@@ -2,7 +2,7 @@
  "id": "q08",
  "query": "Find the lawyer named Daniel Okafor.",
  "gold": "p09",
- "split": "heldout",
+ "split": "dev",
  "model": "openai/gpt-oss-20b",
  "steps": [
   {

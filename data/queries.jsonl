@@ -1,32 +1,44 @@
 {"id": "q01", "query": "Find Priya Raman, the engineer who builds trucking routing software.", "gold": "p01", "split": "dev"}
-{"id": "q02", "query": "Find the Priya Raman who is a nurse in Austin.", "gold": "p02", "split": "heldout"}
+{"id": "q02", "query": "Find the Priya Raman who is a nurse in Austin.", "gold": "p02", "split": "dev"}
 {"id": "q03", "query": "Who founded Kestrel Health?", "gold": "p03", "split": "dev"}
-{"id": "q04", "query": "Find the head of data at Brightwell Bank who maintains tidyledger.", "gold": "p04", "split": "heldout"}
+{"id": "q04", "query": "Find the head of data at Brightwell Bank who maintains tidyledger.", "gold": "p04", "split": "dev"}
 {"id": "q05", "query": "Find Tomas Lindquist the furniture maker.", "gold": "p05", "split": "dev"}
-{"id": "q06", "query": "Find the Fernway product designer who once interned at Lumen Freight.", "gold": "p06", "split": "heldout"}
+{"id": "q06", "query": "Find the Fernway product designer who once interned at Lumen Freight.", "gold": "p06", "split": "dev"}
 {"id": "q07", "query": "Find Daniel Okafor who works on ranking models.", "gold": "p08", "split": "dev"}
-{"id": "q08", "query": "Find the lawyer named Daniel Okafor.", "gold": "p09", "split": "heldout"}
+{"id": "q08", "query": "Find the lawyer named Daniel Okafor.", "gold": "p09", "split": "dev"}
 {"id": "q09", "query": "Find the co-founder and CTO of Harbor Ledger.", "gold": "p11", "split": "dev"}
-{"id": "q10", "query": "Find Mei Chen who used to be principal engineer at Brightwell Bank.", "gold": "p11", "split": "heldout"}
+{"id": "q10", "query": "Find Mei Chen who used to be principal engineer at Brightwell Bank.", "gold": "p11", "split": "dev"}
 {"id": "q11", "query": "Find the security researcher who goes by rduarte_sec.", "gold": "p14", "split": "dev"}
-{"id": "q12", "query": "Find the person who manages the search team at Ostrava Maps.", "gold": "p16", "split": "heldout"}
+{"id": "q12", "query": "Find the person who manages the search team at Ostrava Maps.", "gold": "p16", "split": "dev"}
 {"id": "q13", "query": "Find Lukas Becker, the founder of a CRM startup.", "gold": "p18", "split": "dev"}
-{"id": "q14", "query": "Find the Lukas Becker who works in logistics in Hamburg.", "gold": "p19", "split": "heldout"}
+{"id": "q14", "query": "Find the Lukas Becker who works in logistics in Hamburg.", "gold": "p19", "split": "dev"}
 {"id": "q15", "query": "Find the data scientist at Kestrel Health who used to be an analyst at Brightwell Bank.", "gold": "p21", "split": "dev"}
-{"id": "q16", "query": "Find Arjun Mehta who co-maintains tidyledger.", "gold": "p23", "split": "heldout"}
+{"id": "q16", "query": "Find Arjun Mehta who co-maintains tidyledger.", "gold": "p23", "split": "dev"}
 {"id": "q17", "query": "Find the product manager for payments at Fernway.", "gold": "p25", "split": "dev"}
-{"id": "q18", "query": "Find Noor Haddad, the information retrieval researcher.", "gold": "p26", "split": "heldout"}
+{"id": "q18", "query": "Find Noor Haddad, the information retrieval researcher.", "gold": "p26", "split": "dev"}
 {"id": "q19", "query": "Find the Harbor Ledger SRE who writes about Postgres failover.", "gold": "p28", "split": "dev"}
-{"id": "q20", "query": "Find the investor who led the seed round in Harbor Ledger.", "gold": "p30", "split": "heldout"}
+{"id": "q20", "query": "Find the investor who led the seed round in Harbor Ledger.", "gold": "p30", "split": "dev"}
 {"id": "q21", "query": "Find Grace Kim who does user research for a dessert company.", "gold": "p31", "split": "dev"}
-{"id": "q22", "query": "Who sold a map tile CDN to Ostrava Maps?", "gold": "p33", "split": "heldout"}
+{"id": "q22", "query": "Who sold a map tile CDN to Ostrava Maps?", "gold": "p33", "split": "dev"}
 {"id": "q23", "query": "Find the COO of Fernway.", "gold": "p35", "split": "dev"}
-{"id": "q24", "query": "Find Elena Rossi who sits on the Kestrel Health board.", "gold": "p35", "split": "heldout"}
+{"id": "q24", "query": "Find Elena Rossi who sits on the Kestrel Health board.", "gold": "p35", "split": "dev"}
 {"id": "q25", "query": "Find the platform engineer at Spindle CRM who used to be an SRE at Lumen Freight.", "gold": "p37", "split": "dev"}
-{"id": "q26", "query": "Who replaced Mei Chen as principal engineer at Brightwell Bank?", "gold": "p39", "split": "heldout"}
+{"id": "q26", "query": "Who replaced Mei Chen as principal engineer at Brightwell Bank?", "gold": "p39", "split": "dev"}
 {"id": "q27", "query": "Find the Spindle CRM salesperson who used to work at Cobalt Ice.", "gold": "p20", "split": "dev"}
-{"id": "q28", "query": "Find the person at Quarry AI who hires ML engineers.", "gold": "p13", "split": "heldout"}
+{"id": "q28", "query": "Find the person at Quarry AI who hires ML engineers.", "gold": "p13", "split": "dev"}
 {"id": "q29", "query": "Find the head of research at Quarry AI.", "gold": "p26", "split": "dev"}
-{"id": "q30", "query": "Find the Ivan Petrov who coaches hockey.", "gold": "p29", "split": "heldout"}
+{"id": "q30", "query": "Find the Ivan Petrov who coaches hockey.", "gold": "p29", "split": "dev"}
 {"id": "q31", "query": "Find the angel investor in Fernway who founded a CRM company.", "gold": "p18", "split": "dev"}
-{"id": "q32", "query": "Find the person who co-maintains tidyledger and contracts for Harbor Ledger.", "gold": "p23", "split": "heldout"}
+{"id": "q32", "query": "Find the person who co-maintains tidyledger and contracts for Harbor Ledger.", "gold": "p23", "split": "dev"}
+{"id": "q33", "query": "Find the Rafael Duarte who used to work at Harbor Ledger.", "gold": "p14", "split": "heldout"}
+{"id": "q34", "query": "Find the Hana Sato who organizes a monthly Go meetup.", "gold": "p16", "split": "heldout"}
+{"id": "q35", "query": "Find the person who sells prints of comics about coffee.", "gold": "p10", "split": "heldout"}
+{"id": "q36", "query": "Find the Daniel Okafor who co-wrote a paper on retrieval for tabular data.", "gold": "p08", "split": "heldout"}
+{"id": "q37", "query": "Who teaches a joinery class on Saturdays?", "gold": "p05", "split": "heldout"}
+{"id": "q38", "query": "Find the Kwame Asante who runs Kubernetes at a CRM company.", "gold": "p37", "split": "heldout"}
+{"id": "q39", "query": "Find the Noor Haddad who used to be a scientist at Ostrava Maps.", "gold": "p26", "split": "heldout"}
+{"id": "q40", "query": "Find the Ivan Petrov who used to work at Lumen Freight.", "gold": "p28", "split": "heldout"}
+{"id": "q41", "query": "Who runs a weekend 10k club in Austin?", "gold": "p02", "split": "heldout"}
+{"id": "q42", "query": "Find the Grace Kim who invested in Spindle CRM.", "gold": "p30", "split": "heldout"}
+{"id": "q43", "query": "Find the Sofia Marquez who is a rock climber.", "gold": "p21", "split": "heldout"}
+{"id": "q44", "query": "Who writes a newsletter called Small Screens?", "gold": "p06", "split": "heldout"}

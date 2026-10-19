@@ -2,7 +2,7 @@
  "id": "q14",
  "query": "Find the Lukas Becker who works in logistics in Hamburg.",
  "gold": "p19",
- "split": "heldout",
+ "split": "dev",
  "model": "openai/gpt-oss-20b",
  "temperature": 1.0,
  "seed": 4,

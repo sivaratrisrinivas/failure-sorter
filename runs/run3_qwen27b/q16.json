@@ -2,7 +2,7 @@
  "id": "q16",
  "query": "Find Arjun Mehta who co-maintains tidyledger.",
  "gold": "p23",
- "split": "heldout",
+ "split": "dev",
  "model": "qwen/qwen3.8-27b",
  "steps": [
   {

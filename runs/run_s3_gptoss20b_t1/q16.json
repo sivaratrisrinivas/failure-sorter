@@ -2,7 +2,7 @@
  "id": "q16",
  "query": "Find Arjun Mehta who co-maintains tidyledger.",
  "gold": "p23",
- "split": "heldout",
+ "split": "dev",
  "model": "openai/gpt-oss-20b",
  "temperature": 1.0,
  "seed": 3,

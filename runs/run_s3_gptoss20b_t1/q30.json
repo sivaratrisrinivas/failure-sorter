@@ -2,7 +2,7 @@
  "id": "q30",
  "query": "Find the Ivan Petrov who coaches hockey.",
  "gold": "p29",
- "split": "heldout",
+ "split": "dev",
  "model": "openai/gpt-oss-20b",
  "temperature": 1.0,
  "seed": 3,

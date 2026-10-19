@@ -2,7 +2,7 @@
  "id": "q24",
  "query": "Find Elena Rossi who sits on the Kestrel Health board.",
  "gold": "p35",
- "split": "heldout",
+ "split": "dev",
  "model": "qwen/qwen3.8-27b",
  "steps": [
   {

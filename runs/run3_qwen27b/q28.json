@@ -2,7 +2,7 @@
  "id": "q28",
  "query": "Find the person at Quarry AI who hires ML engineers.",
  "gold": "p13",
- "split": "heldout",
+ "split": "dev",
  "model": "qwen/qwen3.8-27b",
  "steps": [
   {

@@ -2,7 +2,7 @@
  "id": "q10",
  "query": "Find Mei Chen who used to be principal engineer at Brightwell Bank.",
  "gold": "p11",
- "split": "heldout",
+ "split": "dev",
  "model": "qwen/qwen3.8-27b",
  "steps": [
   {

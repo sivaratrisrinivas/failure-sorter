@@ -2,7 +2,7 @@
  "id": "q12",
  "query": "Find the person who manages the search team at Ostrava Maps.",
  "gold": "p16",
- "split": "heldout",
+ "split": "dev",
  "model": "openai/gpt-oss-20b",
  "temperature": 1.0,
  "seed": 4,

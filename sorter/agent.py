@@ -63,7 +63,9 @@ def run(q):
 if __name__ == "__main__":
     OUT = os.environ.get("OUT", "traces"); os.makedirs(OUT, exist_ok=True)
     for line in open("data/queries.jsonl"):
-        q = json.loads(line); path = f"{OUT}/{q['id']}.json"
+        q = json.loads(line)
+        if os.environ.get("SPLIT") and q["split"] != os.environ["SPLIT"]: continue
+        path = f"{OUT}/{q['id']}.json"
         if os.path.exists(path) and "--fresh" not in sys.argv: continue
         t = run(q); json.dump(t, open(path, "w"), indent=1)
         print(q["id"], "OK " if t["correct"] else "MISS", (t["answer"] or {}).get("id"), "gold", q["gold"], len(t["steps"]), "steps", flush=True)

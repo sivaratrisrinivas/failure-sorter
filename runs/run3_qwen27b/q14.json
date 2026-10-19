@@ -2,7 +2,7 @@
  "id": "q14",
  "query": "Find the Lukas Becker who works in logistics in Hamburg.",
  "gold": "p19",
- "split": "heldout",
+ "split": "dev",
  "model": "qwen/qwen3.8-27b",
  "steps": [
   {

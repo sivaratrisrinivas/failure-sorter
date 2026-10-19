@@ -2,7 +2,7 @@
  "id": "q04",
  "query": "Find the head of data at Brightwell Bank who maintains tidyledger.",
  "gold": "p04",
- "split": "heldout",
+ "split": "dev",
  "model": "openai/gpt-oss-20b",
  "steps": [
   {

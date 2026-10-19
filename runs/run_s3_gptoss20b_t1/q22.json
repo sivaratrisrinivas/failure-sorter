@@ -2,7 +2,7 @@
  "id": "q22",
  "query": "Who sold a map tile CDN to Ostrava Maps?",
  "gold": "p33",
- "split": "heldout",
+ "split": "dev",
  "model": "openai/gpt-oss-20b",
  "temperature": 1.0,
  "seed": 3,

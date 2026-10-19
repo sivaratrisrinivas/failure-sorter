@@ -1,0 +1,112 @@
+{
+ "run1_gptoss20b/q10": {
+  "label": "tool_misuse",
+  "note": "p11 (the right Mei Chen) is in the search hits every time. The agent opened the chemistry teacher p12 instead and never opened p11.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run1_gptoss20b/q12": {
+  "label": "tool_misuse",
+  "note": "p16 is the top hit on the first search. The agent repeated near identical searches, opened p16 last, and ran out of calls before answering.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run1_gptoss20b/q19": {
+  "label": "retrieval_miss",
+  "note": "Every search returns the same CTO and two interns. p28 never appears. The SRE fact lives only in the bio, which search does not index.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run1_gptoss20b/q20": {
+  "label": "retrieval_miss",
+  "note": "p30 never appears. The Harbor Ledger seed fact is only in the investor's bio.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run1_gptoss20b/q22": {
+  "label": "retrieval_miss",
+  "note": "p33 never appears. The map tile CDN fact is only in the bio.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run1_gptoss20b/q24": {
+  "label": "tool_misuse",
+  "note": "p35 is the second hit. The agent opened the photographer p36 and never opened p35.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run3_qwen27b/q12": {
+  "label": "tool_misuse",
+  "note": "Spent three calls opening filler profiles, then found and opened p16 with no calls left.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run3_qwen27b/q20": {
+  "label": "retrieval_miss",
+  "note": "p30 never appears in any result.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run_s2_gptoss20b_t1/q10": {
+  "label": "tool_misuse",
+  "note": "p11 (the right Mei Chen) is in the search hits every time. The agent opened the chemistry teacher p12 instead and never opened p11.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run_s2_gptoss20b_t1/q19": {
+  "label": "retrieval_miss",
+  "note": "Every search returns the same CTO and two interns. p28 never appears. The SRE fact lives only in the bio, which search does not index.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run_s2_gptoss20b_t1/q20": {
+  "label": "retrieval_miss",
+  "note": "p30 never appears. The Harbor Ledger seed fact is only in the investor's bio.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run_s3_gptoss20b_t1/q10": {
+  "label": "tool_misuse",
+  "note": "p11 (the right Mei Chen) is in the search hits every time. The agent opened the chemistry teacher p12 instead and never opened p11.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run_s3_gptoss20b_t1/q11": {
+  "label": "tool_misuse",
+  "note": "The handle is not searchable, but the fourth search returns p14 and the agent opens it. The handle is right there. It runs out of calls without answering.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run_s3_gptoss20b_t1/q19": {
+  "label": "retrieval_miss",
+  "note": "Every search returns the same CTO and two interns. p28 never appears. The SRE fact lives only in the bio, which search does not index.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run_s3_gptoss20b_t1/q20": {
+  "label": "retrieval_miss",
+  "note": "p30 never appears. The Harbor Ledger seed fact is only in the investor's bio.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run_s3_gptoss20b_t1/q22": {
+  "label": "retrieval_miss",
+  "note": "p33 never appears. The map tile CDN fact is only in the bio.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run_s3_gptoss20b_t1/q32": {
+  "label": "tool_misuse",
+  "note": "Search for tidyledger returns only p23. The agent kept searching instead of answering.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run_s4_gptoss20b_t1/q10": {
+  "label": "tool_misuse",
+  "note": "p11 (the right Mei Chen) is in the search hits every time. The agent opened the chemistry teacher p12 instead and never opened p11.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run_s4_gptoss20b_t1/q19": {
+  "label": "retrieval_miss",
+  "note": "Every search returns the same CTO and two interns. p28 never appears. The SRE fact lives only in the bio, which search does not index.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run_s4_gptoss20b_t1/q20": {
+  "label": "retrieval_miss",
+  "note": "p30 never appears. The Harbor Ledger seed fact is only in the investor's bio.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run_s4_gptoss20b_t1/q22": {
+  "label": "retrieval_miss",
+  "note": "p33 never appears. The map tile CDN fact is only in the bio.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "run_s4_gptoss20b_t1/q24": {
+  "label": "tool_misuse",
+  "note": "p35 is the second hit. The agent opened the photographer p36 and never opened p35.",
+  "by": "builder, one pass, reading the trace"
+ }
+}

@@ -2,7 +2,7 @@
  "id": "q28",
  "query": "Find the person at Quarry AI who hires ML engineers.",
  "gold": "p13",
- "split": "heldout",
+ "split": "dev",
  "model": "openai/gpt-oss-20b",
  "temperature": 1.0,
  "seed": 3,

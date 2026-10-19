@@ -2,7 +2,7 @@
  "id": "q06",
  "query": "Find the Fernway product designer who once interned at Lumen Freight.",
  "gold": "p06",
- "split": "heldout",
+ "split": "dev",
  "model": "qwen/qwen3.8-27b",
  "steps": [
   {

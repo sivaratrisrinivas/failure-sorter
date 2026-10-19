@@ -2,7 +2,7 @@
  "id": "q22",
  "query": "Who sold a map tile CDN to Ostrava Maps?",
  "gold": "p33",
- "split": "heldout",
+ "split": "dev",
  "model": "qwen/qwen3.8-27b",
  "steps": [
   {

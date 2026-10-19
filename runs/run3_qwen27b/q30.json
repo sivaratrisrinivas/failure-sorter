@@ -2,7 +2,7 @@
  "id": "q30",
  "query": "Find the Ivan Petrov who coaches hockey.",
  "gold": "p29",
- "split": "heldout",
+ "split": "dev",
  "model": "qwen/qwen3.8-27b",
  "steps": [
   {

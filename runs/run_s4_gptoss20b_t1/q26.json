@@ -2,7 +2,7 @@
  "id": "q26",
  "query": "Who replaced Mei Chen as principal engineer at Brightwell Bank?",
  "gold": "p39",
- "split": "heldout",
+ "split": "dev",
  "model": "openai/gpt-oss-20b",
  "temperature": 1.0,
  "seed": 4,

@@ -2,7 +2,7 @@
  "id": "q10",
  "query": "Find Mei Chen who used to be principal engineer at Brightwell Bank.",
  "gold": "p11",
- "split": "heldout",
+ "split": "dev",
  "model": "openai/gpt-oss-20b",
  "temperature": 1.0,
  "seed": 3,

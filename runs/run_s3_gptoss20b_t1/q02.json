@@ -2,7 +2,7 @@
  "id": "q02",
  "query": "Find the Priya Raman who is a nurse in Austin.",
  "gold": "p02",
- "split": "heldout",
+ "split": "dev",
  "model": "openai/gpt-oss-20b",
  "temperature": 1.0,
  "seed": 3,

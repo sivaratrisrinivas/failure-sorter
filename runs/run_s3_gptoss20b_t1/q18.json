@@ -2,7 +2,7 @@
  "id": "q18",
  "query": "Find Noor Haddad, the information retrieval researcher.",
  "gold": "p26",
- "split": "heldout",
+ "split": "dev",
  "model": "openai/gpt-oss-20b",
  "temperature": 1.0,
  "seed": 3,
