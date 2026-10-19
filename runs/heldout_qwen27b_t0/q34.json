@@ -1,0 +1,67 @@
+{
+ "id": "q34",
+ "query": "Find the Hana Sato who organizes a monthly Go meetup.",
+ "gold": "p16",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "temperature": 0.0,
+ "seed": 1,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Hana Sato Go meetup"
+   },
+   "result": [
+    {
+     "id": "p16",
+     "name": "Hana Sato",
+     "headline": "Engineering manager at Ostrava Maps"
+    },
+    {
+     "id": "p17",
+     "name": "Hana Satou",
+     "headline": "Violinist"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p16"
+   },
+   "result": {
+    "id": "p16",
+    "name": "Hana Sato",
+    "headline": "Engineering manager at Ostrava Maps",
+    "city": "Tokyo",
+    "body": "Hana manages the search team at Ostrava Maps. Previously at Quarry AI. Organizes a monthly Go meetup."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p16",
+    "why": "Profile p16 (Hana Sato, Tokyo) explicitly states she \"Organizes a monthly Go meetup.\""
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p16",
+  "why": "Profile p16 (Hana Sato, Tokyo) explicitly states she \"Organizes a monthly Go meetup.\""
+ },
+ "correct": true
+}

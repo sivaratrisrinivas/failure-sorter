@@ -1,0 +1,82 @@
+{
+ "id": "q43",
+ "query": "Find the Sofia Marquez who is a rock climber.",
+ "gold": "p21",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Sofia Marquez rock climber"
+   },
+   "result": [
+    {
+     "id": "p22",
+     "name": "Sofia Marquez",
+     "headline": "Real estate agent"
+    },
+    {
+     "id": "p21",
+     "name": "Sofia Marquez",
+     "headline": "Data scientist at Kestrel Health"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p22"
+   },
+   "result": {
+    "id": "p22",
+    "name": "Sofia Marquez",
+    "headline": "Real estate agent",
+    "city": "Miami",
+    "body": "Sofia Marquez sells condos in Brickell."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p21"
+   },
+   "result": {
+    "id": "p21",
+    "name": "Sofia Marquez",
+    "headline": "Data scientist at Kestrel Health",
+    "city": "Boston",
+    "body": "Sofia builds risk models for claim audits. Ex Brightwell Bank analyst. Rock climber."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p21",
+    "why": "Sofia Marquez in p21 is a data scientist at Kestrel Health in Boston, described as a rock climber in her bio."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p21",
+  "why": "Sofia Marquez in p21 is a data scientist at Kestrel Health in Boston, described as a rock climber in her bio."
+ },
+ "correct": true
+}

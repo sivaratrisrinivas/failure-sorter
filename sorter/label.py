@@ -24,7 +24,7 @@ def label_v1(t):
 def load():
     out = []
     for path in sorted(glob.glob("runs/*/q*.json")):
-        t = json.load(open(path)); t["run"] = path.split("/")[1]; t["key"] = f"{t['run']}/{t['id']}"
+        t = json.load(open(path)); t["split"] = "heldout" if path.split("/")[1].startswith("heldout") else "dev"; t["run"] = path.split("/")[1]; t["key"] = f"{t['run']}/{t['id']}"
         out.append(t)
     return out
 

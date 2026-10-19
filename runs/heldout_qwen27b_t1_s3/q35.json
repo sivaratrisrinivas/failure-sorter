@@ -1,0 +1,80 @@
+{
+ "id": "q35",
+ "query": "Find the person who sells prints of comics about coffee.",
+ "gold": "p10",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "prints comics about coffee"
+   },
+   "result": [],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee comic art prints"
+   },
+   "result": [],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee comic illustrator"
+   },
+   "result": [
+    {
+     "id": "p10",
+     "name": "Dani Okafor",
+     "headline": "Barista and illustrator"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p10"
+   },
+   "result": {
+    "id": "p10",
+    "name": "Dani Okafor",
+    "headline": "Barista and illustrator",
+    "city": "Portland",
+    "body": "Dani Okafor draws comics about coffee. Sells prints online."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p10",
+    "why": "Dani Okafor's profile states: \"Dani Okafor draws comics about coffee. Sells prints online.\""
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p10",
+  "why": "Dani Okafor's profile states: \"Dani Okafor draws comics about coffee. Sells prints online.\""
+ },
+ "correct": true
+}

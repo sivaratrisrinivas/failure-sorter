@@ -1,0 +1,72 @@
+{
+ "id": "q39",
+ "query": "Find the Noor Haddad who used to be a scientist at Ostrava Maps.",
+ "gold": "p26",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Noor Haddad Ostrava Maps scientist"
+   },
+   "result": [
+    {
+     "id": "p27",
+     "name": "Noor Haddad",
+     "headline": "Journalist covering energy"
+    },
+    {
+     "id": "p26",
+     "name": "Noor Haddad",
+     "headline": "Head of research at Quarry AI"
+    },
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p26"
+   },
+   "result": {
+    "id": "p26",
+    "name": "Noor Haddad",
+    "headline": "Head of research at Quarry AI",
+    "city": "Toronto",
+    "body": "Noor leads the research group. PhD in information retrieval. Previously a scientist at Ostrava Maps."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p26",
+    "why": "Noor Haddad (p26) was previously a scientist at Ostrava Maps, confirmed in her bio, and now leads research at Quarry AI."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p26",
+  "why": "Noor Haddad (p26) was previously a scientist at Ostrava Maps, confirmed in her bio, and now leads research at Quarry AI."
+ },
+ "correct": true
+}

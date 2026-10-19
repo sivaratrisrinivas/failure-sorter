@@ -38,6 +38,7 @@ def chat(msgs):
                 {"Authorization": "Bearer " + os.environ["GROQ_API_KEY"], "Content-Type": "application/json", "User-Agent": "failure-sorter"})
             return json.load(urllib.request.urlopen(r, timeout=60))["choices"][0]["message"]
         except Exception as e:
+            print("api error", getattr(e, "code", ""), (e.read()[:300] if hasattr(e, "read") else str(e)), file=sys.stderr, flush=True)
             time.sleep(int(e.headers.get("retry-after", 0) or 0) + 10 * (a + 1) if hasattr(e, "headers") and e.headers else 10 * (a + 1)); err = str(e)
     raise RuntimeError(err)
 def run(q):

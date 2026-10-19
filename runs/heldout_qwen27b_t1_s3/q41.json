@@ -1,0 +1,68 @@
+{
+ "id": "q41",
+ "query": "Who runs a weekend 10k club in Austin?",
+ "gold": "p02",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "weekend 10k club Austin"
+   },
+   "result": [],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "10k running club Austin"
+   },
+   "result": [],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "running club Austin"
+   },
+   "result": [],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Austin runner 10k"
+   },
+   "result": [],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "unknown",
+    "why": "Searches for \"weekend 10k club Austin\", \"10k running club Austin\", \"running club Austin\", and \"Austin runner 10k\" all returned no results, so no matching profile was found."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "No results were returned from the search for a 10k club runner in Austin. I could not find the person in the index.\n\n"
+  }
+ ],
+ "answer": {
+  "id": "unknown",
+  "why": "Searches for \"weekend 10k club Austin\", \"10k running club Austin\", \"running club Austin\", and \"Austin runner 10k\" all returned no results, so no matching profile was found."
+ },
+ "correct": false
+}

@@ -108,5 +108,40 @@
   "label": "tool_misuse",
   "note": "p35 is the second hit. The agent opened the photographer p36 and never opened p35.",
   "by": "builder, one pass, reading the trace"
+ },
+ "heldout_qwen27b_t0/q35": {
+  "label": "retrieval_miss",
+  "note": "p10 never appears. The coffee comics fact is only in the bio.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "heldout_qwen27b_t0/q37": {
+  "label": "retrieval_miss",
+  "note": "p05 never appears. Joinery is only in the bio.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "heldout_qwen27b_t0/q41": {
+  "label": "retrieval_miss",
+  "note": "Every search returns nothing or the wrong person. p02 never appears. The 10k club is only in the bio.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "heldout_qwen27b_t0/q44": {
+  "label": "retrieval_miss",
+  "note": "No search returns p06. Small Screens is only in the bio.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "heldout_qwen27b_t1_s3/q37": {
+  "label": "retrieval_miss",
+  "note": "p05 never appears. Joinery is only in the bio.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "heldout_qwen27b_t1_s3/q41": {
+  "label": "retrieval_miss",
+  "note": "Every search returns nothing or the wrong person. p02 never appears. The 10k club is only in the bio.",
+  "by": "builder, one pass, reading the trace"
+ },
+ "heldout_qwen27b_t1_s3/q44": {
+  "label": "retrieval_miss",
+  "note": "No search returns p06. Small Screens is only in the bio.",
+  "by": "builder, one pass, reading the trace"
  }
 }

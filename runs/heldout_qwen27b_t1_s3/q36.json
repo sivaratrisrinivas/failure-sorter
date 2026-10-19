@@ -1,0 +1,72 @@
+{
+ "id": "q36",
+ "query": "Find the Daniel Okafor who co-wrote a paper on retrieval for tabular data.",
+ "gold": "p08",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Daniel Okafor retrieval tabular data"
+   },
+   "result": [
+    {
+     "id": "p09",
+     "name": "Daniel Okafor",
+     "headline": "Partner at Okafor and Reyes LLP"
+    },
+    {
+     "id": "p08",
+     "name": "Daniel Okafor",
+     "headline": "ML engineer at Quarry AI"
+    },
+    {
+     "id": "p10",
+     "name": "Dani Okafor",
+     "headline": "Barista and illustrator"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p08"
+   },
+   "result": {
+    "id": "p08",
+    "name": "Daniel Okafor",
+    "headline": "ML engineer at Quarry AI",
+    "city": "San Francisco",
+    "body": "Daniel trains ranking models. Ex Fernway. Co-author of a paper on retrieval for tabular data."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p08",
+    "why": "ML engineer at Quarry AI; bio explicitly states he is a co-author of a paper on retrieval for tabular data."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p08",
+  "why": "ML engineer at Quarry AI; bio explicitly states he is a co-author of a paper on retrieval for tabular data."
+ },
+ "correct": true
+}

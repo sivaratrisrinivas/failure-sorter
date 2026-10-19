@@ -54,9 +54,9 @@ fetch("data.json").then(r=>r.json()).then(d=>{D=d;draw()});
 function draw(){const R=D.report,s=R.split,tot=s.retrieval_miss+s.tool_misuse;
  $("nret").textContent=s.retrieval_miss;$("nuse").textContent=s.tool_misuse;
  $("bar").innerHTML=`<i style="width:${100*s.retrieval_miss/tot}%;background:var(--ret)"></i><i style="width:${100*s.tool_misuse/tot}%;background:var(--use)"></i>`;
- $("meta").textContent=`${R.runs} runs over ${R.queries} queries. ${R.misses} misses. Split by labeler v1.`;
+ $("meta").textContent=`${R.runs} runs over ${R.queries} queries. ${R.misses} misses. Split by labeler v1. The run0 harness also indexed bios and missed 0 of 32.`;
  const a=R.agreement,f=x=>`${x.agree}/${x.n}`;
- $("agree").innerHTML=`<b>Does the labeler match hand labels?</b><table><tr><td></td><td>dev (used to build it)</td><td>held out (checked once)</td></tr>
+ $("agree").innerHTML=`<b>Does the labeler match hand labels?</b> <span class="small">one annotator, the builder. Held out = 12 new queries run after the labeler was frozen.</span><table><tr><td></td><td>dev (used to build it)</td><td>held out (checked once)</td></tr>
  <tr><td>v0 outcome only</td><td>${f(a.v0.dev)}</td><td>${f(a.v0.heldout)}</td></tr><tr><td>v1 reads tool results</td><td>${f(a.v1.dev)}</td><td>${f(a.v1.heldout)}</td></tr></table>`;
  const show=$("showpass").checked;
  const rows=D.traces.filter(t=>(show||!t.correct)&&(!filt||t.auto===filt));

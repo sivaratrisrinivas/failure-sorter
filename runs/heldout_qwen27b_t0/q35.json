@@ -1,0 +1,78 @@
+{
+ "id": "q35",
+ "query": "Find the person who sells prints of comics about coffee.",
+ "gold": "p10",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "temperature": 0.0,
+ "seed": 1,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "sells prints of comics about coffee"
+   },
+   "result": [
+    {
+     "id": "p33",
+     "name": "Omar Farouk",
+     "headline": "Founder of Tilepath"
+    },
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    },
+    {
+     "id": "p23",
+     "name": "Arjun Mehta",
+     "headline": "Open source maintainer of tidyledger"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee comic artist prints"
+   },
+   "result": [],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee comic"
+   },
+   "result": [],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "comics coffee"
+   },
+   "result": [],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee"
+   },
+   "result": [],
+   "thought": null
+  }
+ ],
+ "answer": null,
+ "correct": false
+}
