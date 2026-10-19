@@ -1,0 +1,51 @@
+{
+ "id": "q29",
+ "query": "Find the head of research at Quarry AI.",
+ "gold": "p26",
+ "split": "dev",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "head of research Quarry AI"
+   },
+   "result": [
+    {
+     "id": "p26",
+     "name": "Noor Haddad",
+     "headline": "Head of research at Quarry AI"
+    },
+    {
+     "id": "p04",
+     "name": "Tomas Lindqvist",
+     "headline": "Head of data at Brightwell Bank"
+    },
+    {
+     "id": "p13",
+     "name": "Mei Chen-Watts",
+     "headline": "Recruiter at Quarry AI"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p26",
+    "why": "Noor Haddad's headline is \"Head of research at Quarry AI\", matching the query exactly."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p26",
+  "why": "Noor Haddad's headline is \"Head of research at Quarry AI\", matching the query exactly."
+ },
+ "correct": true
+}

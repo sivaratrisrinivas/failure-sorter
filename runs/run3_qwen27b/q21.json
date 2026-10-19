@@ -1,0 +1,66 @@
+{
+ "id": "q21",
+ "query": "Find Grace Kim who does user research for a dessert company.",
+ "gold": "p31",
+ "split": "dev",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Grace Kim user research dessert"
+   },
+   "result": [
+    {
+     "id": "p31",
+     "name": "Grace Kim",
+     "headline": "UX researcher at Cobalt Ice"
+    },
+    {
+     "id": "p30",
+     "name": "Grace Kim",
+     "headline": "General partner at Northbeam Ventures"
+    },
+    {
+     "id": "p32",
+     "name": "Grace Kimball",
+     "headline": "Author"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p31"
+   },
+   "result": {
+    "id": "p31",
+    "name": "Grace Kim",
+    "headline": "UX researcher at Cobalt Ice",
+    "city": "Seoul",
+    "body": "Grace Kim runs taste tests and user interviews."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p31",
+    "why": "Grace Kim is a UX researcher at Cobalt Ice (a dessert/ice cream company) who runs taste tests and user interviews."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p31",
+  "why": "Grace Kim is a UX researcher at Cobalt Ice (a dessert/ice cream company) who runs taste tests and user interviews."
+ },
+ "correct": true
+}

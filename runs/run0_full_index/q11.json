@@ -1,0 +1,56 @@
+{
+ "id": "q11",
+ "query": "Find the security researcher who goes by rduarte_sec.",
+ "gold": "p14",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "rduarte_sec"
+   },
+   "result": [
+    {
+     "id": "p14",
+     "name": "Rafael Duarte",
+     "headline": "Security researcher"
+    }
+   ],
+   "thought": "We need to find a security researcher with handle rduarte_sec. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p14"
+   },
+   "result": {
+    "id": "p14",
+    "name": "Rafael Duarte",
+    "headline": "Security researcher",
+    "city": "Lisbon",
+    "body": "Rafael finds bugs in payment SDKs. Formerly at Harbor Ledger. Known handle: rduarte_sec."
+   },
+   "thought": "We found Rafael Duarte. Need to open profile."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p14",
+    "why": "The profile with handle rduarte_sec is Rafael Duarte, a security researcher."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found the profile. Need to answer with id and why."
+  }
+ ],
+ "answer": {
+  "id": "p14",
+  "why": "The profile with handle rduarte_sec is Rafael Duarte, a security researcher."
+ },
+ "correct": true
+}

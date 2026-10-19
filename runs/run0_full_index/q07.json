@@ -1,0 +1,66 @@
+{
+ "id": "q07",
+ "query": "Find Daniel Okafor who works on ranking models.",
+ "gold": "p08",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Daniel Okafor ranking models"
+   },
+   "result": [
+    {
+     "id": "p08",
+     "name": "Daniel Okafor",
+     "headline": "ML engineer at Quarry AI"
+    },
+    {
+     "id": "p09",
+     "name": "Daniel Okafor",
+     "headline": "Partner at Okafor and Reyes LLP"
+    },
+    {
+     "id": "p10",
+     "name": "Dani Okafor",
+     "headline": "Barista and illustrator"
+    }
+   ],
+   "thought": "We need to search for Daniel Okafor ranking models. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p08"
+   },
+   "result": {
+    "id": "p08",
+    "name": "Daniel Okafor",
+    "headline": "ML engineer at Quarry AI",
+    "city": "San Francisco",
+    "body": "Daniel trains ranking models. Ex Fernway. Co-author of a paper on retrieval for tabular data."
+   },
+   "thought": "We need the person who works on ranking models. The search results show Daniel Okafor at Quarry AI, likely works on ranking models. Let's open that profile."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p08",
+    "why": "Daniel Okafor trains ranking models at Quarry AI"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Daniel Okafor, id p08. Need to answer."
+  }
+ ],
+ "answer": {
+  "id": "p08",
+  "why": "Daniel Okafor trains ranking models at Quarry AI"
+ },
+ "correct": true
+}

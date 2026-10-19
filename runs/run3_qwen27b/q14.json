@@ -1,0 +1,61 @@
+{
+ "id": "q14",
+ "query": "Find the Lukas Becker who works in logistics in Hamburg.",
+ "gold": "p19",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Lukas Becker logistics Hamburg"
+   },
+   "result": [
+    {
+     "id": "p19",
+     "name": "Lukas Becker",
+     "headline": "Logistics coordinator at Lumen Freight"
+    },
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p19"
+   },
+   "result": {
+    "id": "p19",
+    "name": "Lukas Becker",
+    "headline": "Logistics coordinator at Lumen Freight",
+    "city": "Hamburg",
+    "body": "Lukas Becker schedules cross dock transfers. Works with the routing team."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p19",
+    "why": "Lukas Becker, logistics coordinator at Lumen Freight, based in Hamburg."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p19",
+  "why": "Lukas Becker, logistics coordinator at Lumen Freight, based in Hamburg."
+ },
+ "correct": true
+}

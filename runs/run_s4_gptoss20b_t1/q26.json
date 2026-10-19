@@ -1,0 +1,57 @@
+{
+ "id": "q26",
+ "query": "Who replaced Mei Chen as principal engineer at Brightwell Bank?",
+ "gold": "p39",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Brightwell Bank principal engineer"
+   },
+   "result": [
+    {
+     "id": "p39",
+     "name": "Julia Novak",
+     "headline": "Principal engineer at Brightwell Bank"
+    },
+    {
+     "id": "f21",
+     "name": "Quinn Ortiz",
+     "headline": "Analyst at Brightwell Bank"
+    },
+    {
+     "id": "f13",
+     "name": "Sam Byrne",
+     "headline": "Analyst at Brightwell Bank"
+    }
+   ],
+   "thought": "We need to find the person who replaced Mei Chen as principal engineer at Brightwell Bank. We need to search the index. Likely \"Mei Chen\" is a person in the index, and someone else replaced her. Use search for \"Brightwell Bank principal engineer\"."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p39",
+    "why": "Julia Novak is listed as the current principal engineer at Brightwell Bank, indicating she replaced Mei Chen."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found a profile id p39 named Julia Novak, principal engineer at Brightwell Bank. The question: Who replaced Mei Chen as principal engineer at Brightwell Bank? So answer is Julia Novak. We should include why."
+  }
+ ],
+ "answer": {
+  "id": "p39",
+  "why": "Julia Novak is listed as the current principal engineer at Brightwell Bank, indicating she replaced Mei Chen."
+ },
+ "correct": true
+}

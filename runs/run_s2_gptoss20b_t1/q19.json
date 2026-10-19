@@ -1,0 +1,142 @@
+{
+ "id": "q19",
+ "query": "Find the Harbor Ledger SRE who writes about Postgres failover.",
+ "gold": "p28",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 2,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger SRE Postgres failover"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to find a person in the profile index (public profiles). Query: \"Harbor Ledger SRE writes about Postgres failover\". Let's search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger SRE \"Postgres\" failover"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "Search results show only a few. Need to find specific SRE who writes about Postgres failover. We might need to open profiles. Let's open Mei Chen? but she is CTO not SRE. We might search again."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger SRE Postgres Harbor Ledger"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "We need the Harbor Ledger SRE who writes about Postgres failover. Likely a senior engineer. We need to find profile. Search for \"Harbor Ledger SRE Postgres failover\" didn't find. Try \"Harbor Ledger SRE Postgres\""
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger \"Postgres failover\" \"SRE\""
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to find the Harbor Ledger SRE who writes about Postgres failover. The search results show Mei Chen (CTO), Jamie Tan (Intern), Sky Adeyemi (Intern). None mention SRE or Postgres failover. Possibly the SRE is not in top 3 results. Let's search more specifically."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger \"SRE\" Postgres"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to find the Harbor Ledger SRE who writes about Postgres failover. The search results only give CTO and interns. Maybe the SRE is not in the top 3 search results. We have at most 4 calls. We need to search more specifically. Maybe use query \"Harbor Ledger SRE Postgres failover Harbor Ledger\". Try different query terms: \"Harbor Ledger SRE Postgres\"."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

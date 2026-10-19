@@ -1,0 +1,51 @@
+{
+ "id": "q13",
+ "query": "Find Lukas Becker, the founder of a CRM startup.",
+ "gold": "p18",
+ "split": "dev",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Lukas Becker CRM startup founder"
+   },
+   "result": [
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    },
+    {
+     "id": "p19",
+     "name": "Lukas Becker",
+     "headline": "Logistics coordinator at Lumen Freight"
+    },
+    {
+     "id": "p33",
+     "name": "Omar Farouk",
+     "headline": "Founder of Tilepath"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p18",
+    "why": "Lukas Becker, Founder of Spindle CRM \u2014 matches the CRM startup founder description."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p18",
+  "why": "Lukas Becker, Founder of Spindle CRM \u2014 matches the CRM startup founder description."
+ },
+ "correct": true
+}

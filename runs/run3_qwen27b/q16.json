@@ -1,0 +1,51 @@
+{
+ "id": "q16",
+ "query": "Find Arjun Mehta who co-maintains tidyledger.",
+ "gold": "p23",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Arjun Mehta tidyledger"
+   },
+   "result": [
+    {
+     "id": "p23",
+     "name": "Arjun Mehta",
+     "headline": "Open source maintainer of tidyledger"
+    },
+    {
+     "id": "p24",
+     "name": "Arjun Mehta",
+     "headline": "Cardiologist"
+    },
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p23",
+    "why": "Arjun Mehta, open source maintainer of tidyledger."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p23",
+  "why": "Arjun Mehta, open source maintainer of tidyledger."
+ },
+ "correct": true
+}

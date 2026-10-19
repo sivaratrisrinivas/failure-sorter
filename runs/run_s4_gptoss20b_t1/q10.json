@@ -1,0 +1,132 @@
+{
+ "id": "q10",
+ "query": "Find Mei Chen who used to be principal engineer at Brightwell Bank.",
+ "gold": "p11",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Mei Chen principal engineer Brightwell Bank"
+   },
+   "result": [
+    {
+     "id": "p39",
+     "name": "Julia Novak",
+     "headline": "Principal engineer at Brightwell Bank"
+    },
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to search for Mei Chen with that description. We'll call search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Mei Chen Brightwell Bank"
+   },
+   "result": [
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "p13",
+     "name": "Mei Chen-Watts",
+     "headline": "Recruiter at Quarry AI"
+    }
+   ],
+   "thought": "We have two Mei Chen entries. The query: \"Mei Chen who used to be principal engineer at Brightwell Bank.\" We need the profile ID of the Mei Chen who used to be principal engineer at Brightwell Bank. In results, we see \"Julia Novak\" is principal engineer at Brightwell Bank. The Mei Chen entries: one high school teacher, one CTO at Harbor Ledger. Neither mention Brightwell Bank. But maybe the search didn't return the correct. We might need to refine search. The instruction: \"Be quick: you have at most 4 tool calls, do not open profiles unless you must.\" We used 1 call. We might need to refine query to find Mei Chen used to be principal engineer. Let's try search with \"Mei Chen Brightwell Bank\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "\"Mei Chen\" \"Brightwell Bank\" \"principal engineer\""
+   },
+   "result": [
+    {
+     "id": "p39",
+     "name": "Julia Novak",
+     "headline": "Principal engineer at Brightwell Bank"
+    },
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    }
+   ],
+   "thought": "We need the specific person: Mei Chen who used to be principal engineer at Brightwell Bank. The search results: id p39 is Julia Novak. Not Mei Chen. p12 is Mei Chen but high school chemistry teacher. p11 is Mei Chen CTO at Harbor Ledger. So maybe the profile isn't in top 3. We need to find the specific Mei Chen. We may need to refine search. Let's search \"Mei Chen Brightwell Bank principal engineer\" again."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p12"
+   },
+   "result": {
+    "id": "p12",
+    "name": "Mei Chen",
+    "headline": "High school chemistry teacher",
+    "city": "Vancouver",
+    "body": "Mei Chen teaches AP chemistry. Coaches the robotics team."
+   },
+   "thought": "We need find Mei Chen who used to be principal engineer at Brightwell Bank. The search results show no direct. But maybe open p39? It says Julia Novak. Not Mei. Maybe p12 or p11? Let's open p12."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Mei Chen \"former\" \"principal engineer\" \"Brightwell Bank\""
+   },
+   "result": [
+    {
+     "id": "p39",
+     "name": "Julia Novak",
+     "headline": "Principal engineer at Brightwell Bank"
+    },
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    }
+   ],
+   "thought": "We need find Mei Chen who used to be principal engineer at Brightwell Bank. Our search results show Julia Novak as principal engineer at Brightwell Bank, but not Mei Chen. There are two Mei Chen profiles, but not with Brightwell Bank. Could be a mistake. Perhaps Mei Chen used to be principal engineer at Brightwell Bank but not listed? Could be mis-identified; maybe we need to find the correct profile id. Search again with \"Mei Chen\" \"Brightwell Bank\" \"former\" \"principal engineer\"."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

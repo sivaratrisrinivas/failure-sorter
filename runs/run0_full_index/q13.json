@@ -1,0 +1,66 @@
+{
+ "id": "q13",
+ "query": "Find Lukas Becker, the founder of a CRM startup.",
+ "gold": "p18",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Lukas Becker founder CRM startup"
+   },
+   "result": [
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    },
+    {
+     "id": "p19",
+     "name": "Lukas Becker",
+     "headline": "Logistics coordinator at Lumen Freight"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to search for Lukas Becker founder CRM startup. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p18"
+   },
+   "result": {
+    "id": "p18",
+    "name": "Lukas Becker",
+    "headline": "Founder of Spindle CRM",
+    "city": "Berlin",
+    "body": "Lukas started Spindle CRM in 2022 after selling a small analytics shop. Angel investor in Fernway."
+   },
+   "thought": "We found Lukas Becker, founder of Spindle CRM. Need to open profile to confirm."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p18",
+    "why": "Founder's profile matches description"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Lukas Becker, founder of Spindle CRM. Need to answer with id and why."
+  }
+ ],
+ "answer": {
+  "id": "p18",
+  "why": "Founder's profile matches description"
+ },
+ "correct": true
+}

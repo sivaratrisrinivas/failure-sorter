@@ -1,0 +1,81 @@
+{
+ "id": "q10",
+ "query": "Find Mei Chen who used to be principal engineer at Brightwell Bank.",
+ "gold": "p11",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Mei Chen principal engineer Brightwell Bank"
+   },
+   "result": [
+    {
+     "id": "p39",
+     "name": "Julia Novak",
+     "headline": "Principal engineer at Brightwell Bank"
+    },
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p11"
+   },
+   "result": {
+    "id": "p11",
+    "name": "Mei Chen",
+    "headline": "CTO at Harbor Ledger",
+    "city": "Singapore",
+    "body": "Mei Chen co-founded Harbor Ledger, a payments reconciliation startup, in 2021. Previously principal engineer at Brightwell Bank."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p12"
+   },
+   "result": {
+    "id": "p12",
+    "name": "Mei Chen",
+    "headline": "High school chemistry teacher",
+    "city": "Vancouver",
+    "body": "Mei Chen teaches AP chemistry. Coaches the robotics team."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p11",
+    "why": "Mei Chen (p11) is currently CTO at Harbor Ledger and was previously principal engineer at Brightwell Bank, matching the description."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p11",
+  "why": "Mei Chen (p11) is currently CTO at Harbor Ledger and was previously principal engineer at Brightwell Bank, matching the description."
+ },
+ "correct": true
+}

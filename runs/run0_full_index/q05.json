@@ -1,0 +1,66 @@
+{
+ "id": "q05",
+ "query": "Find Tomas Lindquist the furniture maker.",
+ "gold": "p05",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Tomas Lindquist furniture maker"
+   },
+   "result": [
+    {
+     "id": "p05",
+     "name": "Tomas Lindquist",
+     "headline": "Carpenter and furniture maker"
+    },
+    {
+     "id": "p04",
+     "name": "Tomas Lindqvist",
+     "headline": "Head of data at Brightwell Bank"
+    },
+    {
+     "id": "p23",
+     "name": "Arjun Mehta",
+     "headline": "Open source maintainer of tidyledger"
+    }
+   ],
+   "thought": "We need to search for Tomas Lindquist furniture maker. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p05"
+   },
+   "result": {
+    "id": "p05",
+    "name": "Tomas Lindquist",
+    "headline": "Carpenter and furniture maker",
+    "city": "Minneapolis",
+    "body": "Tomas Lindquist makes walnut tables. Teaches a joinery class on Saturdays."
+   },
+   "thought": "We have a hit: id p05. Let's open."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p05",
+    "why": "Found Tomas Lindquist, carpenter and furniture maker, in Minneapolis."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have found the profile. Need to answer with id and why."
+  }
+ ],
+ "answer": {
+  "id": "p05",
+  "why": "Found Tomas Lindquist, carpenter and furniture maker, in Minneapolis."
+ },
+ "correct": true
+}

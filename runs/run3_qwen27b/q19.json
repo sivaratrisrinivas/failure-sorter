@@ -1,0 +1,100 @@
+{
+ "id": "q19",
+ "query": "Find the Harbor Ledger SRE who writes about Postgres failover.",
+ "gold": "p28",
+ "split": "dev",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger SRE Postgres failover"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "SRE Postgres failover"
+   },
+   "result": [],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger site reliability engineer"
+   },
+   "result": [
+    {
+     "id": "p28",
+     "name": "Ivan Petrov",
+     "headline": "Site reliability engineer at Harbor Ledger"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p28"
+   },
+   "result": {
+    "id": "p28",
+    "name": "Ivan Petrov",
+    "headline": "Site reliability engineer at Harbor Ledger",
+    "city": "Sofia",
+    "body": "Ivan runs on call for the ledger. Ex Lumen Freight. Writes about Postgres failover."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p28",
+    "why": "Ivan Petrov is the Site Reliability Engineer at Harbor Ledger, and his bio states he writes about Postgres failover."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p28",
+  "why": "Ivan Petrov is the Site Reliability Engineer at Harbor Ledger, and his bio states he writes about Postgres failover."
+ },
+ "correct": true
+}

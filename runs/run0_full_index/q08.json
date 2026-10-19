@@ -1,0 +1,66 @@
+{
+ "id": "q08",
+ "query": "Find the lawyer named Daniel Okafor.",
+ "gold": "p09",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Daniel Okafor lawyer"
+   },
+   "result": [
+    {
+     "id": "p09",
+     "name": "Daniel Okafor",
+     "headline": "Partner at Okafor and Reyes LLP"
+    },
+    {
+     "id": "p08",
+     "name": "Daniel Okafor",
+     "headline": "ML engineer at Quarry AI"
+    },
+    {
+     "id": "p10",
+     "name": "Dani Okafor",
+     "headline": "Barista and illustrator"
+    }
+   ],
+   "thought": "We need to search for Daniel Okafor. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p09"
+   },
+   "result": {
+    "id": "p09",
+    "name": "Daniel Okafor",
+    "headline": "Partner at Okafor and Reyes LLP",
+    "city": "Lagos",
+    "body": "Daniel Okafor practices commercial law. Sits on the board of a youth chess league."
+   },
+   "thought": "We need to find the lawyer named Daniel Okafor. The search results show two Daniel Okafor: p09 is a partner at Okafor and Reyes LLP (likely a lawyer). p08 is an ML engineer. So we need to open p09."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p09",
+    "why": "Daniel Okafor is a lawyer, Partner at Okafor and Reyes LLP, as indicated by his headline and profile details."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found the lawyer. Need to answer with id and why."
+  }
+ ],
+ "answer": {
+  "id": "p09",
+  "why": "Daniel Okafor is a lawyer, Partner at Okafor and Reyes LLP, as indicated by his headline and profile details."
+ },
+ "correct": true
+}

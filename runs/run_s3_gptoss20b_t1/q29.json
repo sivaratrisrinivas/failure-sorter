@@ -1,0 +1,57 @@
+{
+ "id": "q29",
+ "query": "Find the head of research at Quarry AI.",
+ "gold": "p26",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Quarry AI head of research"
+   },
+   "result": [
+    {
+     "id": "p26",
+     "name": "Noor Haddad",
+     "headline": "Head of research at Quarry AI"
+    },
+    {
+     "id": "p04",
+     "name": "Tomas Lindqvist",
+     "headline": "Head of data at Brightwell Bank"
+    },
+    {
+     "id": "p13",
+     "name": "Mei Chen-Watts",
+     "headline": "Recruiter at Quarry AI"
+    }
+   ],
+   "thought": "We need to find head of research at Quarry AI. Search."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p26",
+    "why": "Found in search results as head of research at Quarry AI"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We need to submit the id, with why."
+  }
+ ],
+ "answer": {
+  "id": "p26",
+  "why": "Found in search results as head of research at Quarry AI"
+ },
+ "correct": true
+}

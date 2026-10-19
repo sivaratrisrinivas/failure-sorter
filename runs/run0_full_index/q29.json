@@ -1,0 +1,66 @@
+{
+ "id": "q29",
+ "query": "Find the head of research at Quarry AI.",
+ "gold": "p26",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "head of research Quarry AI"
+   },
+   "result": [
+    {
+     "id": "p26",
+     "name": "Noor Haddad",
+     "headline": "Head of research at Quarry AI"
+    },
+    {
+     "id": "p08",
+     "name": "Daniel Okafor",
+     "headline": "ML engineer at Quarry AI"
+    },
+    {
+     "id": "p04",
+     "name": "Tomas Lindqvist",
+     "headline": "Head of data at Brightwell Bank"
+    }
+   ],
+   "thought": "We need to find the head of research at Quarry AI. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p26"
+   },
+   "result": {
+    "id": "p26",
+    "name": "Noor Haddad",
+    "headline": "Head of research at Quarry AI",
+    "city": "Toronto",
+    "body": "Noor leads the research group. PhD in information retrieval. Previously a scientist at Ostrava Maps."
+   },
+   "thought": "We found the head of research at Quarry AI: Noor Haddad, id p26. Need to open profile? The instruction: \"Find the head of research at Quarry AI. Use search and open_profile, then call answer with the profile id.\" So we should open profile p26."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p26",
+    "why": "Noor Haddad is listed as Head of research at Quarry AI"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have found the head of research at Quarry AI: Noor Haddad. Need to answer with id and why."
+  }
+ ],
+ "answer": {
+  "id": "p26",
+  "why": "Noor Haddad is listed as Head of research at Quarry AI"
+ },
+ "correct": true
+}

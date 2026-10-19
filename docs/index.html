@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>failure sorter</title>
+<style>
+:root{--ink:#1d1b16;--paper:#f3ecdc;--ret:#c2410c;--use:#1d4ed8;--ok:#5b7c3a;--mute:#7a7263}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+main{max-width:980px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:26px;margin:0;letter-spacing:-.5px}h1 span{display:inline-block;transform:rotate(-3deg);background:var(--ink);color:var(--paper);padding:0 6px}
+.lede{color:var(--mute);margin:6px 0 22px;max-width:640px}
+.bins{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:10px}
+.bin{border:2px solid var(--ink);padding:14px 16px;background:#fbf7ee;box-shadow:5px 5px 0 var(--ink);cursor:pointer}
+.bin.on{outline:3px dashed var(--ink);outline-offset:4px}
+.bin b{font-size:44px;line-height:1}.bin .t{font-weight:700}.bin p{margin:4px 0 0;color:var(--mute);font-size:13px}
+.ret b{color:var(--ret)}.use b{color:var(--use)}
+.bar{display:flex;height:12px;border:2px solid var(--ink);margin:14px 0 6px}.bar i{display:block}
+.meta{font-size:13px;color:var(--mute);margin-bottom:22px}
+.agree{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:10px 0;margin:0 0 22px;font-size:13px}
+.agree table{border-collapse:collapse}.agree td{padding:2px 14px 2px 0}
+.list .row{display:grid;grid-template-columns:118px 1fr 120px;gap:10px;padding:9px 6px;border-bottom:1px dashed #b9ad94;cursor:pointer;align-items:center}
+.list .row:hover{background:#ebe2cc}
+.stamp{font-size:11px;font-weight:700;text-transform:uppercase;border:2px solid;padding:1px 5px;transform:rotate(-2deg);display:inline-block;text-align:center}
+.s-retrieval_miss{color:var(--ret)}.s-tool_misuse{color:var(--use)}.s-pass{color:var(--ok)}
+.small{font-size:12px;color:var(--mute)}
+dialog{max-width:860px;width:94vw;border:2px solid var(--ink);background:var(--paper);box-shadow:8px 8px 0 var(--ink);padding:0}
+dialog .hd{padding:14px 18px;border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;gap:12px}
+dialog .bd{padding:10px 18px 18px;max-height:70vh;overflow:auto}
+.step{border-left:3px solid var(--mute);margin:12px 0;padding:4px 0 4px 12px}
+.step.search{border-color:#8a6d1f}.step.open_profile{border-color:#3d6b5c}.step.answer{border-color:var(--ink)}
+.step pre{white-space:pre-wrap;margin:4px 0 0;font-size:12px}
+.hit{display:block}.hit.g{background:#ffe08a;font-weight:700}
+.why{background:#fbf7ee;border:1px solid #b9ad94;padding:8px 10px;font-size:13px;margin-top:10px}
+button.x{font:inherit;background:var(--ink);color:var(--paper);border:0;padding:2px 10px;cursor:pointer}
+.filters{margin:0 0 8px;font-size:13px}.filters label{margin-right:14px}
+@media(max-width:640px){.bins{grid-template-columns:1fr}.list .row{grid-template-columns:90px 1fr}.list .row .r3{display:none}}
+</style></head><body><main>
+<h1><span>failure</span> sorter</h1>
+<p class="lede">A small agent tried to find people in a profile index. When it missed, was it because it never saw the right person, or because it saw them and fumbled? Each miss goes in one of two bins. Click any row to read the full trace.</p>
+<div class="bins">
+ <div class="bin ret" data-k="retrieval_miss"><b id="nret">-</b> <span class="t">retrieval miss</span><p>The right profile never came back from any tool. Fix search.</p></div>
+ <div class="bin use" data-k="tool_misuse"><b id="nuse">-</b> <span class="t">tool misuse</span><p>The right profile came back, and the agent did not use it. Fix the harness or the model.</p></div>
+</div>
+<div class="bar" id="bar"></div>
+<div class="meta" id="meta"></div>
+<div class="agree" id="agree"></div>
+<div class="filters"><label><input type="checkbox" id="showpass"> show passes too</label><span class="small">yellow = the right profile inside a tool result</span></div>
+<div class="list" id="list"></div>
+<p class="small">All profiles are invented. No real person is in this index. Source: <a href="https://github.com/sivaratrisrinivas/failure-sorter">github.com/sivaratrisrinivas/failure-sorter</a></p>
+</main>
+<dialog id="dlg"><div class="hd"><div id="dh"></div><button class="x" onclick="dlg.close()">close</button></div><div class="bd" id="db"></div></dialog>
+<script>
+let D,filt=null;const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const name={retrieval_miss:"retrieval miss",tool_misuse:"tool misuse",pass:"pass"};
+fetch("data.json").then(r=>r.json()).then(d=>{D=d;draw()});
+function draw(){const R=D.report,s=R.split,tot=s.retrieval_miss+s.tool_misuse;
+ $("nret").textContent=s.retrieval_miss;$("nuse").textContent=s.tool_misuse;
+ $("bar").innerHTML=`<i style="width:${100*s.retrieval_miss/tot}%;background:var(--ret)"></i><i style="width:${100*s.tool_misuse/tot}%;background:var(--use)"></i>`;
+ $("meta").textContent=`${R.runs} runs over ${R.queries} queries. ${R.misses} misses. Split by labeler v1.`;
+ const a=R.agreement,f=x=>`${x.agree}/${x.n}`;
+ $("agree").innerHTML=`<b>Does the labeler match hand labels?</b><table><tr><td></td><td>dev (used to build it)</td><td>held out (checked once)</td></tr>
+ <tr><td>v0 outcome only</td><td>${f(a.v0.dev)}</td><td>${f(a.v0.heldout)}</td></tr><tr><td>v1 reads tool results</td><td>${f(a.v1.dev)}</td><td>${f(a.v1.heldout)}</td></tr></table>`;
+ const show=$("showpass").checked;
+ const rows=D.traces.filter(t=>(show||!t.correct)&&(!filt||t.auto===filt));
+ $("list").innerHTML=rows.map(t=>`<div class="row" data-k="${t.key}"><span><span class="stamp s-${t.auto}">${name[t.auto]}</span></span><span>${esc(t.query)}<br><span class="small">${t.run} . ${t.id} . ${t.split}</span></span><span class="r3 small">${t.hand?"hand: "+name[t.hand.label]:""}</span></div>`).join("");
+ document.querySelectorAll(".row").forEach(r=>r.onclick=()=>open1(r.dataset.k));}
+document.querySelectorAll(".bin").forEach(b=>b.onclick=()=>{filt=filt===b.dataset.k?null:b.dataset.k;document.querySelectorAll(".bin").forEach(x=>x.classList.toggle("on",x.dataset.k===filt));draw()});
+$("showpass").onchange=draw;
+function open1(k){const t=D.traces.find(x=>x.key===k);
+ $("dh").innerHTML=`<b>${esc(t.query)}</b><br><span class="small">${t.key} . model ${t.model} . right answer ${t.gold} . agent answered ${esc(t.answer?.id??"nothing")}</span><br><span class="stamp s-${t.auto}">${name[t.auto]}</span>`;
+ $("db").innerHTML=t.steps.map((s,i)=>{if(s.type!=="tool")return `<div class="step"><b>${i+1}. text</b><pre>${esc(s.content)}</pre></div>`;
+  let r=Array.isArray(s.result)?s.result.map(h=>`<span class="hit ${h.id===t.gold?"g":""}">${h.id}  ${esc(h.name)}  .  ${esc(h.headline)}</span>`).join("")||"(no hits)":`<span class="hit ${s.result.id===t.gold?"g":""}">${esc(JSON.stringify(s.result,null,1))}</span>`;
+  return `<div class="step ${s.name}"><b>${i+1}. ${s.name}</b> <span class="small">${esc(JSON.stringify(s.args))}</span><pre>${r}</pre></div>`}).join("")+
+  (t.hand?`<div class="why"><b>hand label: ${name[t.hand.label]}</b><br>${esc(t.hand.note)}</div>`:"");
+ dlg.showModal();}
+</script></body></html>

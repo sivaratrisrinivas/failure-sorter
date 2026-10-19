@@ -1,0 +1,72 @@
+{
+ "id": "q16",
+ "query": "Find Arjun Mehta who co-maintains tidyledger.",
+ "gold": "p23",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Arjun Mehta tidyledger co-maintains"
+   },
+   "result": [
+    {
+     "id": "p23",
+     "name": "Arjun Mehta",
+     "headline": "Open source maintainer of tidyledger"
+    },
+    {
+     "id": "p24",
+     "name": "Arjun Mehta",
+     "headline": "Cardiologist"
+    },
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    }
+   ],
+   "thought": "We need to search for Arjun Mehta. Use search query."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p23"
+   },
+   "result": {
+    "id": "p23",
+    "name": "Arjun Mehta",
+    "headline": "Open source maintainer of tidyledger",
+    "city": "Pune",
+    "body": "Arjun co-maintains tidyledger with Tomas Lindqvist. Works as a contractor for Harbor Ledger."
+   },
+   "thought": "We have search results: p23, p24, p25. The target: Arjun Mehta who co-maintains tidyledger. Likely p23. We should open to verify. But instructions: we have 4 tool calls limit. We used 1 search. We can open p23 to confirm. Then answer. That's 2 calls. Good. Let's open p23."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p23",
+    "why": "Arjun Mehta is listed as an Open source maintainer of tidyledger in the profile index."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Arjun Mehta with id p23. Provide answer."
+  }
+ ],
+ "answer": {
+  "id": "p23",
+  "why": "Arjun Mehta is listed as an Open source maintainer of tidyledger in the profile index."
+ },
+ "correct": true
+}

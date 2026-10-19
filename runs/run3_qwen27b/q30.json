@@ -1,0 +1,46 @@
+{
+ "id": "q30",
+ "query": "Find the Ivan Petrov who coaches hockey.",
+ "gold": "p29",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Ivan Petrov hockey coach"
+   },
+   "result": [
+    {
+     "id": "p29",
+     "name": "Ivan Petrov",
+     "headline": "Hockey coach"
+    },
+    {
+     "id": "p28",
+     "name": "Ivan Petrov",
+     "headline": "Site reliability engineer at Harbor Ledger"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p29",
+    "why": "Headline is \"Hockey coach\", matching the request."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p29",
+  "why": "Headline is \"Hockey coach\", matching the request."
+ },
+ "correct": true
+}

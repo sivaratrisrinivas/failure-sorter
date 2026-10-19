@@ -1,0 +1,66 @@
+{
+ "id": "q22",
+ "query": "Who sold a map tile CDN to Ostrava Maps?",
+ "gold": "p33",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "map tile CDN sold to Ostrava Maps"
+   },
+   "result": [
+    {
+     "id": "p33",
+     "name": "Omar Farouk",
+     "headline": "Founder of Tilepath"
+    },
+    {
+     "id": "p16",
+     "name": "Hana Sato",
+     "headline": "Engineering manager at Ostrava Maps"
+    },
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": "We need to find a person who sold a map tile CDN to Ostrava Maps. Likely a founder or CEO of a company that sold a map tile CDN to Ostrava Maps. Let's search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p33"
+   },
+   "result": {
+    "id": "p33",
+    "name": "Omar Farouk",
+    "headline": "Founder of Tilepath",
+    "city": "Cairo",
+    "body": "Omar built Tilepath, a map tile CDN. Sold it to Ostrava Maps in 2024. Now advises startups."
+   },
+   "thought": "We need to find who sold a map tile CDN to Ostrava Maps. The search returned three hits: Omar Farouk (Founder of Tilepath), Hana Sato (Engineering manager at Ostrava Maps), Avery Silva (Designer at Ostrava Maps). The likely seller is Omar Farouk, founder of Tilepath, which presumably sells a map tile CDN. So answer: Omar Farouk. Need to open profile to confirm."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p33",
+    "why": "Omar Farouk built Tilepath, a map tile CDN, and sold it to Ostrava Maps in 2024."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Omar Farouk. Need to answer with id and why."
+  }
+ ],
+ "answer": {
+  "id": "p33",
+  "why": "Omar Farouk built Tilepath, a map tile CDN, and sold it to Ostrava Maps in 2024."
+ },
+ "correct": true
+}

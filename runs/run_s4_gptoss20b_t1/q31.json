@@ -1,0 +1,72 @@
+{
+ "id": "q31",
+ "query": "Find the angel investor in Fernway who founded a CRM company.",
+ "gold": "p18",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Fernway angel investor CRM"
+   },
+   "result": [
+    {
+     "id": "p35",
+     "name": "Elena Rossi",
+     "headline": "COO at Fernway"
+    },
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    },
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    }
+   ],
+   "thought": "We need to find the angel investor in Fernway who founded a CRM company. Fernway likely refers to a place, maybe a town in California. The angel investor is a person in Fernway who founded a CRM company. We need to search.\n\nWe have a tool \"search\" to search over public profiles. We'll search for \"Fernway angel investor CRM\"."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p18"
+   },
+   "result": {
+    "id": "p18",
+    "name": "Lukas Becker",
+    "headline": "Founder of Spindle CRM",
+    "city": "Berlin",
+    "body": "Lukas started Spindle CRM in 2022 after selling a small analytics shop. Angel investor in Fernway."
+   },
+   "thought": "We have top 3 hits: Elena Rossi, Arjun Mehra, Lukas Becker. The question: \"angel investor in Fernway who founded a CRM company.\" The profile that matches: Lukas Becker, headline \"Founder of Spindle CRM\". That seems like a CRM company. But is he an angel investor? Not in headline. We may need to open to confirm. Open profile id p18."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p18",
+    "why": "Angel investor in Fernway who founded a CRM company."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We need to answer with id and why."
+  }
+ ],
+ "answer": {
+  "id": "p18",
+  "why": "Angel investor in Fernway who founded a CRM company."
+ },
+ "correct": true
+}

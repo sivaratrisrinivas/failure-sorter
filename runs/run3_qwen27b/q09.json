@@ -1,0 +1,66 @@
+{
+ "id": "q09",
+ "query": "Find the co-founder and CTO of Harbor Ledger.",
+ "gold": "p11",
+ "split": "dev",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger co-founder CTO"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p11"
+   },
+   "result": {
+    "id": "p11",
+    "name": "Mei Chen",
+    "headline": "CTO at Harbor Ledger",
+    "city": "Singapore",
+    "body": "Mei Chen co-founded Harbor Ledger, a payments reconciliation startup, in 2021. Previously principal engineer at Brightwell Bank."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p11",
+    "why": "Mei Chen is the CTO at Harbor Ledger and co-founded the company in 2021."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p11",
+  "why": "Mei Chen is the CTO at Harbor Ledger and co-founded the company in 2021."
+ },
+ "correct": true
+}

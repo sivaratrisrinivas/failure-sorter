@@ -1,0 +1,81 @@
+{
+ "id": "q18",
+ "query": "Find Noor Haddad, the information retrieval researcher.",
+ "gold": "p26",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Noor Haddad information retrieval researcher"
+   },
+   "result": [
+    {
+     "id": "p27",
+     "name": "Noor Haddad",
+     "headline": "Journalist covering energy"
+    },
+    {
+     "id": "p26",
+     "name": "Noor Haddad",
+     "headline": "Head of research at Quarry AI"
+    },
+    {
+     "id": "p14",
+     "name": "Rafael Duarte",
+     "headline": "Security researcher"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p26"
+   },
+   "result": {
+    "id": "p26",
+    "name": "Noor Haddad",
+    "headline": "Head of research at Quarry AI",
+    "city": "Toronto",
+    "body": "Noor leads the research group. PhD in information retrieval. Previously a scientist at Ostrava Maps."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p27"
+   },
+   "result": {
+    "id": "p27",
+    "name": "Noor Haddad",
+    "headline": "Journalist covering energy",
+    "city": "Amman",
+    "body": "Noor Haddad writes about oil and solar markets."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p26",
+    "why": "Noor Haddad (p26) is Head of research at Quarry AI with a PhD in information retrieval, matching the description. The other Noor Haddad (p27) is a journalist covering energy."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p26",
+  "why": "Noor Haddad (p26) is Head of research at Quarry AI with a PhD in information retrieval, matching the description. The other Noor Haddad (p27) is a journalist covering energy."
+ },
+ "correct": true
+}

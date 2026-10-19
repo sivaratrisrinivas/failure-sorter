@@ -1,0 +1,72 @@
+{
+ "id": "q21",
+ "query": "Find Grace Kim who does user research for a dessert company.",
+ "gold": "p31",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Grace Kim user research dessert company"
+   },
+   "result": [
+    {
+     "id": "p31",
+     "name": "Grace Kim",
+     "headline": "UX researcher at Cobalt Ice"
+    },
+    {
+     "id": "p30",
+     "name": "Grace Kim",
+     "headline": "General partner at Northbeam Ventures"
+    },
+    {
+     "id": "p32",
+     "name": "Grace Kimball",
+     "headline": "Author"
+    }
+   ],
+   "thought": "We need to find Grace Kim doing user research for a dessert company. Use search tool."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p31"
+   },
+   "result": {
+    "id": "p31",
+    "name": "Grace Kim",
+    "headline": "UX researcher at Cobalt Ice",
+    "city": "Seoul",
+    "body": "Grace Kim runs taste tests and user interviews."
+   },
+   "thought": "We found Grace Kim with headline UX researcher at Cobalt Ice. That seems like dessert company? Cobalt Ice maybe? Let's open."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p31",
+    "why": "Grace Kim is a UX researcher at Cobalt Ice, a dessert company."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have found Grace Kim, UX researcher at Cobalt Ice. The question: \"Find Grace Kim who does user research for a dessert company.\" The profile is Grace Kim, UX researcher at Cobalt Ice. That's likely dessert company. We must answer with id. Provide why."
+  }
+ ],
+ "answer": {
+  "id": "p31",
+  "why": "Grace Kim is a UX researcher at Cobalt Ice, a dessert company."
+ },
+ "correct": true
+}

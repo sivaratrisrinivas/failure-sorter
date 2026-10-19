@@ -1,0 +1,72 @@
+{
+ "id": "q04",
+ "query": "Find the head of data at Brightwell Bank who maintains tidyledger.",
+ "gold": "p04",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "head of data Brightwell Bank"
+   },
+   "result": [
+    {
+     "id": "p04",
+     "name": "Tomas Lindqvist",
+     "headline": "Head of data at Brightwell Bank"
+    },
+    {
+     "id": "f21",
+     "name": "Quinn Ortiz",
+     "headline": "Analyst at Brightwell Bank"
+    },
+    {
+     "id": "f13",
+     "name": "Sam Byrne",
+     "headline": "Analyst at Brightwell Bank"
+    }
+   ],
+   "thought": "We need to find a person. We can search \"head of data Brightwell Bank\"."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p04"
+   },
+   "result": {
+    "id": "p04",
+    "name": "Tomas Lindqvist",
+    "headline": "Head of data at Brightwell Bank",
+    "city": "Stockholm",
+    "body": "Tomas leads a team of 12 analysts. He previously worked at Ostrava Maps on geocoding. Maintains the open source library tidyledger."
+   },
+   "thought": "We need to answer with the ID and why. We found Tomas Lindqvist is Head of data at Brightwell Bank. We need to check if he maintains tidyledger. We haven't opened profile. We may need to open to confirm he maintains tidyledger. But the question: \"Find the head of data at Brightwell Bank who maintains tidyledger.\" The search gave head of data. We might need to verify that he maintains tidyledger. But maybe we can assume that. We could open profile to check. Let's open."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p04",
+    "why": "Head of data at Brightwell Bank, maintains tidyledger."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We need to submit the id p04 with why."
+  }
+ ],
+ "answer": {
+  "id": "p04",
+  "why": "Head of data at Brightwell Bank, maintains tidyledger."
+ },
+ "correct": true
+}

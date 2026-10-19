@@ -1,0 +1,46 @@
+{
+ "id": "q05",
+ "query": "Find Tomas Lindquist the furniture maker.",
+ "gold": "p05",
+ "split": "dev",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Tomas Lindquist furniture maker"
+   },
+   "result": [
+    {
+     "id": "p05",
+     "name": "Tomas Lindquist",
+     "headline": "Carpenter and furniture maker"
+    },
+    {
+     "id": "p04",
+     "name": "Tomas Lindqvist",
+     "headline": "Head of data at Brightwell Bank"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p05",
+    "why": "Tomas Lindquist, Carpenter and furniture maker \u2014 matches the requested person."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p05",
+  "why": "Tomas Lindquist, Carpenter and furniture maker \u2014 matches the requested person."
+ },
+ "correct": true
+}

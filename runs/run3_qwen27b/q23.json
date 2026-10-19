@@ -1,0 +1,51 @@
+{
+ "id": "q23",
+ "query": "Find the COO of Fernway.",
+ "gold": "p35",
+ "split": "dev",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "COO Fernway"
+   },
+   "result": [
+    {
+     "id": "p35",
+     "name": "Elena Rossi",
+     "headline": "COO at Fernway"
+    },
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    },
+    {
+     "id": "p06",
+     "name": "Ama Mensah",
+     "headline": "Product designer at Fernway"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p35",
+    "why": "Elena Rossi's headline is \"COO at Fernway\", matching the query."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p35",
+  "why": "Elena Rossi's headline is \"COO at Fernway\", matching the query."
+ },
+ "correct": true
+}

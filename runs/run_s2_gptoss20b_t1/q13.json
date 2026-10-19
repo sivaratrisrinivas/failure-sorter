@@ -1,0 +1,57 @@
+{
+ "id": "q13",
+ "query": "Find Lukas Becker, the founder of a CRM startup.",
+ "gold": "p18",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 2,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Lukas Becker founder CRM startup"
+   },
+   "result": [
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    },
+    {
+     "id": "p19",
+     "name": "Lukas Becker",
+     "headline": "Logistics coordinator at Lumen Freight"
+    },
+    {
+     "id": "p33",
+     "name": "Omar Farouk",
+     "headline": "Founder of Tilepath"
+    }
+   ],
+   "thought": "We need to find Lukas Becker, founder of a CRM startup. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p18",
+    "why": "Found in search results: \"Lukas Becker\" with headline \"Founder of Spindle CRM\""
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have found two results, id p18 and p19. The query \"Lukas Becker founder CRM startup\" returned p18 with headline \"Founder of Spindle CRM\". That matches \"founder of a CRM startup\". p19 is not founder. So answer with id p18."
+  }
+ ],
+ "answer": {
+  "id": "p18",
+  "why": "Found in search results: \"Lukas Becker\" with headline \"Founder of Spindle CRM\""
+ },
+ "correct": true
+}

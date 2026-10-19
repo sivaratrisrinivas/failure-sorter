@@ -1,0 +1,72 @@
+{
+ "id": "q09",
+ "query": "Find the co-founder and CTO of Harbor Ledger.",
+ "gold": "p11",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger co-founder CTO"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to find co-founder and CTO of Harbor Ledger. Search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p11"
+   },
+   "result": {
+    "id": "p11",
+    "name": "Mei Chen",
+    "headline": "CTO at Harbor Ledger",
+    "city": "Singapore",
+    "body": "Mei Chen co-founded Harbor Ledger, a payments reconciliation startup, in 2021. Previously principal engineer at Brightwell Bank."
+   },
+   "thought": "We found Mei Chen. Need co-founder and CTO. Likely Mei Chen is the CTO. But is she a co-founder? Need verify. Could open profile."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p11",
+    "why": "Mei Chen is the co\u2011founder and CTO of Harbor Ledger."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have the answer."
+  }
+ ],
+ "answer": {
+  "id": "p11",
+  "why": "Mei Chen is the co\u2011founder and CTO of Harbor Ledger."
+ },
+ "correct": true
+}

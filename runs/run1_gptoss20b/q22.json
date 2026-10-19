@@ -1,0 +1,136 @@
+{
+ "id": "q22",
+ "query": "Who sold a map tile CDN to Ostrava Maps?",
+ "gold": "p33",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "map tile CDN sold to Ostrava Maps"
+   },
+   "result": [
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f12",
+     "name": "Alex Hale",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f04",
+     "name": "Riley Larsen",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": "We need to find a person who sold a map tile CDN to Ostrava Maps. Likely a founder or CEO of a company that sold a map tile CDN to Ostrava Maps. Ostrava Maps is a company. The map tile CDN could be from a company like Mapbox, MapTiler, or a smaller CDN provider. Let's search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "sold a map tile CDN to Ostrava Maps founder"
+   },
+   "result": [
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f12",
+     "name": "Alex Hale",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f04",
+     "name": "Riley Larsen",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": "The search results show designers at Ostrava Maps, not the seller. We need the person who sold a map tile CDN to Ostrava Maps. Likely a founder or CEO of a company that sold a CDN. Let's search more."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "\"map tile CDN\" sold to Ostrava Maps"
+   },
+   "result": [
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f12",
+     "name": "Alex Hale",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f04",
+     "name": "Riley Larsen",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": "We need to find who sold a map tile CDN to Ostrava Maps. The search results show designers at Ostrava Maps, not the seller. We need to find the person who sold a map tile CDN to Ostrava Maps. Likely a founder or CEO of a company that sold a CDN. Let's search for \"map tile CDN\" and \"sold\" and \"Ostrava Maps\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Ostrava Maps map tile CDN founder"
+   },
+   "result": [
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f12",
+     "name": "Alex Hale",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f04",
+     "name": "Riley Larsen",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": "We need to find who sold a map tile CDN to Ostrava Maps. The search results show only designers at Ostrava Maps. We need to find the person who sold a map tile CDN to Ostrava Maps. Likely a founder or someone else. Let's search for \"map tile CDN\" and \"Ostrava Maps\" maybe the founder."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "\"map tile CDN\" \"Ostrava Maps\" sold"
+   },
+   "result": [
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f12",
+     "name": "Alex Hale",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f04",
+     "name": "Riley Larsen",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": "We need to find who sold a map tile CDN to Ostrava Maps. The search results all show designers at Ostrava Maps, not the seller. We need to find the person who sold a map tile CDN to Ostrava Maps. Likely a founder or CEO of a company that sold a CDN. Let's search for \"map tile CDN\" and \"sold\" and \"Ostrava Maps\" maybe the seller is a founder of a company that sold a CDN. Search for \"map tile CDN\" \"Ostrava Maps\" \"sold\" \"to\"."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

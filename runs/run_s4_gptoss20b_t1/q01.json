@@ -1,0 +1,72 @@
+{
+ "id": "q01",
+ "query": "Find Priya Raman, the engineer who builds trucking routing software.",
+ "gold": "p01",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Priya Raman engineer trucking routing software"
+   },
+   "result": [
+    {
+     "id": "p01",
+     "name": "Priya Raman",
+     "headline": "Staff engineer at Lumen Freight"
+    },
+    {
+     "id": "p02",
+     "name": "Priya Raman",
+     "headline": "Pediatric nurse"
+    },
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    }
+   ],
+   "thought": "We need to find a specific person in a profile index. Likely the name: Priya Raman, engineer building trucking routing software. We'll search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p01"
+   },
+   "result": {
+    "id": "p01",
+    "name": "Priya Raman",
+    "headline": "Staff engineer at Lumen Freight",
+    "city": "Austin",
+    "body": "Priya builds routing software for trucking. Before Lumen she spent four years at Ostrava Maps. Speaks at RustConf about allocators."
+   },
+   "thought": "We found p01 likely. Let's open."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p01",
+    "why": "Priya Raman builds trucking routing software, as stated in her headline and bio. She is a staff engineer at Lumen Freight in Austin."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have the profile id p01. Need to answer with answer function."
+  }
+ ],
+ "answer": {
+  "id": "p01",
+  "why": "Priya Raman builds trucking routing software, as stated in her headline and bio. She is a staff engineer at Lumen Freight in Austin."
+ },
+ "correct": true
+}

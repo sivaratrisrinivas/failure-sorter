@@ -1,0 +1,66 @@
+{
+ "id": "q25",
+ "query": "Find the platform engineer at Spindle CRM who used to be an SRE at Lumen Freight.",
+ "gold": "p37",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Spindle CRM platform engineer Lumen Freight SRE"
+   },
+   "result": [
+    {
+     "id": "p37",
+     "name": "Kwame Asante",
+     "headline": "Platform engineer at Spindle CRM"
+    },
+    {
+     "id": "p01",
+     "name": "Priya Raman",
+     "headline": "Staff engineer at Lumen Freight"
+    },
+    {
+     "id": "f22",
+     "name": "Rowan Ivanova",
+     "headline": "Data engineer at Spindle CRM"
+    }
+   ],
+   "thought": "We need to find a specific person: platform engineer at Spindle CRM, who used to be an SRE at Lumen Freight. We need to search. Use search tool."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p37"
+   },
+   "result": {
+    "id": "p37",
+    "name": "Kwame Asante",
+    "headline": "Platform engineer at Spindle CRM",
+    "city": "Accra",
+    "body": "Kwame runs the Kubernetes platform at Spindle CRM. Former Lumen Freight SRE."
+   },
+   "thought": "We have search results: p37 Kwame Asante, platform engineer at Spindle CRM. We need the platform engineer at Spindle CRM who used to be an SRE at Lumen Freight. The search result shows p01 Priya Raman staff engineer at Lumen Freight, not SRE. But maybe the profile of Kwame Asante includes that he used to be an SRE at Lumen Freight. We need to open profile p37 to confirm."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p37",
+    "why": "Kwame Asante is listed as a Platform engineer at Spindle CRM and his bio states he was a former SRE at Lumen Freight."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have found the profile. Need to answer with id and why."
+  }
+ ],
+ "answer": {
+  "id": "p37",
+  "why": "Kwame Asante is listed as a Platform engineer at Spindle CRM and his bio states he was a former SRE at Lumen Freight."
+ },
+ "correct": true
+}

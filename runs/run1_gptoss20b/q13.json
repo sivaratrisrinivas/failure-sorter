@@ -1,0 +1,51 @@
+{
+ "id": "q13",
+ "query": "Find Lukas Becker, the founder of a CRM startup.",
+ "gold": "p18",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Lukas Becker founder CRM startup"
+   },
+   "result": [
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    },
+    {
+     "id": "p19",
+     "name": "Lukas Becker",
+     "headline": "Logistics coordinator at Lumen Freight"
+    },
+    {
+     "id": "p33",
+     "name": "Omar Farouk",
+     "headline": "Founder of Tilepath"
+    }
+   ],
+   "thought": "We need to find Lukas Becker, founder of a CRM startup. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p18",
+    "why": "Founder of Spindle CRM"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have two results: p18 and p19. The founder of a CRM startup is likely p18. We need to answer with id and why."
+  }
+ ],
+ "answer": {
+  "id": "p18",
+  "why": "Founder of Spindle CRM"
+ },
+ "correct": true
+}

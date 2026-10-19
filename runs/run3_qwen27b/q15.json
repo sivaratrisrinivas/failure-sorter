@@ -1,0 +1,66 @@
+{
+ "id": "q15",
+ "query": "Find the data scientist at Kestrel Health who used to be an analyst at Brightwell Bank.",
+ "gold": "p21",
+ "split": "dev",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "data scientist Kestrel Health"
+   },
+   "result": [
+    {
+     "id": "p21",
+     "name": "Sofia Marquez",
+     "headline": "Data scientist at Kestrel Health"
+    },
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    },
+    {
+     "id": "f23",
+     "name": "Sky Adeyemi",
+     "headline": "Recruiter at Kestrel Health"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p21"
+   },
+   "result": {
+    "id": "p21",
+    "name": "Sofia Marquez",
+    "headline": "Data scientist at Kestrel Health",
+    "city": "Boston",
+    "body": "Sofia builds risk models for claim audits. Ex Brightwell Bank analyst. Rock climber."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p21",
+    "why": "Sofia Marquez is a data scientist at Kestrel Health and her bio notes she was an analyst at Brightwell Bank."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p21",
+  "why": "Sofia Marquez is a data scientist at Kestrel Health and her bio notes she was an analyst at Brightwell Bank."
+ },
+ "correct": true
+}

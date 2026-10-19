@@ -1,0 +1,57 @@
+{
+ "id": "q03",
+ "query": "Who founded Kestrel Health?",
+ "gold": "p03",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Kestrel Health founder"
+   },
+   "result": [
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    },
+    {
+     "id": "f23",
+     "name": "Sky Adeyemi",
+     "headline": "Recruiter at Kestrel Health"
+    },
+    {
+     "id": "f15",
+     "name": "Taylor Nakamura",
+     "headline": "Recruiter at Kestrel Health"
+    }
+   ],
+   "thought": "We need to find founder of Kestrel Health. We must use search tool to find profile. Likely Kestrel Health founder is someone with name. Let's search."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p03",
+    "why": "Priya Ramanathan is listed as the Founder of Kestrel Health"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found id p03. We should answer with that."
+  }
+ ],
+ "answer": {
+  "id": "p03",
+  "why": "Priya Ramanathan is listed as the Founder of Kestrel Health"
+ },
+ "correct": true
+}

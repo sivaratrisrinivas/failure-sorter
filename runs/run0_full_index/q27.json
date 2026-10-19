@@ -1,0 +1,66 @@
+{
+ "id": "q27",
+ "query": "Find the Spindle CRM salesperson who used to work at Cobalt Ice.",
+ "gold": "p20",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Spindle CRM salesperson Cobalt Ice"
+   },
+   "result": [
+    {
+     "id": "p20",
+     "name": "Lucas Baker",
+     "headline": "Sales lead at Spindle CRM"
+    },
+    {
+     "id": "p31",
+     "name": "Grace Kim",
+     "headline": "UX researcher at Cobalt Ice"
+    },
+    {
+     "id": "p07",
+     "name": "Ama Mensah-Boateng",
+     "headline": "VP Marketing at Cobalt Ice"
+    }
+   ],
+   "thought": "We need to find a specific person: Spindle CRM salesperson who used to work at Cobalt Ice. We need to search. Use search tool."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p20"
+   },
+   "result": {
+    "id": "p20",
+    "name": "Lucas Baker",
+    "headline": "Sales lead at Spindle CRM",
+    "city": "Berlin",
+    "body": "Lucas Baker sells CRM seats to mid market firms. Ex Cobalt Ice."
+   },
+   "thought": "We need Spindle CRM salesperson who used to work at Cobalt Ice. Search results show Lucas Baker (Sales lead at Spindle CRM). Need to check if he used to work at Cobalt Ice. Open profile."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p20",
+    "why": "Lucas Baker is a Spindle CRM salesperson who previously worked at Cobalt Ice."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Lucas Baker. Need to answer."
+  }
+ ],
+ "answer": {
+  "id": "p20",
+  "why": "Lucas Baker is a Spindle CRM salesperson who previously worked at Cobalt Ice."
+ },
+ "correct": true
+}

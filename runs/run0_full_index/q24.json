@@ -1,0 +1,91 @@
+{
+ "id": "q24",
+ "query": "Find Elena Rossi who sits on the Kestrel Health board.",
+ "gold": "p35",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Elena Rossi Kestrel Health board"
+   },
+   "result": [
+    {
+     "id": "p35",
+     "name": "Elena Rossi",
+     "headline": "COO at Fernway"
+    },
+    {
+     "id": "p36",
+     "name": "Elena Rossi",
+     "headline": "Fashion photographer"
+    },
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    }
+   ],
+   "thought": "We need to search for Elena Rossi Kestrel Health board. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Kestrel Health board Elena Rossi"
+   },
+   "result": [
+    {
+     "id": "p35",
+     "name": "Elena Rossi",
+     "headline": "COO at Fernway"
+    },
+    {
+     "id": "p36",
+     "name": "Elena Rossi",
+     "headline": "Fashion photographer"
+    },
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    }
+   ],
+   "thought": "Search results show Elena Rossi but not board. Maybe need to search \"Kestrel Health board Elena Rossi\"."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p35"
+   },
+   "result": {
+    "id": "p35",
+    "name": "Elena Rossi",
+    "headline": "COO at Fernway",
+    "city": "Milan",
+    "body": "Elena runs operations at Fernway. Ex McKinsey style consultant. Board member at Kestrel Health."
+   },
+   "thought": "We need to find Elena Rossi who sits on the Kestrel Health board. The search results show Elena Rossi but not board. Maybe need to open profile. Let's open p35."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p35",
+    "why": "Elena Rossi is listed as a board member of Kestrel Health in her profile."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Elena Rossi with id p35. Need to answer."
+  }
+ ],
+ "answer": {
+  "id": "p35",
+  "why": "Elena Rossi is listed as a board member of Kestrel Health in her profile."
+ },
+ "correct": true
+}

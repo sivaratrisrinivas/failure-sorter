@@ -1,0 +1,72 @@
+{
+ "id": "q28",
+ "query": "Find the person at Quarry AI who hires ML engineers.",
+ "gold": "p13",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Quarry AI ML engineers hire"
+   },
+   "result": [
+    {
+     "id": "p08",
+     "name": "Daniel Okafor",
+     "headline": "ML engineer at Quarry AI"
+    },
+    {
+     "id": "p13",
+     "name": "Mei Chen-Watts",
+     "headline": "Recruiter at Quarry AI"
+    },
+    {
+     "id": "f18",
+     "name": "Morgan Kowal",
+     "headline": "Office manager at Quarry AI"
+    }
+   ],
+   "thought": "We need to find the person at Quarry AI who hires ML engineers. Likely an HR or recruiter. Search Quarry AI."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p13"
+   },
+   "result": {
+    "id": "p13",
+    "name": "Mei Chen-Watts",
+    "headline": "Recruiter at Quarry AI",
+    "city": "San Francisco",
+    "body": "Mei Chen-Watts hires ML engineers. Hosts a podcast about interviewing."
+   },
+   "thought": "We need \"person at Quarry AI who hires ML engineers\". Probably recruiter. That might be Mei Chen-Watts, \"Recruiter at Quarry AI\". We should open profile to confirm."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p13",
+    "why": "Mei Chen-Watts is the recruiter at Quarry AI who hires ML engineers."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We need to answer with id and why."
+  }
+ ],
+ "answer": {
+  "id": "p13",
+  "why": "Mei Chen-Watts is the recruiter at Quarry AI who hires ML engineers."
+ },
+ "correct": true
+}

@@ -1,0 +1,81 @@
+{
+ "id": "q04",
+ "query": "Find the head of data at Brightwell Bank who maintains tidyledger.",
+ "gold": "p04",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "head of data Brightwell Bank tidyledger"
+   },
+   "result": [
+    {
+     "id": "p04",
+     "name": "Tomas Lindqvist",
+     "headline": "Head of data at Brightwell Bank"
+    },
+    {
+     "id": "p23",
+     "name": "Arjun Mehta",
+     "headline": "Open source maintainer of tidyledger"
+    },
+    {
+     "id": "f21",
+     "name": "Quinn Ortiz",
+     "headline": "Analyst at Brightwell Bank"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p04"
+   },
+   "result": {
+    "id": "p04",
+    "name": "Tomas Lindqvist",
+    "headline": "Head of data at Brightwell Bank",
+    "city": "Stockholm",
+    "body": "Tomas leads a team of 12 analysts. He previously worked at Ostrava Maps on geocoding. Maintains the open source library tidyledger."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p23"
+   },
+   "result": {
+    "id": "p23",
+    "name": "Arjun Mehta",
+    "headline": "Open source maintainer of tidyledger",
+    "city": "Pune",
+    "body": "Arjun co-maintains tidyledger with Tomas Lindqvist. Works as a contractor for Harbor Ledger."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p04",
+    "why": "Tomas Lindqvist is the Head of data at Brightwell Bank and maintains the open source library tidyledger."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p04",
+  "why": "Tomas Lindqvist is the Head of data at Brightwell Bank and maintains the open source library tidyledger."
+ },
+ "correct": true
+}

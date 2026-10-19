@@ -1,0 +1,132 @@
+{
+ "id": "q10",
+ "query": "Find Mei Chen who used to be principal engineer at Brightwell Bank.",
+ "gold": "p11",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Mei Chen Brightwell Bank"
+   },
+   "result": [
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "p13",
+     "name": "Mei Chen-Watts",
+     "headline": "Recruiter at Quarry AI"
+    }
+   ],
+   "thought": "We need to find a specific person: Mei Chen, used to be principal engineer at Brightwell Bank. Use search with query. Then find id. Then answer. Probably search \"Mei Chen Brightwell Bank\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Mei Chen Brightwell"
+   },
+   "result": [
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "p13",
+     "name": "Mei Chen-Watts",
+     "headline": "Recruiter at Quarry AI"
+    }
+   ],
+   "thought": "Search didn't return the relevant profile; maybe different phrasing. Try \"Mei Chen Brightwell\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Brightwell Bank"
+   },
+   "result": [
+    {
+     "id": "f21",
+     "name": "Quinn Ortiz",
+     "headline": "Analyst at Brightwell Bank"
+    },
+    {
+     "id": "f13",
+     "name": "Sam Byrne",
+     "headline": "Analyst at Brightwell Bank"
+    },
+    {
+     "id": "f05",
+     "name": "Casey Moreau",
+     "headline": "Analyst at Brightwell Bank"
+    }
+   ],
+   "thought": "We didn't find the Brightwell Bank. Maybe need different search terms. Let's search Brightwell Bank."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Mei Chen principal engineer Brightwell Bank"
+   },
+   "result": [
+    {
+     "id": "p39",
+     "name": "Julia Novak",
+     "headline": "Principal engineer at Brightwell Bank"
+    },
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to find Mei Chen who used to be principal engineer at Brightwell Bank. Search results show no such profile. Maybe need to search differently. Let's try \"Mei Chen principal engineer Brightwell Bank\"."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p12"
+   },
+   "result": {
+    "id": "p12",
+    "name": "Mei Chen",
+    "headline": "High school chemistry teacher",
+    "city": "Vancouver",
+    "body": "Mei Chen teaches AP chemistry. Coaches the robotics team."
+   },
+   "thought": "We need Mei Chen who used to be principal engineer at Brightwell Bank. The search results show p12, p11, p13, and p39 but none match that. p12 is high school teacher; p11 CTO; p39 is Julia Novak principal engineer. So maybe the profile not found? Possibly the profile ID might be in the search results but the headline doesn't mention principal engineer. Maybe we need to open profile p12 to see if it includes previous role? Let's open p12."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

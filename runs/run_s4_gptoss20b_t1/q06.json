@@ -1,0 +1,72 @@
+{
+ "id": "q06",
+ "query": "Find the Fernway product designer who once interned at Lumen Freight.",
+ "gold": "p06",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Fernway product designer interned at Lumen Freight"
+   },
+   "result": [
+    {
+     "id": "p06",
+     "name": "Ama Mensah",
+     "headline": "Product designer at Fernway"
+    },
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    },
+    {
+     "id": "p19",
+     "name": "Lukas Becker",
+     "headline": "Logistics coordinator at Lumen Freight"
+    }
+   ],
+   "thought": "We need to find a person: \"Fernway product designer\" who once interned at Lumen Freight. Search likely. We'll search query: \"Fernway product designer interned at Lumen Freight\". Let's use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p06"
+   },
+   "result": {
+    "id": "p06",
+    "name": "Ama Mensah",
+    "headline": "Product designer at Fernway",
+    "city": "Accra",
+    "body": "Ama designs onboarding flows. Former intern at Lumen Freight. Writes a newsletter called Small Screens."
+   },
+   "thought": "We have a search result with three hits: Ama Mensah product designer at Fernway, Arjun Mehra product manager at Fernway, Lukas Becker logistics coordinator at Lumen Freight. The user asks: Find the Fernway product designer who once interned at Lumen Freight. The search results include Ama Mensah as product designer at Fernway. Need to verify if she interned at Lumen Freight. We might need to open her profile. Also maybe Arjun Mehra but he's product manager, not designer. We need to find product designer, so likely Ama Mensah. Let's open her profile to confirm."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p06",
+    "why": "Profile matches Fernway product designer who interned at Lumen Freight"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found profile id p06. Provide answer."
+  }
+ ],
+ "answer": {
+  "id": "p06",
+  "why": "Profile matches Fernway product designer who interned at Lumen Freight"
+ },
+ "correct": true
+}

@@ -1,0 +1,72 @@
+{
+ "id": "q15",
+ "query": "Find the data scientist at Kestrel Health who used to be an analyst at Brightwell Bank.",
+ "gold": "p21",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "data scientist Kestrel Health Brightwell Bank analyst"
+   },
+   "result": [
+    {
+     "id": "p21",
+     "name": "Sofia Marquez",
+     "headline": "Data scientist at Kestrel Health"
+    },
+    {
+     "id": "f21",
+     "name": "Quinn Ortiz",
+     "headline": "Analyst at Brightwell Bank"
+    },
+    {
+     "id": "f13",
+     "name": "Sam Byrne",
+     "headline": "Analyst at Brightwell Bank"
+    }
+   ],
+   "thought": "We need to search. Use search query: \"data scientist Kestrel Health analyst Brightwell Bank\"."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p21"
+   },
+   "result": {
+    "id": "p21",
+    "name": "Sofia Marquez",
+    "headline": "Data scientist at Kestrel Health",
+    "city": "Boston",
+    "body": "Sofia builds risk models for claim audits. Ex Brightwell Bank analyst. Rock climber."
+   },
+   "thought": "We got search results: Sofia Marquez (Data scientist at Kestrel Health) but we need the data scientist who used to be an analyst at Brightwell Bank. Could be Sofia, but we need to check if her past job includes analyst at Brightwell Bank. We might need to open her profile. We'll open Sofia."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p21",
+    "why": "Sofia Marquez is the data scientist at Kestrel Health who previously worked as an analyst at Brightwell Bank."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have found the person: Sofia Marquez, data scientist at Kestrel Health, ex Brightwell Bank analyst. Need to answer."
+  }
+ ],
+ "answer": {
+  "id": "p21",
+  "why": "Sofia Marquez is the data scientist at Kestrel Health who previously worked as an analyst at Brightwell Bank."
+ },
+ "correct": true
+}

@@ -1,0 +1,122 @@
+{
+ "id": "q32",
+ "query": "Find the person who co-maintains tidyledger and contracts for Harbor Ledger.",
+ "gold": "p23",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "tidyledger co-maintainer Harbor Ledger"
+   },
+   "result": [
+    {
+     "id": "p23",
+     "name": "Arjun Mehta",
+     "headline": "Open source maintainer of tidyledger"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to find the person who co-maintains tidyledger and contracts for Harbor Ledger. Likely a public figure. Search for \"tidyledger co-maintainer\" and \"Harbor Ledger\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "tidyledger co-maintainer contract Harbor Ledger"
+   },
+   "result": [
+    {
+     "id": "p23",
+     "name": "Arjun Mehta",
+     "headline": "Open source maintainer of tidyledger"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "We need find person who co-maintains tidyledger and contracts for Harbor Ledger. The search results show Arjun Mehta as Open source maintainer of tidyledger. Mei Chen is CTO at Harbor Ledger. But the phrase \"contracts for Harbor Ledger\" might refer to \"contractor\" role. Maybe a person is both co-maintainer of tidyledger and a contractor for Harbor Ledger. The search results show only those. But maybe we need to search again with \"tidyledger co-maintainer Harbor Ledger contract\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "\"tidyledger\" \"Harbor Ledger\" contracts"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "We need find person who co-maintains tidyledger and contracts for Harbor Ledger. Likely a person involved both as co-maintainer of tidyledger and contracts for Harbor Ledger. The search results show p23 Arjun Mehta: open source maintainer of tidyledger. p11 Mei Chen: CTO at Harbor Ledger. We need co-maintainer of tidyledger and contracts for Harbor Ledger. Maybe the same person appears in both roles. Let's search for \"tidyledger co-maintainer contracts Harbor Ledger\"."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p23"
+   },
+   "result": {
+    "id": "p23",
+    "name": "Arjun Mehta",
+    "headline": "Open source maintainer of tidyledger",
+    "city": "Pune",
+    "body": "Arjun co-maintains tidyledger with Tomas Lindqvist. Works as a contractor for Harbor Ledger."
+   },
+   "thought": "We need a person who co-maintains tidyledger and contracts for Harbor Ledger. Likely a person involved both as maintainer and contracts. Maybe the CTO? But \"co-maintains\" suggests they are a maintainer. Could be Arjun Mehta. He is \"Open source maintainer of tidyledger\". Does he contract for Harbor Ledger? We need evidence that he is also contracting for Harbor Ledger. Maybe open profile for Arjun."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p23",
+    "why": "Arjun Mehta co-maintains tidyledger and works as a contractor for Harbor Ledger."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have profile p23 with description: co-maintains tidyledger with Tomas Lindqvist, works as a contractor for Harbor Ledger. That matches. So answer with id p23."
+  }
+ ],
+ "answer": {
+  "id": "p23",
+  "why": "Arjun Mehta co-maintains tidyledger and works as a contractor for Harbor Ledger."
+ },
+ "correct": true
+}

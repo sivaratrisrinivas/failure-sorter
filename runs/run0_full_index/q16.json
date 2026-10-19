@@ -1,0 +1,66 @@
+{
+ "id": "q16",
+ "query": "Find Arjun Mehta who co-maintains tidyledger.",
+ "gold": "p23",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Arjun Mehta tidyledger"
+   },
+   "result": [
+    {
+     "id": "p23",
+     "name": "Arjun Mehta",
+     "headline": "Open source maintainer of tidyledger"
+    },
+    {
+     "id": "p24",
+     "name": "Arjun Mehta",
+     "headline": "Cardiologist"
+    },
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    }
+   ],
+   "thought": "We need to search for Arjun Mehta. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p23"
+   },
+   "result": {
+    "id": "p23",
+    "name": "Arjun Mehta",
+    "headline": "Open source maintainer of tidyledger",
+    "city": "Pune",
+    "body": "Arjun co-maintains tidyledger with Tomas Lindqvist. Works as a contractor for Harbor Ledger."
+   },
+   "thought": "We found Arjun Mehta with id p23. Need to open profile? The instruction: \"Find Arjun Mehta who co-maintains tidyledger. Use search and open_profile, then call answer with the profile id.\" So we should open profile p23 to confirm."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p23",
+    "why": "Arjun Mehta is the co-maintainer of tidyledger, as indicated in his profile headline and bio."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have found the profile. Need to answer with id and why."
+  }
+ ],
+ "answer": {
+  "id": "p23",
+  "why": "Arjun Mehta is the co-maintainer of tidyledger, as indicated in his profile headline and bio."
+ },
+ "correct": true
+}

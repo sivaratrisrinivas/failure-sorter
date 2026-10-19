@@ -1,0 +1,81 @@
+{
+ "id": "q18",
+ "query": "Find Noor Haddad, the information retrieval researcher.",
+ "gold": "p26",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Noor Haddad information retrieval researcher"
+   },
+   "result": [
+    {
+     "id": "p27",
+     "name": "Noor Haddad",
+     "headline": "Journalist covering energy"
+    },
+    {
+     "id": "p26",
+     "name": "Noor Haddad",
+     "headline": "Head of research at Quarry AI"
+    },
+    {
+     "id": "p14",
+     "name": "Rafael Duarte",
+     "headline": "Security researcher"
+    }
+   ],
+   "thought": "We need to search for Noor Haddad. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p27"
+   },
+   "result": {
+    "id": "p27",
+    "name": "Noor Haddad",
+    "headline": "Journalist covering energy",
+    "city": "Amman",
+    "body": "Noor Haddad writes about oil and solar markets."
+   },
+   "thought": "Search results show two Noor Haddad entries. We need the information retrieval researcher. Which one? The headlines: \"Journalist covering energy\" and \"Head of research at Quarry AI\". Neither explicitly says information retrieval researcher. Maybe the profile index has a different headline. Could be the second one? Let's open both to see bio."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p26"
+   },
+   "result": {
+    "id": "p26",
+    "name": "Noor Haddad",
+    "headline": "Head of research at Quarry AI",
+    "city": "Toronto",
+    "body": "Noor leads the research group. PhD in information retrieval. Previously a scientist at Ostrava Maps."
+   },
+   "thought": "We need to find Noor Haddad, the information retrieval researcher. The search results gave two Noor Haddad entries: p27 (journalist) and p26 (Head of research at Quarry AI). Neither is explicitly \"information retrieval researcher\". Maybe p26 is the correct one? Let's open p26."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p26",
+    "why": "This profile lists Noor Haddad as Head of research at Quarry AI with a PhD in information retrieval, matching the description of an information retrieval researcher."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We need to find Noor Haddad, the information retrieval researcher. The search returned two Noor Haddad entries: p27 (journalist) and p26 (Head of research at Quarry AI, PhD in information retrieval). The question: \"Find Noor Haddad, the information retrieval researcher.\" So we should answer with id p26. Provide why."
+  }
+ ],
+ "answer": {
+  "id": "p26",
+  "why": "This profile lists Noor Haddad as Head of research at Quarry AI with a PhD in information retrieval, matching the description of an information retrieval researcher."
+ },
+ "correct": true
+}

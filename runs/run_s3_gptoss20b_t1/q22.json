@@ -1,0 +1,132 @@
+{
+ "id": "q22",
+ "query": "Who sold a map tile CDN to Ostrava Maps?",
+ "gold": "p33",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "map tile CDN sold to Ostrava Maps"
+   },
+   "result": [
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f12",
+     "name": "Alex Hale",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f04",
+     "name": "Riley Larsen",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": "We need to identify who sold a map tile CDN to Ostrava Maps. Likely a person, maybe founder of some company. Search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "sold map tile CDN Ostrava Maps"
+   },
+   "result": [
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f12",
+     "name": "Alex Hale",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f04",
+     "name": "Riley Larsen",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": "The search results are about designers, not about someone who sold a map tile CDN to Ostrava Maps. Likely need to search more specific: \"map tile CDN\" plus \"sold to Ostrava Maps\". Let's search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Ostrava Maps map tile CDN"
+   },
+   "result": [
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f12",
+     "name": "Alex Hale",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f04",
+     "name": "Riley Larsen",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": "We need to find person who sold a map tile CDN to Ostrava Maps. Might be a vendor or entrepreneur. Could be a founder of a CDN company that sold to Ostrava Maps. Let's search for \"Ostrava Maps map tile CDN\" in profile context. Maybe the person is \"Kevin Johnson\" etc. Let's search more general.\n\n"
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "f20"
+   },
+   "result": {
+    "id": "f20",
+    "name": "Avery Silva",
+    "headline": "Designer at Ostrava Maps",
+    "city": "Austin",
+    "body": "Works at Ostrava Maps as designer. Previously at Kestrel Health. Mentions search, routing, ledger and payments in posts."
+   },
+   "thought": "We need to find a person who sold a map tile CDN to Ostrava Maps. We need the profile ID. Likely the person sold something. Search queries didn't yield results. Maybe \"map tile CDN\" sold to \"Ostrava Maps\" by a specific individual. Could be a founder or vendor. The search returned designers. We may need to open one of them to see their bio. Let's open the first."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "map tile CDN company sold to Ostrava Maps"
+   },
+   "result": [
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f12",
+     "name": "Alex Hale",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f04",
+     "name": "Riley Larsen",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": "We need to answer: \"Who sold a map tile CDN to Ostrava Maps?\" The search didn't find a direct reference. We might need to find the person who sold map tile CDN. Maybe it's a company: \"map tile CDN\" like \"TileCloud\"? Search again."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

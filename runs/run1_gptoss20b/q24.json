@@ -1,0 +1,126 @@
+{
+ "id": "q24",
+ "query": "Find Elena Rossi who sits on the Kestrel Health board.",
+ "gold": "p35",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Elena Rossi Kestrel Health board"
+   },
+   "result": [
+    {
+     "id": "p36",
+     "name": "Elena Rossi",
+     "headline": "Fashion photographer"
+    },
+    {
+     "id": "p35",
+     "name": "Elena Rossi",
+     "headline": "COO at Fernway"
+    },
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    }
+   ],
+   "thought": "We need to find Elena Rossi who sits on the Kestrel Health board. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Kestrel Health board"
+   },
+   "result": [
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    },
+    {
+     "id": "f23",
+     "name": "Sky Adeyemi",
+     "headline": "Recruiter at Kestrel Health"
+    },
+    {
+     "id": "f15",
+     "name": "Taylor Nakamura",
+     "headline": "Recruiter at Kestrel Health"
+    }
+   ],
+   "thought": "Search results show two Elena Rossi but not board. Need to search again maybe with \"Kestrel Health board\" alone."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p36"
+   },
+   "result": {
+    "id": "p36",
+    "name": "Elena Rossi",
+    "headline": "Fashion photographer",
+    "city": "Milan",
+    "body": "Elena Rossi shoots for magazines."
+   },
+   "thought": "We need Elena Rossi who sits on Kestrel Health board. Search results show Elena Rossi but not board. Maybe open profile p36? Let's open."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Elena Rossi \"Kestrel Health\" board"
+   },
+   "result": [
+    {
+     "id": "p36",
+     "name": "Elena Rossi",
+     "headline": "Fashion photographer"
+    },
+    {
+     "id": "p35",
+     "name": "Elena Rossi",
+     "headline": "COO at Fernway"
+    },
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    }
+   ],
+   "thought": "We need to find Elena Rossi who sits on the Kestrel Health board. The search results show Elena Rossi but not board. The profile shows fashion photographer. Maybe wrong person. We need to find the correct Elena Rossi. Maybe there is another Elena Rossi. Let's search again with \"Elena Rossi Kestrel Health board member\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Elena Rossi \"Kestrel Health\" \"board\""
+   },
+   "result": [
+    {
+     "id": "p36",
+     "name": "Elena Rossi",
+     "headline": "Fashion photographer"
+    },
+    {
+     "id": "p35",
+     "name": "Elena Rossi",
+     "headline": "COO at Fernway"
+    },
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    }
+   ],
+   "thought": "We need to find Elena Rossi who sits on the Kestrel Health board. The search results show two Elena Rossi profiles: p36 (fashion photographer) and p35 (COO at Fernway). Neither indicates board membership. Maybe the board member is not in the search results? Could be a different profile ID. Let's search for \"Elena Rossi Kestrel Health board member\"."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

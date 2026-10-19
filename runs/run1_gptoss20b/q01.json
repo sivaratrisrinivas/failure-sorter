@@ -1,0 +1,51 @@
+{
+ "id": "q01",
+ "query": "Find Priya Raman, the engineer who builds trucking routing software.",
+ "gold": "p01",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Priya Raman engineer trucking routing software"
+   },
+   "result": [
+    {
+     "id": "p01",
+     "name": "Priya Raman",
+     "headline": "Staff engineer at Lumen Freight"
+    },
+    {
+     "id": "p02",
+     "name": "Priya Raman",
+     "headline": "Pediatric nurse"
+    },
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    }
+   ],
+   "thought": "We need to find Priya Raman, engineer builds trucking routing software. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p01",
+    "why": "Staff engineer at Lumen Freight, which builds trucking routing software"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have 3 hits. The relevant one is likely p01: Staff engineer at Lumen Freight. That matches trucking routing software. So answer with id p01."
+  }
+ ],
+ "answer": {
+  "id": "p01",
+  "why": "Staff engineer at Lumen Freight, which builds trucking routing software"
+ },
+ "correct": true
+}

@@ -1,0 +1,104 @@
+{
+ "id": "q20",
+ "query": "Find the investor who led the seed round in Harbor Ledger.",
+ "gold": "p30",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger seed round investor"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "led seed round Harbor Ledger"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "investor seed round fintech"
+   },
+   "result": [],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "venture capital investor"
+   },
+   "result": [],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": null
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

@@ -1,0 +1,52 @@
+{
+ "id": "q30",
+ "query": "Find the Ivan Petrov who coaches hockey.",
+ "gold": "p29",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Ivan Petrov coach hockey"
+   },
+   "result": [
+    {
+     "id": "p29",
+     "name": "Ivan Petrov",
+     "headline": "Hockey coach"
+    },
+    {
+     "id": "p28",
+     "name": "Ivan Petrov",
+     "headline": "Site reliability engineer at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to search."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p29",
+    "why": "I found Ivan Petrov with headline 'Hockey coach' in the search results, which matches the requested profile."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We need to submit the id with why. Likely use p29."
+  }
+ ],
+ "answer": {
+  "id": "p29",
+  "why": "I found Ivan Petrov with headline 'Hockey coach' in the search results, which matches the requested profile."
+ },
+ "correct": true
+}

@@ -1,0 +1,72 @@
+{
+ "id": "q18",
+ "query": "Find Noor Haddad, the information retrieval researcher.",
+ "gold": "p26",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Noor Haddad information retrieval researcher"
+   },
+   "result": [
+    {
+     "id": "p27",
+     "name": "Noor Haddad",
+     "headline": "Journalist covering energy"
+    },
+    {
+     "id": "p26",
+     "name": "Noor Haddad",
+     "headline": "Head of research at Quarry AI"
+    },
+    {
+     "id": "p14",
+     "name": "Rafael Duarte",
+     "headline": "Security researcher"
+    }
+   ],
+   "thought": "We need to search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p26"
+   },
+   "result": {
+    "id": "p26",
+    "name": "Noor Haddad",
+    "headline": "Head of research at Quarry AI",
+    "city": "Toronto",
+    "body": "Noor leads the research group. PhD in information retrieval. Previously a scientist at Ostrava Maps."
+   },
+   "thought": "Search results show two Noor Haddad profiles: p27 journalist energy; p26 research at Quarry AI. But question: \"information retrieval researcher\". None exactly. Maybe open p26."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p26",
+    "why": "The profile shows Noor Haddad with a PhD in information retrieval and current research role"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We need answer with id and why. The profile id is p26. The person is Noor Haddad, researcher in information retrieval. The answer tool."
+  }
+ ],
+ "answer": {
+  "id": "p26",
+  "why": "The profile shows Noor Haddad with a PhD in information retrieval and current research role"
+ },
+ "correct": true
+}

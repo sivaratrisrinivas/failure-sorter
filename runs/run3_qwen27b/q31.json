@@ -1,0 +1,66 @@
+{
+ "id": "q31",
+ "query": "Find the angel investor in Fernway who founded a CRM company.",
+ "gold": "p18",
+ "split": "dev",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "angel investor Fernway CRM founder"
+   },
+   "result": [
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    },
+    {
+     "id": "p33",
+     "name": "Omar Farouk",
+     "headline": "Founder of Tilepath"
+    },
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p18"
+   },
+   "result": {
+    "id": "p18",
+    "name": "Lukas Becker",
+    "headline": "Founder of Spindle CRM",
+    "city": "Berlin",
+    "body": "Lukas started Spindle CRM in 2022 after selling a small analytics shop. Angel investor in Fernway."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p18",
+    "why": "Lukas Becker founded Spindle CRM and is an angel investor in Fernway."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p18",
+  "why": "Lukas Becker founded Spindle CRM and is an angel investor in Fernway."
+ },
+ "correct": true
+}

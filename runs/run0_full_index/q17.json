@@ -1,0 +1,66 @@
+{
+ "id": "q17",
+ "query": "Find the product manager for payments at Fernway.",
+ "gold": "p25",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Fernway product manager payments"
+   },
+   "result": [
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    },
+    {
+     "id": "p06",
+     "name": "Ama Mensah",
+     "headline": "Product designer at Fernway"
+    },
+    {
+     "id": "f18",
+     "name": "Morgan Kowal",
+     "headline": "Office manager at Quarry AI"
+    }
+   ],
+   "thought": "We need to find the product manager for payments at Fernway. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p25"
+   },
+   "result": {
+    "id": "p25",
+    "name": "Arjun Mehra",
+    "headline": "Product manager at Fernway",
+    "city": "Bangalore",
+    "body": "Arjun Mehra owns the payments roadmap at Fernway."
+   },
+   "thought": "We need product manager for payments at Fernway. Search returned Arjun Mehra product manager at Fernway. Likely the answer. We should open profile to confirm."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p25",
+    "why": "Arjun Mehra is the product manager for payments at Fernway"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Arjun Mehra. Need to answer with id and why."
+  }
+ ],
+ "answer": {
+  "id": "p25",
+  "why": "Arjun Mehra is the product manager for payments at Fernway"
+ },
+ "correct": true
+}

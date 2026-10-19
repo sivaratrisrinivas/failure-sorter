@@ -1,0 +1,66 @@
+{
+ "id": "q06",
+ "query": "Find the Fernway product designer who once interned at Lumen Freight.",
+ "gold": "p06",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Fernway product designer interned at Lumen Freight"
+   },
+   "result": [
+    {
+     "id": "p06",
+     "name": "Ama Mensah",
+     "headline": "Product designer at Fernway"
+    },
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    },
+    {
+     "id": "p19",
+     "name": "Lukas Becker",
+     "headline": "Logistics coordinator at Lumen Freight"
+    }
+   ],
+   "thought": "We need to find a specific person: \"Fernway product designer who once interned at Lumen Freight.\" We need to search. Use search tool."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p06"
+   },
+   "result": {
+    "id": "p06",
+    "name": "Ama Mensah",
+    "headline": "Product designer at Fernway",
+    "city": "Accra",
+    "body": "Ama designs onboarding flows. Former intern at Lumen Freight. Writes a newsletter called Small Screens."
+   },
+   "thought": "We need Fernway product designer who once interned at Lumen Freight. Search results show Ama Mensah product designer at Fernway. Need to verify internship at Lumen Freight. Open profile."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p06",
+    "why": "Ama Mensah is a product designer at Fernway and previously interned at Lumen Freight."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have found the profile. Need to answer with id and why."
+  }
+ ],
+ "answer": {
+  "id": "p06",
+  "why": "Ama Mensah is a product designer at Fernway and previously interned at Lumen Freight."
+ },
+ "correct": true
+}

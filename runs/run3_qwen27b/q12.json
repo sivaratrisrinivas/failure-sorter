@@ -1,0 +1,146 @@
+{
+ "id": "q12",
+ "query": "Find the person who manages the search team at Ostrava Maps.",
+ "gold": "p16",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "search team Ostrava Maps"
+   },
+   "result": [
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f12",
+     "name": "Alex Hale",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f04",
+     "name": "Riley Larsen",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "manages search team Ostrava Maps"
+   },
+   "result": [
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f12",
+     "name": "Alex Hale",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f04",
+     "name": "Riley Larsen",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "f20"
+   },
+   "result": {
+    "id": "f20",
+    "name": "Avery Silva",
+    "headline": "Designer at Ostrava Maps",
+    "city": "Austin",
+    "body": "Works at Ostrava Maps as designer. Previously at Kestrel Health. Mentions search, routing, ledger and payments in posts."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "f12"
+   },
+   "result": {
+    "id": "f12",
+    "name": "Alex Hale",
+    "headline": "Designer at Ostrava Maps",
+    "city": "Singapore",
+    "body": "Works at Ostrava Maps as designer. Previously at Kestrel Health. Mentions search, routing, ledger and payments in posts."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "f04"
+   },
+   "result": {
+    "id": "f04",
+    "name": "Riley Larsen",
+    "headline": "Designer at Ostrava Maps",
+    "city": "Austin",
+    "body": "Works at Ostrava Maps as designer. Previously at Kestrel Health. Mentions search, routing, ledger and payments in posts."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Ostrava Maps manager"
+   },
+   "result": [
+    {
+     "id": "p16",
+     "name": "Hana Sato",
+     "headline": "Engineering manager at Ostrava Maps"
+    },
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f12",
+     "name": "Alex Hale",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p16"
+   },
+   "result": {
+    "id": "p16",
+    "name": "Hana Sato",
+    "headline": "Engineering manager at Ostrava Maps",
+    "city": "Tokyo",
+    "body": "Hana manages the search team at Ostrava Maps. Previously at Quarry AI. Organizes a monthly Go meetup."
+   },
+   "thought": null
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

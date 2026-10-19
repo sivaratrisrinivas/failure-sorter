@@ -1,0 +1,66 @@
+{
+ "id": "q02",
+ "query": "Find the Priya Raman who is a nurse in Austin.",
+ "gold": "p02",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Priya Raman nurse Austin"
+   },
+   "result": [
+    {
+     "id": "p02",
+     "name": "Priya Raman",
+     "headline": "Pediatric nurse"
+    },
+    {
+     "id": "p01",
+     "name": "Priya Raman",
+     "headline": "Staff engineer at Lumen Freight"
+    },
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p02"
+   },
+   "result": {
+    "id": "p02",
+    "name": "Priya Raman",
+    "headline": "Pediatric nurse",
+    "city": "Austin",
+    "body": "Priya Raman works night shifts at St. Brigid Children's. Runs a weekend 10k club. No software background."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p02",
+    "why": "Priya Raman, pediatric nurse in Austin (works night shifts at St. Brigid Children's)."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p02",
+  "why": "Priya Raman, pediatric nurse in Austin (works night shifts at St. Brigid Children's)."
+ },
+ "correct": true
+}

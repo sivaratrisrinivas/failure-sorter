@@ -1,0 +1,97 @@
+{
+ "id": "q09",
+ "query": "Find the co-founder and CTO of Harbor Ledger.",
+ "gold": "p11",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger co-founder CTO"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to find co-founder and CTO of Harbor Ledger. Likely a company \"Harbor Ledger\" (maybe blockchain). Search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger co-founder"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "We got search results. The query returned \"Mei Chen\" as CTO at Harbor Ledger. Need co-founder and CTO. Maybe Mei Chen is the co-founder? Let's search for co-founder."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p11"
+   },
+   "result": {
+    "id": "p11",
+    "name": "Mei Chen",
+    "headline": "CTO at Harbor Ledger",
+    "city": "Singapore",
+    "body": "Mei Chen co-founded Harbor Ledger, a payments reconciliation startup, in 2021. Previously principal engineer at Brightwell Bank."
+   },
+   "thought": "We found Mei Chen is CTO, but we need co-founder and CTO. The person is likely a co-founder and CTO. We need the id of that person. The search results show only Mei Chen as CTO; maybe Mei Chen is co-founder too? We should open profile to confirm."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p11",
+    "why": "Mei Chen is listed as the CTO and a co-founder of Harbor Ledger in the profile information."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We need to submit the id, and why."
+  }
+ ],
+ "answer": {
+  "id": "p11",
+  "why": "Mei Chen is listed as the CTO and a co-founder of Harbor Ledger in the profile information."
+ },
+ "correct": true
+}

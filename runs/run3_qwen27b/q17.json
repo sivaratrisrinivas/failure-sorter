@@ -1,0 +1,66 @@
+{
+ "id": "q17",
+ "query": "Find the product manager for payments at Fernway.",
+ "gold": "p25",
+ "split": "dev",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "product manager payments Fernway"
+   },
+   "result": [
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    },
+    {
+     "id": "p06",
+     "name": "Ama Mensah",
+     "headline": "Product designer at Fernway"
+    },
+    {
+     "id": "p35",
+     "name": "Elena Rossi",
+     "headline": "COO at Fernway"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p25"
+   },
+   "result": {
+    "id": "p25",
+    "name": "Arjun Mehra",
+    "headline": "Product manager at Fernway",
+    "city": "Bangalore",
+    "body": "Arjun Mehra owns the payments roadmap at Fernway."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p25",
+    "why": "Arjun Mehra is the Product Manager at Fernway and owns the payments roadmap."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p25",
+  "why": "Arjun Mehra is the Product Manager at Fernway and owns the payments roadmap."
+ },
+ "correct": true
+}

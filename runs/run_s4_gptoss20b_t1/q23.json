@@ -1,0 +1,57 @@
+{
+ "id": "q23",
+ "query": "Find the COO of Fernway.",
+ "gold": "p35",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Fernway COO"
+   },
+   "result": [
+    {
+     "id": "p35",
+     "name": "Elena Rossi",
+     "headline": "COO at Fernway"
+    },
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    },
+    {
+     "id": "p06",
+     "name": "Ama Mensah",
+     "headline": "Product designer at Fernway"
+    }
+   ],
+   "thought": "We need to find the COO of Fernway. Likely the profile index has people. We need to search \"Fernway COO\" or \"Fernway Chief Operating Officer\". Use search. Then open_profile? We need the ID of the person. Then answer with id and why. Use search tool."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p35",
+    "why": "The search results list Elena Rossi with the headline 'COO at Fernway'."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found id p35. We should answer."
+  }
+ ],
+ "answer": {
+  "id": "p35",
+  "why": "The search results list Elena Rossi with the headline 'COO at Fernway'."
+ },
+ "correct": true
+}

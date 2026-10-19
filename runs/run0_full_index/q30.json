@@ -1,0 +1,61 @@
+{
+ "id": "q30",
+ "query": "Find the Ivan Petrov who coaches hockey.",
+ "gold": "p29",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Ivan Petrov hockey coach"
+   },
+   "result": [
+    {
+     "id": "p29",
+     "name": "Ivan Petrov",
+     "headline": "Hockey coach"
+    },
+    {
+     "id": "p28",
+     "name": "Ivan Petrov",
+     "headline": "Site reliability engineer at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to search for Ivan Petrov who coaches hockey. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p29"
+   },
+   "result": {
+    "id": "p29",
+    "name": "Ivan Petrov",
+    "headline": "Hockey coach",
+    "city": "Toronto",
+    "body": "Ivan Petrov coaches junior hockey."
+   },
+   "thought": "We have two results. Need to open profile p29."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p29",
+    "why": "Ivan Petrov is listed as a hockey coach in the profile index."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Ivan Petrov, id p29. Need to answer."
+  }
+ ],
+ "answer": {
+  "id": "p29",
+  "why": "Ivan Petrov is listed as a hockey coach in the profile index."
+ },
+ "correct": true
+}

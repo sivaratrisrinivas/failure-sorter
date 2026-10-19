@@ -1,0 +1,142 @@
+{
+ "id": "q20",
+ "query": "Find the investor who led the seed round in Harbor Ledger.",
+ "gold": "p30",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger seed round lead investor"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to find investor who led seed round in Harbor Ledger. Likely a person profile. Let's search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger seed round investor"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "Search result shows only staff, no investor. Need find investor. Maybe search for Harbor Ledger seed round."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger seed funding led by"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "The search results didn't provide the lead investor. Need other queries. Maybe \"Harbor Ledger seed funding\" search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "The search results all return same 3 entries unrelated. Perhaps the profile index doesn't include Harbor Ledger investor. We need find the investor who led the seed round in Harbor Ledger. Maybe the person is a venture capital? Could search for \"Harbor Ledger investor\" maybe \"Harbor Ledger seed round\" but search gave same. Could need open the profile of the company? Not sure.\n\nWe might need to search for \"Harbor Ledger\" as company. Maybe there is a profile for the company itself with investors. Let's search \"Harbor Ledger\" alone."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "\"Harbor Ledger\" \"seed\" \"investor\""
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "The search results all return same small set of interns and a CTO. No investor appears. Maybe we need to open the profile of a person to find investor info? But likely the investor isn't in the public index; maybe there's a known investor who led the seed round: For Harbor Ledger, I think it's \"Founders Fund\" or \"GV\"? Wait, I should recall: Harbor Ledger is a blockchain startup, maybe seed round led by \"SV Angel\" or \"Y Combinator\"? I can search again. Let's search for \"Harbor Ledger seed funding led by investor name\"."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

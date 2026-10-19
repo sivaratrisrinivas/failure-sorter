@@ -1,0 +1,91 @@
+{
+ "id": "q27",
+ "query": "Find the Spindle CRM salesperson who used to work at Cobalt Ice.",
+ "gold": "p20",
+ "split": "dev",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Spindle CRM salesperson Cobalt Ice"
+   },
+   "result": [
+    {
+     "id": "p31",
+     "name": "Grace Kim",
+     "headline": "UX researcher at Cobalt Ice"
+    },
+    {
+     "id": "p07",
+     "name": "Ama Mensah-Boateng",
+     "headline": "VP Marketing at Cobalt Ice"
+    },
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "salesperson Spindle CRM"
+   },
+   "result": [
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    },
+    {
+     "id": "p37",
+     "name": "Kwame Asante",
+     "headline": "Platform engineer at Spindle CRM"
+    },
+    {
+     "id": "p20",
+     "name": "Lucas Baker",
+     "headline": "Sales lead at Spindle CRM"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p20"
+   },
+   "result": {
+    "id": "p20",
+    "name": "Lucas Baker",
+    "headline": "Sales lead at Spindle CRM",
+    "city": "Berlin",
+    "body": "Lucas Baker sells CRM seats to mid market firms. Ex Cobalt Ice."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p20",
+    "why": "Lucas Baker is the sales lead at Spindle CRM and his bio notes he is ex-Cobalt Ice."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p20",
+  "why": "Lucas Baker is the sales lead at Spindle CRM and his bio notes he is ex-Cobalt Ice."
+ },
+ "correct": true
+}

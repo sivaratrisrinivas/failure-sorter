@@ -1,0 +1,126 @@
+{
+ "id": "q10",
+ "query": "Find Mei Chen who used to be principal engineer at Brightwell Bank.",
+ "gold": "p11",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Mei Chen principal engineer Brightwell Bank"
+   },
+   "result": [
+    {
+     "id": "p39",
+     "name": "Julia Novak",
+     "headline": "Principal engineer at Brightwell Bank"
+    },
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to search for Mei Chen. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Mei Chen Brightwell Bank"
+   },
+   "result": [
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "p13",
+     "name": "Mei Chen-Watts",
+     "headline": "Recruiter at Quarry AI"
+    }
+   ],
+   "thought": "We need Mei Chen who used to be principal engineer at Brightwell Bank. The search results show two Mei Chen entries: p12 (High school chemistry teacher) and p11 (CTO at Harbor Ledger). Neither matches principal engineer at Brightwell Bank. The first result is Julia Novak, principal engineer at Brightwell Bank. But we need Mei Chen who used to be principal engineer at Brightwell Bank. Maybe the profile is not in top 3? We might need to search again with different query. Let's try \"Mei Chen Brightwell Bank\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Mei Chen Brightwell Bank principal engineer"
+   },
+   "result": [
+    {
+     "id": "p39",
+     "name": "Julia Novak",
+     "headline": "Principal engineer at Brightwell Bank"
+    },
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    }
+   ],
+   "thought": "We need Mei Chen who used to be principal engineer at Brightwell Bank. The search results show Mei Chen with headline \"High school chemistry teacher\" and \"CTO at Harbor Ledger\". None mention Brightwell Bank. Maybe the profile is not in top 3? We can search again with \"Mei Chen Brightwell Bank principal engineer\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Mei Chen Brightwell"
+   },
+   "result": [
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "p13",
+     "name": "Mei Chen-Watts",
+     "headline": "Recruiter at Quarry AI"
+    }
+   ],
+   "thought": "We need to find Mei Chen who used to be principal engineer at Brightwell Bank. The search results show no Mei Chen with that headline. The only principal engineer at Brightwell Bank is Julia Novak. But the user specifically wants Mei Chen. Maybe the profile is not in top 3? We can search again with broader query."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p12"
+   },
+   "result": {
+    "id": "p12",
+    "name": "Mei Chen",
+    "headline": "High school chemistry teacher",
+    "city": "Vancouver",
+    "body": "Mei Chen teaches AP chemistry. Coaches the robotics team."
+   },
+   "thought": "We need to find Mei Chen who used to be principal engineer at Brightwell Bank. The search results show no Mei Chen with that headline. Maybe the profile is not in top 3. We can search for \"Brightwell Bank principal engineer\" to see if any other names. But we need Mei Chen. Maybe the profile is not in top 3 due to ranking. We can try to search for \"Mei Chen Brightwell Bank principal engineer\" again but maybe we need to adjust query. Let's search for \"Mei Chen Brightwell Bank\" again but maybe we need to search for \"Mei Chen\" only and then open profile to see if they mention Brightwell Bank. But we have limited calls. We can open p12 or p11. Let's open p12."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

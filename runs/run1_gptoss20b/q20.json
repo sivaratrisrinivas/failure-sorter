@@ -1,0 +1,136 @@
+{
+ "id": "q20",
+ "query": "Find the investor who led the seed round in Harbor Ledger.",
+ "gold": "p30",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger seed round led by investor"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to find the investor who led the seed round in Harbor Ledger. Likely a startup. We need to search. Use search tool."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger seed round investor"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "Search results show only employees, not investor. Need to search broader."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger seed round led by"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "The search results are not helpful. We need to find the investor who led the seed round in Harbor Ledger. Maybe the investor is a VC. Let's search broader."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "The search results are not helpful. Maybe the investor is not in the index? We need to find the investor who led the seed round in Harbor Ledger. Could be a VC like Sequoia, Andreessen, etc. Let's search for \"Harbor Ledger seed round\" again but maybe the profile index has the investor. Let's search for \"Harbor Ledger\" alone."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "\"Harbor Ledger\" seed round"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "The search results only show internal staff, not investors. Maybe the investor is not in the index? We might need to open a profile of a known investor? But we need to find the investor who led the seed round in Harbor Ledger. Could be a venture capital firm or individual. Maybe the investor is \"Mei Chen\"? But Mei Chen is CTO. Not likely. Maybe the investor is \"Jamie Tan\"? No. The search tool might not find because the index is limited. We might need to guess? But we need to provide an answer with id and why. We can try to search for \"Harbor Ledger seed round investor\" again but maybe the query needs quotes? Let's try \"Harbor Ledger seed round\" again."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

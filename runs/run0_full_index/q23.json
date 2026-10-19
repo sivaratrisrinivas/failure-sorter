@@ -1,0 +1,66 @@
+{
+ "id": "q23",
+ "query": "Find the COO of Fernway.",
+ "gold": "p35",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "COO Fernway"
+   },
+   "result": [
+    {
+     "id": "p35",
+     "name": "Elena Rossi",
+     "headline": "COO at Fernway"
+    },
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    },
+    {
+     "id": "f09",
+     "name": "Quinn Ortiz",
+     "headline": "Support engineer at Fernway"
+    }
+   ],
+   "thought": "We need to find the COO of Fernway. Likely a company. We need to search. Use search tool."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p35"
+   },
+   "result": {
+    "id": "p35",
+    "name": "Elena Rossi",
+    "headline": "COO at Fernway",
+    "city": "Milan",
+    "body": "Elena runs operations at Fernway. Ex McKinsey style consultant. Board member at Kestrel Health."
+   },
+   "thought": "We found the COO: Elena Rossi, id p35. Need to open profile? Not necessary but maybe to confirm. We can open."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p35",
+    "why": "Elena Rossi is listed as COO at Fernway in the profile index."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have found the COO: Elena Rossi. Need to answer with id and why."
+  }
+ ],
+ "answer": {
+  "id": "p35",
+  "why": "Elena Rossi is listed as COO at Fernway in the profile index."
+ },
+ "correct": true
+}

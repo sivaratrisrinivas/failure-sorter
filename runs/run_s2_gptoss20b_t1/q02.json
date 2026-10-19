@@ -1,0 +1,72 @@
+{
+ "id": "q02",
+ "query": "Find the Priya Raman who is a nurse in Austin.",
+ "gold": "p02",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 2,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Priya Raman nurse Austin"
+   },
+   "result": [
+    {
+     "id": "p02",
+     "name": "Priya Raman",
+     "headline": "Pediatric nurse"
+    },
+    {
+     "id": "p01",
+     "name": "Priya Raman",
+     "headline": "Staff engineer at Lumen Freight"
+    },
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    }
+   ],
+   "thought": "We need to find a person named Priya Raman, nurse in Austin. Likely a public profile. We'll search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p02"
+   },
+   "result": {
+    "id": "p02",
+    "name": "Priya Raman",
+    "headline": "Pediatric nurse",
+    "city": "Austin",
+    "body": "Priya Raman works night shifts at St. Brigid Children's. Runs a weekend 10k club. No software background."
+   },
+   "thought": "We have three hits. The first: id p02, name Priya Raman, headline Pediatric nurse. Probably the nurse. Need to confirm location Austin. We might open profile. Let's do open_profile."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p02",
+    "why": "This profile matches Priya Raman who is a pediatric nurse located in Austin, as specified in the user query."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found the nurse in Austin. Provide answer."
+  }
+ ],
+ "answer": {
+  "id": "p02",
+  "why": "This profile matches Priya Raman who is a pediatric nurse located in Austin, as specified in the user query."
+ },
+ "correct": true
+}

@@ -1,0 +1,97 @@
+{
+ "id": "q12",
+ "query": "Find the person who manages the search team at Ostrava Maps.",
+ "gold": "p16",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Ostrava Maps search team manager"
+   },
+   "result": [
+    {
+     "id": "p16",
+     "name": "Hana Sato",
+     "headline": "Engineering manager at Ostrava Maps"
+    },
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f12",
+     "name": "Alex Hale",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": "We need to search. Use search with query \"Ostrava Maps search team manager\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "search team manager Ostrava Maps"
+   },
+   "result": [
+    {
+     "id": "p16",
+     "name": "Hana Sato",
+     "headline": "Engineering manager at Ostrava Maps"
+    },
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f12",
+     "name": "Alex Hale",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": "We have search results: Hana Sato is engineering manager, not search team manager. The question: \"Find the person who manages the search team at Ostrava Maps.\" Maybe the search team manager is a different title. Need to search for \"search team manager Ostrava Maps\"."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p16"
+   },
+   "result": {
+    "id": "p16",
+    "name": "Hana Sato",
+    "headline": "Engineering manager at Ostrava Maps",
+    "city": "Tokyo",
+    "body": "Hana manages the search team at Ostrava Maps. Previously at Quarry AI. Organizes a monthly Go meetup."
+   },
+   "thought": "We need the person who manages the search team at Ostrava Maps. The search returned engineering manager at Ostrava Maps: Hana Sato. Could be the manager. But is there a separate search team manager? Possibly a Head of Search or something. Search again: \"search team manager Ostrava Maps\" returned the same. Might be that engineering manager is the answer.\n\nLet's open profile for Hana Sato to verify."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p16",
+    "why": "Hana Sato\u2019s profile states she manages the search team at Ostrava Maps."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have found profile p16 Hana Sato. We must answer with id and reason."
+  }
+ ],
+ "answer": {
+  "id": "p16",
+  "why": "Hana Sato\u2019s profile states she manages the search team at Ostrava Maps."
+ },
+ "correct": true
+}

@@ -1,0 +1,51 @@
+{
+ "id": "q26",
+ "query": "Who replaced Mei Chen as principal engineer at Brightwell Bank?",
+ "gold": "p39",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Mei Chen principal engineer Brightwell Bank replaced"
+   },
+   "result": [
+    {
+     "id": "p39",
+     "name": "Julia Novak",
+     "headline": "Principal engineer at Brightwell Bank"
+    },
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to find who replaced Mei Chen as principal engineer at Brightwell Bank. We need to search. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p39",
+    "why": "Julia Novak is listed as Principal engineer at Brightwell Bank, indicating she replaced Mei Chen in that role."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We need to find who replaced Mei Chen as principal engineer at Brightwell Bank. The search returned 3 hits: Julia Novak (Principal engineer at Brightwell Bank), Mei Chen (High school chemistry teacher), Mei Chen (CTO at Harbor Ledger). The relevant one is Julia Novak. We should answer with id p39. Provide why."
+  }
+ ],
+ "answer": {
+  "id": "p39",
+  "why": "Julia Novak is listed as Principal engineer at Brightwell Bank, indicating she replaced Mei Chen in that role."
+ },
+ "correct": true
+}

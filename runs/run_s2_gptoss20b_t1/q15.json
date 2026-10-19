@@ -1,0 +1,97 @@
+{
+ "id": "q15",
+ "query": "Find the data scientist at Kestrel Health who used to be an analyst at Brightwell Bank.",
+ "gold": "p21",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 2,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Kestrel Health Data Scientist Brightwell Bank analyst"
+   },
+   "result": [
+    {
+     "id": "p21",
+     "name": "Sofia Marquez",
+     "headline": "Data scientist at Kestrel Health"
+    },
+    {
+     "id": "f21",
+     "name": "Quinn Ortiz",
+     "headline": "Analyst at Brightwell Bank"
+    },
+    {
+     "id": "f13",
+     "name": "Sam Byrne",
+     "headline": "Analyst at Brightwell Bank"
+    }
+   ],
+   "thought": "We need to find a person in profile index: Data Scientist at Kestrel Health, former analyst at Brightwell Bank. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Brightwell Bank Kestrel Health"
+   },
+   "result": [
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    },
+    {
+     "id": "f23",
+     "name": "Sky Adeyemi",
+     "headline": "Recruiter at Kestrel Health"
+    },
+    {
+     "id": "f21",
+     "name": "Quinn Ortiz",
+     "headline": "Analyst at Brightwell Bank"
+    }
+   ],
+   "thought": "We need data scientist at Kestrel Health who used to be an analyst at Brightwell Bank. Search shows Sofia Marquez is data scientist at Kestrel Health but no mention of past analyst. Quinn Ortiz is analyst at Brightwell Bank. We need a person who is currently at Kestrel Health, and previously at Brightwell Bank.\n\nMaybe another profile: maybe also at Kestrel Health. Let's search for Kestrel Health Brightwell Bank."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p21"
+   },
+   "result": {
+    "id": "p21",
+    "name": "Sofia Marquez",
+    "headline": "Data scientist at Kestrel Health",
+    "city": "Boston",
+    "body": "Sofia builds risk models for claim audits. Ex Brightwell Bank analyst. Rock climber."
+   },
+   "thought": "We need to find the data scientist at Kestrel Health who used to be an analyst at Brightwell Bank. We have search results: Sofia Marquez is Data Scientist at Kestrel Health. Quinn Ortiz and Sam Byrne are Analysts at Brightwell Bank. We need to find a person who is Data Scientist at Kestrel Health and formerly analyst at Brightwell Bank.\n\nMaybe Sofia Marquez used to be an analyst at Brightwell Bank. Let's open Sofia Marquez profile."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p21",
+    "why": "Sofia Marquez is a Data Scientist at Kestrel Health and previously worked as an analyst at Brightwell Bank."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Sofia Marquez profile id p21. Now answer."
+  }
+ ],
+ "answer": {
+  "id": "p21",
+  "why": "Sofia Marquez is a Data Scientist at Kestrel Health and previously worked as an analyst at Brightwell Bank."
+ },
+ "correct": true
+}

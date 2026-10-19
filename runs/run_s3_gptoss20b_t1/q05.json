@@ -1,0 +1,52 @@
+{
+ "id": "q05",
+ "query": "Find Tomas Lindquist the furniture maker.",
+ "gold": "p05",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Tomas Lindquist furniture maker"
+   },
+   "result": [
+    {
+     "id": "p05",
+     "name": "Tomas Lindquist",
+     "headline": "Carpenter and furniture maker"
+    },
+    {
+     "id": "p04",
+     "name": "Tomas Lindqvist",
+     "headline": "Head of data at Brightwell Bank"
+    }
+   ],
+   "thought": "We need to search."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p05",
+    "why": "Tomas Lindquist is the carpenter and furniture maker"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We need to submit the id \"p05\"."
+  }
+ ],
+ "answer": {
+  "id": "p05",
+  "why": "Tomas Lindquist is the carpenter and furniture maker"
+ },
+ "correct": true
+}

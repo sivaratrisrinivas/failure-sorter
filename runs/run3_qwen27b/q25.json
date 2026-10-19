@@ -1,0 +1,66 @@
+{
+ "id": "q25",
+ "query": "Find the platform engineer at Spindle CRM who used to be an SRE at Lumen Freight.",
+ "gold": "p37",
+ "split": "dev",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "platform engineer Spindle CRM SRE Lumen Freight"
+   },
+   "result": [
+    {
+     "id": "p37",
+     "name": "Kwame Asante",
+     "headline": "Platform engineer at Spindle CRM"
+    },
+    {
+     "id": "p01",
+     "name": "Priya Raman",
+     "headline": "Staff engineer at Lumen Freight"
+    },
+    {
+     "id": "f22",
+     "name": "Rowan Ivanova",
+     "headline": "Data engineer at Spindle CRM"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p37"
+   },
+   "result": {
+    "id": "p37",
+    "name": "Kwame Asante",
+    "headline": "Platform engineer at Spindle CRM",
+    "city": "Accra",
+    "body": "Kwame runs the Kubernetes platform at Spindle CRM. Former Lumen Freight SRE."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p37",
+    "why": "Kwame Asante is a platform engineer at Spindle CRM and a former SRE at Lumen Freight, matching the description."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p37",
+  "why": "Kwame Asante is a platform engineer at Spindle CRM and a former SRE at Lumen Freight, matching the description."
+ },
+ "correct": true
+}

@@ -1,0 +1,52 @@
+{
+ "id": "q05",
+ "query": "Find Tomas Lindquist the furniture maker.",
+ "gold": "p05",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Tomas Lindquist furniture maker"
+   },
+   "result": [
+    {
+     "id": "p05",
+     "name": "Tomas Lindquist",
+     "headline": "Carpenter and furniture maker"
+    },
+    {
+     "id": "p04",
+     "name": "Tomas Lindqvist",
+     "headline": "Head of data at Brightwell Bank"
+    }
+   ],
+   "thought": "We need to find Tomas Lindquist, furniture maker. We must search. Let's search."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p05",
+    "why": "Found via search query \"Tomas Lindquist furniture maker\" returning matching profile with ID p05."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Tomas Lindquist id p05. Need answer with why."
+  }
+ ],
+ "answer": {
+  "id": "p05",
+  "why": "Found via search query \"Tomas Lindquist furniture maker\" returning matching profile with ID p05."
+ },
+ "correct": true
+}

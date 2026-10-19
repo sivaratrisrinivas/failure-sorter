@@ -1,0 +1,66 @@
+{
+ "id": "q15",
+ "query": "Find the data scientist at Kestrel Health who used to be an analyst at Brightwell Bank.",
+ "gold": "p21",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Kestrel Health data scientist Brightwell Bank analyst"
+   },
+   "result": [
+    {
+     "id": "p21",
+     "name": "Sofia Marquez",
+     "headline": "Data scientist at Kestrel Health"
+    },
+    {
+     "id": "f21",
+     "name": "Quinn Ortiz",
+     "headline": "Analyst at Brightwell Bank"
+    },
+    {
+     "id": "f13",
+     "name": "Sam Byrne",
+     "headline": "Analyst at Brightwell Bank"
+    }
+   ],
+   "thought": "We need to search for \"Kestrel Health data scientist\" and \"Brightwell Bank analyst\". Let's search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p21"
+   },
+   "result": {
+    "id": "p21",
+    "name": "Sofia Marquez",
+    "headline": "Data scientist at Kestrel Health",
+    "city": "Boston",
+    "body": "Sofia builds risk models for claim audits. Ex Brightwell Bank analyst. Rock climber."
+   },
+   "thought": "We need the data scientist at Kestrel Health who used to be an analyst at Brightwell Bank. The search returned 3 hits: Sofia Marquez (Data scientist at Kestrel Health), Quinn Ortiz (Analyst at Brightwell Bank), Sam Byrne (Analyst at Brightwell Bank). We need to find which of these is the same person. Likely Sofia Marquez used to be an analyst at Brightwell Bank. We need to open Sofia's profile to confirm."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p21",
+    "why": "Sofia Marquez is a data scientist at Kestrel Health and previously worked as an analyst at Brightwell Bank."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Sofia Marquez. Need to answer with id and why."
+  }
+ ],
+ "answer": {
+  "id": "p21",
+  "why": "Sofia Marquez is a data scientist at Kestrel Health and previously worked as an analyst at Brightwell Bank."
+ },
+ "correct": true
+}

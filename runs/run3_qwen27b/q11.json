@@ -1,0 +1,61 @@
+{
+ "id": "q11",
+ "query": "Find the security researcher who goes by rduarte_sec.",
+ "gold": "p14",
+ "split": "dev",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "rduarte_sec security researcher"
+   },
+   "result": [
+    {
+     "id": "p14",
+     "name": "Rafael Duarte",
+     "headline": "Security researcher"
+    },
+    {
+     "id": "p31",
+     "name": "Grace Kim",
+     "headline": "UX researcher at Cobalt Ice"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p14"
+   },
+   "result": {
+    "id": "p14",
+    "name": "Rafael Duarte",
+    "headline": "Security researcher",
+    "city": "Lisbon",
+    "body": "Rafael finds bugs in payment SDKs. Formerly at Harbor Ledger. Known handle: rduarte_sec."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p14",
+    "why": "Profile p14 (Rafael Duarte, security researcher in Lisbon) explicitly lists \"Known handle: rduarte_sec.\""
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p14",
+  "why": "Profile p14 (Rafael Duarte, security researcher in Lisbon) explicitly lists \"Known handle: rduarte_sec.\""
+ },
+ "correct": true
+}

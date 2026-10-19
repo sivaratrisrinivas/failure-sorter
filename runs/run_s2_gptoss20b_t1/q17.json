@@ -1,0 +1,72 @@
+{
+ "id": "q17",
+ "query": "Find the product manager for payments at Fernway.",
+ "gold": "p25",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 2,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "product manager payments Fernway"
+   },
+   "result": [
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    },
+    {
+     "id": "p06",
+     "name": "Ama Mensah",
+     "headline": "Product designer at Fernway"
+    },
+    {
+     "id": "p35",
+     "name": "Elena Rossi",
+     "headline": "COO at Fernway"
+    }
+   ],
+   "thought": "We need to find the product manager for payments at Fernway. Use search with query \"product manager payments Fernway\"."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p25"
+   },
+   "result": {
+    "id": "p25",
+    "name": "Arjun Mehra",
+    "headline": "Product manager at Fernway",
+    "city": "Bangalore",
+    "body": "Arjun Mehra owns the payments roadmap at Fernway."
+   },
+   "thought": "We need product manager for payments at Fernway. The search results show \"Product manager at Fernway\" - Arjun Mehra. Likely the answer. But check if there is \"product manager for payments\". Possibly Arjun Mehra is the product manager. We can open profile to confirm if they work on payments. Let's open."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p25",
+    "why": "Arjun Mehra is the Product manager at Fernway and owns the payments roadmap."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have found product manager: Arjun Mehra id p25. We should answer."
+  }
+ ],
+ "answer": {
+  "id": "p25",
+  "why": "Arjun Mehra is the Product manager at Fernway and owns the payments roadmap."
+ },
+ "correct": true
+}

@@ -1,0 +1,57 @@
+{
+ "id": "q07",
+ "query": "Find Daniel Okafor who works on ranking models.",
+ "gold": "p08",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Daniel Okafor ranking models"
+   },
+   "result": [
+    {
+     "id": "p09",
+     "name": "Daniel Okafor",
+     "headline": "Partner at Okafor and Reyes LLP"
+    },
+    {
+     "id": "p08",
+     "name": "Daniel Okafor",
+     "headline": "ML engineer at Quarry AI"
+    },
+    {
+     "id": "p10",
+     "name": "Dani Okafor",
+     "headline": "Barista and illustrator"
+    }
+   ],
+   "thought": "We need to find Daniel Okafor who works on ranking models. Use search query \"Daniel Okafor ranking models\"."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p08",
+    "why": "This profile is for Daniel Okafor, an ML engineer at Quarry AI, a role that typically involves developing and working on ranking models."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have 3 results. Which one works on ranking models? The second: ML engineer at Quarry AI likely works on ranking models. The headline \"ML engineer at Quarry AI\" suggests relevant. So answer with that id \"p08\". Need to explain why."
+  }
+ ],
+ "answer": {
+  "id": "p08",
+  "why": "This profile is for Daniel Okafor, an ML engineer at Quarry AI, a role that typically involves developing and working on ranking models."
+ },
+ "correct": true
+}

@@ -1,0 +1,66 @@
+{
+ "id": "q10",
+ "query": "Find Mei Chen who used to be principal engineer at Brightwell Bank.",
+ "gold": "p11",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Mei Chen Brightwell Bank principal engineer"
+   },
+   "result": [
+    {
+     "id": "p39",
+     "name": "Julia Novak",
+     "headline": "Principal engineer at Brightwell Bank"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    }
+   ],
+   "thought": "We need to search for \"Mei Chen Brightwell Bank principal engineer\". Use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p11"
+   },
+   "result": {
+    "id": "p11",
+    "name": "Mei Chen",
+    "headline": "CTO at Harbor Ledger",
+    "city": "Singapore",
+    "body": "Mei Chen co-founded Harbor Ledger, a payments reconciliation startup, in 2021. Previously principal engineer at Brightwell Bank."
+   },
+   "thought": "We need Mei Chen who used to be principal engineer at Brightwell Bank. The search results show two Mei Chen entries: p11 (CTO at Harbor Ledger) and p12 (High school chemistry teacher). Neither indicates Brightwell Bank. But maybe the profile p11 used to be principal engineer at Brightwell Bank. We need to open p11."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p11",
+    "why": "Found Mei Chen, former principal engineer at Brightwell Bank, via search and profile details."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Mei Chen with id p11. Need to answer."
+  }
+ ],
+ "answer": {
+  "id": "p11",
+  "why": "Found Mei Chen, former principal engineer at Brightwell Bank, via search and profile details."
+ },
+ "correct": true
+}

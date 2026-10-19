@@ -1,0 +1,66 @@
+{
+ "id": "q31",
+ "query": "Find the angel investor in Fernway who founded a CRM company.",
+ "gold": "p18",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Fernway angel investor founded CRM company"
+   },
+   "result": [
+    {
+     "id": "p35",
+     "name": "Elena Rossi",
+     "headline": "COO at Fernway"
+    },
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    },
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    }
+   ],
+   "thought": "We need to find an angel investor in Fernway who founded a CRM company. Likely a person in Fernway (maybe a company or location). We need to search. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p18"
+   },
+   "result": {
+    "id": "p18",
+    "name": "Lukas Becker",
+    "headline": "Founder of Spindle CRM",
+    "city": "Berlin",
+    "body": "Lukas started Spindle CRM in 2022 after selling a small analytics shop. Angel investor in Fernway."
+   },
+   "thought": "We need angel investor in Fernway who founded a CRM company. The search returned 3 hits: Elena Rossi, Arjun Mehra, Lukas Becker. Lukas Becker is \"Founder of Spindle CRM\". Likely the angel investor. We need to confirm that Lukas Becker is an angel investor at Fernway. Let's open profile."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p18",
+    "why": "Lukas Becker is an angel investor in Fernway and founded Spindle CRM."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We need to answer with the profile id and why. The answer should be a call to answer."
+  }
+ ],
+ "answer": {
+  "id": "p18",
+  "why": "Lukas Becker is an angel investor in Fernway and founded Spindle CRM."
+ },
+ "correct": true
+}

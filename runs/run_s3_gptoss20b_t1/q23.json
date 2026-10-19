@@ -1,0 +1,57 @@
+{
+ "id": "q23",
+ "query": "Find the COO of Fernway.",
+ "gold": "p35",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 3,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "COO Fernway"
+   },
+   "result": [
+    {
+     "id": "p35",
+     "name": "Elena Rossi",
+     "headline": "COO at Fernway"
+    },
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    },
+    {
+     "id": "p06",
+     "name": "Ama Mensah",
+     "headline": "Product designer at Fernway"
+    }
+   ],
+   "thought": "We need to search for \"COO Fernway\". Let's use search."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p35",
+    "why": "COO at Fernway"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We need to submit the id with why. Use answer."
+  }
+ ],
+ "answer": {
+  "id": "p35",
+  "why": "COO at Fernway"
+ },
+ "correct": true
+}

@@ -1,0 +1,51 @@
+{
+ "id": "q16",
+ "query": "Find Arjun Mehta who co-maintains tidyledger.",
+ "gold": "p23",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Arjun Mehta tidyledger"
+   },
+   "result": [
+    {
+     "id": "p23",
+     "name": "Arjun Mehta",
+     "headline": "Open source maintainer of tidyledger"
+    },
+    {
+     "id": "p24",
+     "name": "Arjun Mehta",
+     "headline": "Cardiologist"
+    },
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    }
+   ],
+   "thought": "We need to search for Arjun Mehta. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p23",
+    "why": "Found Arjun Mehta, co-maintainer of tidyledger"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Arjun Mehta with id p23. Need to answer."
+  }
+ ],
+ "answer": {
+  "id": "p23",
+  "why": "Found Arjun Mehta, co-maintainer of tidyledger"
+ },
+ "correct": true
+}

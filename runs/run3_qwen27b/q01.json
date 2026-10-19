@@ -1,0 +1,66 @@
+{
+ "id": "q01",
+ "query": "Find Priya Raman, the engineer who builds trucking routing software.",
+ "gold": "p01",
+ "split": "dev",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Priya Raman trucking routing software engineer"
+   },
+   "result": [
+    {
+     "id": "p01",
+     "name": "Priya Raman",
+     "headline": "Staff engineer at Lumen Freight"
+    },
+    {
+     "id": "p02",
+     "name": "Priya Raman",
+     "headline": "Pediatric nurse"
+    },
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p01"
+   },
+   "result": {
+    "id": "p01",
+    "name": "Priya Raman",
+    "headline": "Staff engineer at Lumen Freight",
+    "city": "Austin",
+    "body": "Priya builds routing software for trucking. Before Lumen she spent four years at Ostrava Maps. Speaks at RustConf about allocators."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p01",
+    "why": "Priya Raman is a Staff engineer at Lumen Freight who builds routing software for trucking."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p01",
+  "why": "Priya Raman is a Staff engineer at Lumen Freight who builds routing software for trucking."
+ },
+ "correct": true
+}

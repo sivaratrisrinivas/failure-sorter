@@ -1,0 +1,91 @@
+{
+ "id": "q22",
+ "query": "Who sold a map tile CDN to Ostrava Maps?",
+ "gold": "p33",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "sold map tile CDN Ostrava Maps"
+   },
+   "result": [
+    {
+     "id": "f20",
+     "name": "Avery Silva",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f12",
+     "name": "Alex Hale",
+     "headline": "Designer at Ostrava Maps"
+    },
+    {
+     "id": "f04",
+     "name": "Riley Larsen",
+     "headline": "Designer at Ostrava Maps"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "map tile CDN founder sold"
+   },
+   "result": [
+    {
+     "id": "p33",
+     "name": "Omar Farouk",
+     "headline": "Founder of Tilepath"
+    },
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    },
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p33"
+   },
+   "result": {
+    "id": "p33",
+    "name": "Omar Farouk",
+    "headline": "Founder of Tilepath",
+    "city": "Cairo",
+    "body": "Omar built Tilepath, a map tile CDN. Sold it to Ostrava Maps in 2024. Now advises startups."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p33",
+    "why": "Omar Farouk built Tilepath, a map tile CDN, and sold it to Ostrava Maps in 2024."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p33",
+  "why": "Omar Farouk built Tilepath, a map tile CDN, and sold it to Ostrava Maps in 2024."
+ },
+ "correct": true
+}

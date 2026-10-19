@@ -1,0 +1,81 @@
+{
+ "id": "q24",
+ "query": "Find Elena Rossi who sits on the Kestrel Health board.",
+ "gold": "p35",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Elena Rossi Kestrel Health board"
+   },
+   "result": [
+    {
+     "id": "p36",
+     "name": "Elena Rossi",
+     "headline": "Fashion photographer"
+    },
+    {
+     "id": "p35",
+     "name": "Elena Rossi",
+     "headline": "COO at Fernway"
+    },
+    {
+     "id": "p03",
+     "name": "Priya Ramanathan",
+     "headline": "Founder, Kestrel Health"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p36"
+   },
+   "result": {
+    "id": "p36",
+    "name": "Elena Rossi",
+    "headline": "Fashion photographer",
+    "city": "Milan",
+    "body": "Elena Rossi shoots for magazines."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p35"
+   },
+   "result": {
+    "id": "p35",
+    "name": "Elena Rossi",
+    "headline": "COO at Fernway",
+    "city": "Milan",
+    "body": "Elena runs operations at Fernway. Ex McKinsey style consultant. Board member at Kestrel Health."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p35",
+    "why": "Elena Rossi (p35) is COO at Fernway and a board member at Kestrel Health, matching the query."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p35",
+  "why": "Elena Rossi (p35) is COO at Fernway and a board member at Kestrel Health, matching the query."
+ },
+ "correct": true
+}

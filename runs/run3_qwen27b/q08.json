@@ -1,0 +1,51 @@
+{
+ "id": "q08",
+ "query": "Find the lawyer named Daniel Okafor.",
+ "gold": "p09",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Daniel Okafor lawyer"
+   },
+   "result": [
+    {
+     "id": "p09",
+     "name": "Daniel Okafor",
+     "headline": "Partner at Okafor and Reyes LLP"
+    },
+    {
+     "id": "p08",
+     "name": "Daniel Okafor",
+     "headline": "ML engineer at Quarry AI"
+    },
+    {
+     "id": "p10",
+     "name": "Dani Okafor",
+     "headline": "Barista and illustrator"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p09",
+    "why": "Daniel Okafor, Partner at Okafor and Reyes LLP \u2014 a law firm, matching the lawyer description."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p09",
+  "why": "Daniel Okafor, Partner at Okafor and Reyes LLP \u2014 a law firm, matching the lawyer description."
+ },
+ "correct": true
+}

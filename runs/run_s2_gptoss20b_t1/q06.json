@@ -1,0 +1,72 @@
+{
+ "id": "q06",
+ "query": "Find the Fernway product designer who once interned at Lumen Freight.",
+ "gold": "p06",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 2,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Fernway product designer Lumen Freight intern"
+   },
+   "result": [
+    {
+     "id": "p06",
+     "name": "Ama Mensah",
+     "headline": "Product designer at Fernway"
+    },
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    },
+    {
+     "id": "p19",
+     "name": "Lukas Becker",
+     "headline": "Logistics coordinator at Lumen Freight"
+    }
+   ],
+   "thought": "We need to find a product designer named Fernway (?) Actually \"Fernway\" could be the company? Might be \"Fernway\" product designer. The question: Find the Fernway product designer who once interned at Lumen Freight. So the person works at Fernway as product designer and interned at Lumen Freight.\n\nWe need to find their profile index ID and answer. We must use search. Use query maybe \"Fernway product designer Lumen Freight intern\"."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p06"
+   },
+   "result": {
+    "id": "p06",
+    "name": "Ama Mensah",
+    "headline": "Product designer at Fernway",
+    "city": "Accra",
+    "body": "Ama designs onboarding flows. Former intern at Lumen Freight. Writes a newsletter called Small Screens."
+   },
+   "thought": "We need Fernway product designer who interned at Lumen Freight. The search results show a product designer at Fernway: Ama Mensah. But we need confirmation about internship at Lumen Freight. We may open the profile of Ama Mensah (id p06)."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p06",
+    "why": "Ama Mensah is a product designer at Fernway and formerly interned at Lumen Freight"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found the profile id p06. We need answer."
+  }
+ ],
+ "answer": {
+  "id": "p06",
+  "why": "Ama Mensah is a product designer at Fernway and formerly interned at Lumen Freight"
+ },
+ "correct": true
+}

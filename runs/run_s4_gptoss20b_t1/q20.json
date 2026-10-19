@@ -1,0 +1,142 @@
+{
+ "id": "q20",
+ "query": "Find the investor who led the seed round in Harbor Ledger.",
+ "gold": "p30",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger seed round lead investor"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "We need investor who led seed round in Harbor Ledger. We must search. Use search tool."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger seed round led by investor"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "Search didn't give relevant result. Need investor. Maybe need a more targeted query: \"Harbor Ledger seed round led by\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger seed funding investor"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "The search results are wrong; no relevant investor. We might need to search with more specific query. Let's try \"Harbor Ledger seed funding investor\""
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger investor"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "The search tool only returned internal company employees, not investors. The instruction: find investor who led seed round in Harbor Ledger. Maybe we need to open profile of Harbor Ledger? But we need the investor id.\n\nWe might need to find external investor, maybe a VC. But the tool search only indexes public profiles, likely not the investor. But maybe there is a profile for investor. We need to search for \"Harbor Ledger investor\" or \"Harbor Ledger seed round investor\".\n\nLet's try search again with \"Harbor Ledger investor\""
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger seed round led by"
+   },
+   "result": [
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    },
+    {
+     "id": "f11",
+     "name": "Sky Adeyemi",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "The search tool only returned internal company employees, not investors. Need to find the lead investor. Maybe the seed round lead investor is \"Atlas Venture\"? Or \"Kleiner Perkins\"? Let's recall: Harbor Ledger is a fintech. Could be \"J.P. Morgan\" etc. But we need specific person. Might be \"Michael S. Li\" from \"Y Combinator\"? Wait.\n\nWe might need to open a profile that is investor. Let's search for \"Harbor Ledger investor lead\" maybe \"Harbor Ledger seed round led by investor\".\n\nBut search results show only company employees. Maybe the index is incomplete. Let's try searching for \"Harbor Ledger\" + \"seed\" + \"Series A\" + \"investment\". But maybe the investor is \"Kai Zhao\" from \"Silicon Valley Venture\". Let's try search again.\n\n"
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

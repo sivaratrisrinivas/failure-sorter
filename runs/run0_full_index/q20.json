@@ -1,0 +1,66 @@
+{
+ "id": "q20",
+ "query": "Find the investor who led the seed round in Harbor Ledger.",
+ "gold": "p30",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Harbor Ledger seed round led by investor"
+   },
+   "result": [
+    {
+     "id": "p30",
+     "name": "Grace Kim",
+     "headline": "General partner at Northbeam Ventures"
+    },
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    },
+    {
+     "id": "f19",
+     "name": "Jamie Tan",
+     "headline": "Intern at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to find the investor who led the seed round in Harbor Ledger. Likely a startup. We need to search. Use search tool."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p30"
+   },
+   "result": {
+    "id": "p30",
+    "name": "Grace Kim",
+    "headline": "General partner at Northbeam Ventures",
+    "city": "New York",
+    "body": "Grace invests in fintech. Led the seed in Harbor Ledger and Spindle CRM."
+   },
+   "thought": "Search results show Grace Kim, Lukas Becker, Jamie Tan. We need investor who led seed round in Harbor Ledger. Likely Grace Kim? Let's open Grace Kim."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p30",
+    "why": "Grace Kim led the seed round in Harbor Ledger"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Grace Kim. Need to answer."
+  }
+ ],
+ "answer": {
+  "id": "p30",
+  "why": "Grace Kim led the seed round in Harbor Ledger"
+ },
+ "correct": true
+}

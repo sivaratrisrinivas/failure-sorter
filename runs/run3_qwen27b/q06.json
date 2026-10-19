@@ -1,0 +1,66 @@
+{
+ "id": "q06",
+ "query": "Find the Fernway product designer who once interned at Lumen Freight.",
+ "gold": "p06",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Fernway product designer Lumen Freight intern"
+   },
+   "result": [
+    {
+     "id": "p06",
+     "name": "Ama Mensah",
+     "headline": "Product designer at Fernway"
+    },
+    {
+     "id": "p25",
+     "name": "Arjun Mehra",
+     "headline": "Product manager at Fernway"
+    },
+    {
+     "id": "p19",
+     "name": "Lukas Becker",
+     "headline": "Logistics coordinator at Lumen Freight"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p06"
+   },
+   "result": {
+    "id": "p06",
+    "name": "Ama Mensah",
+    "headline": "Product designer at Fernway",
+    "city": "Accra",
+    "body": "Ama designs onboarding flows. Former intern at Lumen Freight. Writes a newsletter called Small Screens."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p06",
+    "why": "Ama Mensah is a product designer at Fernway and her profile notes she was a former intern at Lumen Freight."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p06",
+  "why": "Ama Mensah is a product designer at Fernway and her profile notes she was a former intern at Lumen Freight."
+ },
+ "correct": true
+}

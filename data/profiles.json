@@ -1,0 +1,450 @@
+[
+ {
+  "id": "p01",
+  "name": "Priya Raman",
+  "headline": "Staff engineer at Lumen Freight",
+  "city": "Austin",
+  "body": "Priya builds routing software for trucking. Before Lumen she spent four years at Ostrava Maps. Speaks at RustConf about allocators."
+ },
+ {
+  "id": "p02",
+  "name": "Priya Raman",
+  "headline": "Pediatric nurse",
+  "city": "Austin",
+  "body": "Priya Raman works night shifts at St. Brigid Children's. Runs a weekend 10k club. No software background."
+ },
+ {
+  "id": "p03",
+  "name": "Priya Ramanathan",
+  "headline": "Founder, Kestrel Health",
+  "city": "Boston",
+  "body": "Priya Ramanathan started Kestrel Health after a PhD in biostatistics. Kestrel sells claim audits to clinics."
+ },
+ {
+  "id": "p04",
+  "name": "Tomas Lindqvist",
+  "headline": "Head of data at Brightwell Bank",
+  "city": "Stockholm",
+  "body": "Tomas leads a team of 12 analysts. He previously worked at Ostrava Maps on geocoding. Maintains the open source library tidyledger."
+ },
+ {
+  "id": "p05",
+  "name": "Tomas Lindquist",
+  "headline": "Carpenter and furniture maker",
+  "city": "Minneapolis",
+  "body": "Tomas Lindquist makes walnut tables. Teaches a joinery class on Saturdays."
+ },
+ {
+  "id": "p06",
+  "name": "Ama Mensah",
+  "headline": "Product designer at Fernway",
+  "city": "Accra",
+  "body": "Ama designs onboarding flows. Former intern at Lumen Freight. Writes a newsletter called Small Screens."
+ },
+ {
+  "id": "p07",
+  "name": "Ama Mensah-Boateng",
+  "headline": "VP Marketing at Cobalt Ice",
+  "city": "London",
+  "body": "Ama Mensah-Boateng runs brand for a frozen dessert company. Joined from Unilever-style CPG roles."
+ },
+ {
+  "id": "p08",
+  "name": "Daniel Okafor",
+  "headline": "ML engineer at Quarry AI",
+  "city": "San Francisco",
+  "body": "Daniel trains ranking models. Ex Fernway. Co-author of a paper on retrieval for tabular data."
+ },
+ {
+  "id": "p09",
+  "name": "Daniel Okafor",
+  "headline": "Partner at Okafor and Reyes LLP",
+  "city": "Lagos",
+  "body": "Daniel Okafor practices commercial law. Sits on the board of a youth chess league."
+ },
+ {
+  "id": "p10",
+  "name": "Dani Okafor",
+  "headline": "Barista and illustrator",
+  "city": "Portland",
+  "body": "Dani Okafor draws comics about coffee. Sells prints online."
+ },
+ {
+  "id": "p11",
+  "name": "Mei Chen",
+  "headline": "CTO at Harbor Ledger",
+  "city": "Singapore",
+  "body": "Mei Chen co-founded Harbor Ledger, a payments reconciliation startup, in 2021. Previously principal engineer at Brightwell Bank."
+ },
+ {
+  "id": "p12",
+  "name": "Mei Chen",
+  "headline": "High school chemistry teacher",
+  "city": "Vancouver",
+  "body": "Mei Chen teaches AP chemistry. Coaches the robotics team."
+ },
+ {
+  "id": "p13",
+  "name": "Mei Chen-Watts",
+  "headline": "Recruiter at Quarry AI",
+  "city": "San Francisco",
+  "body": "Mei Chen-Watts hires ML engineers. Hosts a podcast about interviewing."
+ },
+ {
+  "id": "p14",
+  "name": "Rafael Duarte",
+  "headline": "Security researcher",
+  "city": "Lisbon",
+  "body": "Rafael finds bugs in payment SDKs. Formerly at Harbor Ledger. Known handle: rduarte_sec."
+ },
+ {
+  "id": "p15",
+  "name": "Rafael Duarte",
+  "headline": "Chef and owner of Casa Duarte",
+  "city": "Porto",
+  "body": "Rafael Duarte runs a seafood restaurant. Won a regional award in 2023."
+ },
+ {
+  "id": "p16",
+  "name": "Hana Sato",
+  "headline": "Engineering manager at Ostrava Maps",
+  "city": "Tokyo",
+  "body": "Hana manages the search team at Ostrava Maps. Previously at Quarry AI. Organizes a monthly Go meetup."
+ },
+ {
+  "id": "p17",
+  "name": "Hana Satou",
+  "headline": "Violinist",
+  "city": "Osaka",
+  "body": "Hana Satou plays with a chamber orchestra."
+ },
+ {
+  "id": "p18",
+  "name": "Lukas Becker",
+  "headline": "Founder of Spindle CRM",
+  "city": "Berlin",
+  "body": "Lukas started Spindle CRM in 2022 after selling a small analytics shop. Angel investor in Fernway."
+ },
+ {
+  "id": "p19",
+  "name": "Lukas Becker",
+  "headline": "Logistics coordinator at Lumen Freight",
+  "city": "Hamburg",
+  "body": "Lukas Becker schedules cross dock transfers. Works with the routing team."
+ },
+ {
+  "id": "p20",
+  "name": "Lucas Baker",
+  "headline": "Sales lead at Spindle CRM",
+  "city": "Berlin",
+  "body": "Lucas Baker sells CRM seats to mid market firms. Ex Cobalt Ice."
+ },
+ {
+  "id": "p21",
+  "name": "Sofia Marquez",
+  "headline": "Data scientist at Kestrel Health",
+  "city": "Boston",
+  "body": "Sofia builds risk models for claim audits. Ex Brightwell Bank analyst. Rock climber."
+ },
+ {
+  "id": "p22",
+  "name": "Sofia Marquez",
+  "headline": "Real estate agent",
+  "city": "Miami",
+  "body": "Sofia Marquez sells condos in Brickell."
+ },
+ {
+  "id": "p23",
+  "name": "Arjun Mehta",
+  "headline": "Open source maintainer of tidyledger",
+  "city": "Pune",
+  "body": "Arjun co-maintains tidyledger with Tomas Lindqvist. Works as a contractor for Harbor Ledger."
+ },
+ {
+  "id": "p24",
+  "name": "Arjun Mehta",
+  "headline": "Cardiologist",
+  "city": "Mumbai",
+  "body": "Dr. Arjun Mehta practices at a heart institute."
+ },
+ {
+  "id": "p25",
+  "name": "Arjun Mehra",
+  "headline": "Product manager at Fernway",
+  "city": "Bangalore",
+  "body": "Arjun Mehra owns the payments roadmap at Fernway."
+ },
+ {
+  "id": "p26",
+  "name": "Noor Haddad",
+  "headline": "Head of research at Quarry AI",
+  "city": "Toronto",
+  "body": "Noor leads the research group. PhD in information retrieval. Previously a scientist at Ostrava Maps."
+ },
+ {
+  "id": "p27",
+  "name": "Noor Haddad",
+  "headline": "Journalist covering energy",
+  "city": "Amman",
+  "body": "Noor Haddad writes about oil and solar markets."
+ },
+ {
+  "id": "p28",
+  "name": "Ivan Petrov",
+  "headline": "Site reliability engineer at Harbor Ledger",
+  "city": "Sofia",
+  "body": "Ivan runs on call for the ledger. Ex Lumen Freight. Writes about Postgres failover."
+ },
+ {
+  "id": "p29",
+  "name": "Ivan Petrov",
+  "headline": "Hockey coach",
+  "city": "Toronto",
+  "body": "Ivan Petrov coaches junior hockey."
+ },
+ {
+  "id": "p30",
+  "name": "Grace Kim",
+  "headline": "General partner at Northbeam Ventures",
+  "city": "New York",
+  "body": "Grace invests in fintech. Led the seed in Harbor Ledger and Spindle CRM."
+ },
+ {
+  "id": "p31",
+  "name": "Grace Kim",
+  "headline": "UX researcher at Cobalt Ice",
+  "city": "Seoul",
+  "body": "Grace Kim runs taste tests and user interviews."
+ },
+ {
+  "id": "p32",
+  "name": "Grace Kimball",
+  "headline": "Author",
+  "city": "New York",
+  "body": "Grace Kimball writes mystery novels."
+ },
+ {
+  "id": "p33",
+  "name": "Omar Farouk",
+  "headline": "Founder of Tilepath",
+  "city": "Cairo",
+  "body": "Omar built Tilepath, a map tile CDN. Sold it to Ostrava Maps in 2024. Now advises startups."
+ },
+ {
+  "id": "p34",
+  "name": "Omar Farouk",
+  "headline": "Accountant",
+  "city": "Dubai",
+  "body": "Omar Farouk audits small businesses."
+ },
+ {
+  "id": "p35",
+  "name": "Elena Rossi",
+  "headline": "COO at Fernway",
+  "city": "Milan",
+  "body": "Elena runs operations at Fernway. Ex McKinsey style consultant. Board member at Kestrel Health."
+ },
+ {
+  "id": "p36",
+  "name": "Elena Rossi",
+  "headline": "Fashion photographer",
+  "city": "Milan",
+  "body": "Elena Rossi shoots for magazines."
+ },
+ {
+  "id": "p37",
+  "name": "Kwame Asante",
+  "headline": "Platform engineer at Spindle CRM",
+  "city": "Accra",
+  "body": "Kwame runs the Kubernetes platform at Spindle CRM. Former Lumen Freight SRE."
+ },
+ {
+  "id": "p38",
+  "name": "Kwame Asante",
+  "headline": "Football agent",
+  "city": "Kumasi",
+  "body": "Kwame Asante represents young footballers."
+ },
+ {
+  "id": "p39",
+  "name": "Julia Novak",
+  "headline": "Principal engineer at Brightwell Bank",
+  "city": "Prague",
+  "body": "Julia replaced Mei Chen as principal engineer. Works on the core ledger."
+ },
+ {
+  "id": "p40",
+  "name": "Julia Nowak",
+  "headline": "Dentist",
+  "city": "Krakow",
+  "body": "Julia Nowak runs a family dental practice."
+ },
+ {
+  "id": "f00",
+  "name": "Alex Hale",
+  "headline": "Account executive at Lumen Freight",
+  "city": "Boston",
+  "body": "Works at Lumen Freight as account executive. Previously at Harbor Ledger. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f01",
+  "name": "Sam Byrne",
+  "headline": "Support engineer at Fernway",
+  "city": "Berlin",
+  "body": "Works at Fernway as support engineer. Previously at Ostrava Maps. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f02",
+  "name": "Jordan Varga",
+  "headline": "Office manager at Quarry AI",
+  "city": "San Francisco",
+  "body": "Works at Quarry AI as office manager. Previously at Brightwell Bank. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f03",
+  "name": "Taylor Nakamura",
+  "headline": "Intern at Harbor Ledger",
+  "city": "Tokyo",
+  "body": "Works at Harbor Ledger as intern. Previously at Spindle CRM. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f04",
+  "name": "Riley Larsen",
+  "headline": "Designer at Ostrava Maps",
+  "city": "Austin",
+  "body": "Works at Ostrava Maps as designer. Previously at Kestrel Health. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f05",
+  "name": "Casey Moreau",
+  "headline": "Analyst at Brightwell Bank",
+  "city": "Austin",
+  "body": "Works at Brightwell Bank as analyst. Previously at Lumen Freight. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f06",
+  "name": "Morgan Kowal",
+  "headline": "Data engineer at Spindle CRM",
+  "city": "London",
+  "body": "Works at Spindle CRM as data engineer. Previously at Fernway. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f07",
+  "name": "Jamie Tan",
+  "headline": "Recruiter at Kestrel Health",
+  "city": "Singapore",
+  "body": "Works at Kestrel Health as recruiter. Previously at Quarry AI. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f08",
+  "name": "Avery Silva",
+  "headline": "Account executive at Lumen Freight",
+  "city": "Austin",
+  "body": "Works at Lumen Freight as account executive. Previously at Harbor Ledger. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f09",
+  "name": "Quinn Ortiz",
+  "headline": "Support engineer at Fernway",
+  "city": "Boston",
+  "body": "Works at Fernway as support engineer. Previously at Ostrava Maps. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f10",
+  "name": "Rowan Ivanova",
+  "headline": "Office manager at Quarry AI",
+  "city": "Singapore",
+  "body": "Works at Quarry AI as office manager. Previously at Brightwell Bank. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f11",
+  "name": "Sky Adeyemi",
+  "headline": "Intern at Harbor Ledger",
+  "city": "Austin",
+  "body": "Works at Harbor Ledger as intern. Previously at Spindle CRM. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f12",
+  "name": "Alex Hale",
+  "headline": "Designer at Ostrava Maps",
+  "city": "Singapore",
+  "body": "Works at Ostrava Maps as designer. Previously at Kestrel Health. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f13",
+  "name": "Sam Byrne",
+  "headline": "Analyst at Brightwell Bank",
+  "city": "Berlin",
+  "body": "Works at Brightwell Bank as analyst. Previously at Lumen Freight. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f14",
+  "name": "Jordan Varga",
+  "headline": "Data engineer at Spindle CRM",
+  "city": "Austin",
+  "body": "Works at Spindle CRM as data engineer. Previously at Fernway. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f15",
+  "name": "Taylor Nakamura",
+  "headline": "Recruiter at Kestrel Health",
+  "city": "Austin",
+  "body": "Works at Kestrel Health as recruiter. Previously at Quarry AI. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f16",
+  "name": "Riley Larsen",
+  "headline": "Account executive at Lumen Freight",
+  "city": "San Francisco",
+  "body": "Works at Lumen Freight as account executive. Previously at Harbor Ledger. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f17",
+  "name": "Casey Moreau",
+  "headline": "Support engineer at Fernway",
+  "city": "San Francisco",
+  "body": "Works at Fernway as support engineer. Previously at Ostrava Maps. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f18",
+  "name": "Morgan Kowal",
+  "headline": "Office manager at Quarry AI",
+  "city": "Austin",
+  "body": "Works at Quarry AI as office manager. Previously at Brightwell Bank. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f19",
+  "name": "Jamie Tan",
+  "headline": "Intern at Harbor Ledger",
+  "city": "Berlin",
+  "body": "Works at Harbor Ledger as intern. Previously at Spindle CRM. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f20",
+  "name": "Avery Silva",
+  "headline": "Designer at Ostrava Maps",
+  "city": "Austin",
+  "body": "Works at Ostrava Maps as designer. Previously at Kestrel Health. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f21",
+  "name": "Quinn Ortiz",
+  "headline": "Analyst at Brightwell Bank",
+  "city": "Singapore",
+  "body": "Works at Brightwell Bank as analyst. Previously at Lumen Freight. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f22",
+  "name": "Rowan Ivanova",
+  "headline": "Data engineer at Spindle CRM",
+  "city": "San Francisco",
+  "body": "Works at Spindle CRM as data engineer. Previously at Fernway. Mentions search, routing, ledger and payments in posts."
+ },
+ {
+  "id": "f23",
+  "name": "Sky Adeyemi",
+  "headline": "Recruiter at Kestrel Health",
+  "city": "Austin",
+  "body": "Works at Kestrel Health as recruiter. Previously at Quarry AI. Mentions search, routing, ledger and payments in posts."
+ }
+]

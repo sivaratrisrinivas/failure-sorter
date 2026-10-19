@@ -1,0 +1,66 @@
+{
+ "id": "q18",
+ "query": "Find Noor Haddad, the information retrieval researcher.",
+ "gold": "p26",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Noor Haddad information retrieval researcher"
+   },
+   "result": [
+    {
+     "id": "p26",
+     "name": "Noor Haddad",
+     "headline": "Head of research at Quarry AI"
+    },
+    {
+     "id": "p27",
+     "name": "Noor Haddad",
+     "headline": "Journalist covering energy"
+    },
+    {
+     "id": "p31",
+     "name": "Grace Kim",
+     "headline": "UX researcher at Cobalt Ice"
+    }
+   ],
+   "thought": "We need to search for Noor Haddad. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p26"
+   },
+   "result": {
+    "id": "p26",
+    "name": "Noor Haddad",
+    "headline": "Head of research at Quarry AI",
+    "city": "Toronto",
+    "body": "Noor leads the research group. PhD in information retrieval. Previously a scientist at Ostrava Maps."
+   },
+   "thought": "We need Noor Haddad, information retrieval researcher. The search results show two Noor Haddad entries: p26 and p27. p26 is Head of research at Quarry AI, p27 is journalist covering energy. Neither explicitly says information retrieval researcher. Maybe the profile includes more details. Let's open p26."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p26",
+    "why": "Found Noor Haddad, information retrieval researcher, ID p26"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Noor Haddad, ID p26. Need to answer."
+  }
+ ],
+ "answer": {
+  "id": "p26",
+  "why": "Found Noor Haddad, information retrieval researcher, ID p26"
+ },
+ "correct": true
+}

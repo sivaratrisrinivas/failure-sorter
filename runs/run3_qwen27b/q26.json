@@ -1,0 +1,66 @@
+{
+ "id": "q26",
+ "query": "Who replaced Mei Chen as principal engineer at Brightwell Bank?",
+ "gold": "p39",
+ "split": "heldout",
+ "model": "qwen/qwen3.8-27b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "principal engineer Brightwell Bank"
+   },
+   "result": [
+    {
+     "id": "p39",
+     "name": "Julia Novak",
+     "headline": "Principal engineer at Brightwell Bank"
+    },
+    {
+     "id": "f21",
+     "name": "Quinn Ortiz",
+     "headline": "Analyst at Brightwell Bank"
+    },
+    {
+     "id": "f13",
+     "name": "Sam Byrne",
+     "headline": "Analyst at Brightwell Bank"
+    }
+   ],
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p39"
+   },
+   "result": {
+    "id": "p39",
+    "name": "Julia Novak",
+    "headline": "Principal engineer at Brightwell Bank",
+    "city": "Prague",
+    "body": "Julia replaced Mei Chen as principal engineer. Works on the core ledger."
+   },
+   "thought": null
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p39",
+    "why": "Profile states Julia Novak replaced Mei Chen as principal engineer at Brightwell Bank."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": null
+  }
+ ],
+ "answer": {
+  "id": "p39",
+  "why": "Profile states Julia Novak replaced Mei Chen as principal engineer at Brightwell Bank."
+ },
+ "correct": true
+}

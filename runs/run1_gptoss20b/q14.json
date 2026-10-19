@@ -1,0 +1,61 @@
+{
+ "id": "q14",
+ "query": "Find the Lukas Becker who works in logistics in Hamburg.",
+ "gold": "p19",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Lukas Becker logistics Hamburg"
+   },
+   "result": [
+    {
+     "id": "p19",
+     "name": "Lukas Becker",
+     "headline": "Logistics coordinator at Lumen Freight"
+    },
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    }
+   ],
+   "thought": "We need to search for Lukas Becker logistics Hamburg. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p19"
+   },
+   "result": {
+    "id": "p19",
+    "name": "Lukas Becker",
+    "headline": "Logistics coordinator at Lumen Freight",
+    "city": "Hamburg",
+    "body": "Lukas Becker schedules cross dock transfers. Works with the routing team."
+   },
+   "thought": "We have two results. Need the one who works in logistics in Hamburg. The first: \"Logistics coordinator at Lumen Freight\". Likely in Hamburg? We need to confirm city. Open profile."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p19",
+    "why": "Found Lukas Becker, logistics coordinator at Lumen Freight in Hamburg"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Lukas Becker with id p19. Need to answer."
+  }
+ ],
+ "answer": {
+  "id": "p19",
+  "why": "Found Lukas Becker, logistics coordinator at Lumen Freight in Hamburg"
+ },
+ "correct": true
+}
