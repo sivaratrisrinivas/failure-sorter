@@ -1,0 +1,24 @@
+name: ci
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pytest
+      - run: python -m pytest -q tests
+      - name: Labeler output matches committed data.json
+        run: |
+          cp docs/data.json /tmp/committed.json
+          python sorter/label.py > /dev/null
+          python -c "import json;a=json.load(open('/tmp/committed.json'))['report'];b=json.load(open('docs/data.json'))['report'];assert a==b,'report drifted'"
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
