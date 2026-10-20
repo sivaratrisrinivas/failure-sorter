@@ -1,0 +1,112 @@
+{
+ "id": "q43",
+ "query": "Find the Sofia Marquez who is a rock climber.",
+ "gold": "p21",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Sofia Marquez rock climber"
+   },
+   "result": [
+    {
+     "id": "p22",
+     "name": "Sofia Marquez",
+     "headline": "Real estate agent"
+    },
+    {
+     "id": "p21",
+     "name": "Sofia Marquez",
+     "headline": "Data scientist at Kestrel Health"
+    }
+   ],
+   "thought": "We need to search for Sofia Marquez rock climber. Likely a public profile. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Sofia Marquez climber"
+   },
+   "result": [
+    {
+     "id": "p22",
+     "name": "Sofia Marquez",
+     "headline": "Real estate agent"
+    },
+    {
+     "id": "p21",
+     "name": "Sofia Marquez",
+     "headline": "Data scientist at Kestrel Health"
+    }
+   ],
+   "thought": "Search results: two Sofia Marquez but not rock climber. We need find one who is a rock climber. Maybe profile includes rock climbing as hobby. Search again with \"Sofia Marquez climber\""
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Sofia Marquez climbing"
+   },
+   "result": [
+    {
+     "id": "p22",
+     "name": "Sofia Marquez",
+     "headline": "Real estate agent"
+    },
+    {
+     "id": "p21",
+     "name": "Sofia Marquez",
+     "headline": "Data scientist at Kestrel Health"
+    }
+   ],
+   "thought": "We have no rock climber result. Maybe the profile name \"Sofia Marquez\" with rock climbing in bio. We might need to open a profile. But we only have two results: p22 Real estate agent, p21 Data scientist. Neither seems rock climber. Could be a third profile not in top 3. Search with \"Sofia Marquez climbing\" maybe? Let's try."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p22"
+   },
+   "result": {
+    "id": "p22",
+    "name": "Sofia Marquez",
+    "headline": "Real estate agent",
+    "city": "Miami",
+    "body": "Sofia Marquez sells condos in Brickell."
+   },
+   "thought": "We have no rock climber result. Maybe the profile name not exact. Try just \"Sofia Marquez climbing\". Already did. Perhaps the person is not in top 3. We only get 2 results. Might be we need to use open_profile to see bio. But we don't know which is rock climber. Let's open p22 and p21."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Sofia Marquez rock climber profile"
+   },
+   "result": [
+    {
+     "id": "p22",
+     "name": "Sofia Marquez",
+     "headline": "Real estate agent"
+    },
+    {
+     "id": "p21",
+     "name": "Sofia Marquez",
+     "headline": "Data scientist at Kestrel Health"
+    }
+   ],
+   "thought": "We didn't find a rock climber. Maybe the profile not searchable by that. Use different query: \"Sofia Marquez climber profile\". Let's search again."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

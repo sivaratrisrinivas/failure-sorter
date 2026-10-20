@@ -1,0 +1,72 @@
+{
+ "id": "q42",
+ "query": "Find the Grace Kim who invested in Spindle CRM.",
+ "gold": "p30",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 2,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Grace Kim Spindle CRM investment"
+   },
+   "result": [
+    {
+     "id": "p31",
+     "name": "Grace Kim",
+     "headline": "UX researcher at Cobalt Ice"
+    },
+    {
+     "id": "p30",
+     "name": "Grace Kim",
+     "headline": "General partner at Northbeam Ventures"
+    },
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    }
+   ],
+   "thought": "We need to find Grace Kim who invested in Spindle CRM. Likely in some investment news. Use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p30"
+   },
+   "result": {
+    "id": "p30",
+    "name": "Grace Kim",
+    "headline": "General partner at Northbeam Ventures",
+    "city": "New York",
+    "body": "Grace invests in fintech. Led the seed in Harbor Ledger and Spindle CRM."
+   },
+   "thought": "We need Grace Kim who invested in Spindle CRM. The search results: Grace Kim at Cobalt Ice; Grace Kim at Northbeam Ventures. Which one invested? We need to find a profile that indicates investment. Probably the partner at Northbeam Ventures. Let's open that."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p30",
+    "why": "Grace Kim is a general partner at Northbeam Ventures and is listed as having led the seed investment in Spindle CRM."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found Grace Kim, ID p30, invests in Spindle CRM. We should answer."
+  }
+ ],
+ "answer": {
+  "id": "p30",
+  "why": "Grace Kim is a general partner at Northbeam Ventures and is listed as having led the seed investment in Spindle CRM."
+ },
+ "correct": true
+}

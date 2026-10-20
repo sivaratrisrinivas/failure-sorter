@@ -1,0 +1,68 @@
+{
+ "id": "q37",
+ "query": "Who teaches a joinery class on Saturdays?",
+ "gold": "p05",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "joinery class on Saturdays"
+   },
+   "result": [],
+   "thought": "We need to find a specific person who teaches a joinery class on Saturdays. Use search. Probably the person is named in some context? We have no context. We need to search for \"joinery class on Saturdays\" in profile index. We'll search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Saturday joinery instructor"
+   },
+   "result": [],
+   "thought": "No results. Maybe different phrasing: \"Saturday joinery\" \"joinery instructor\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "\"joinery\" \"Saturday\" teacher"
+   },
+   "result": [
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    }
+   ],
+   "thought": "We need find a specific person who teaches a joinery class on Saturdays. Might need to search for \"joinery\" and \"Saturdays\". Could be a local community college or workshop. Maybe a teacher named \"Sally\"? But we don't know. Let's broaden. Search for \"joinery class Saturday\" and \"teacher\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "joinery instructor"
+   },
+   "result": [],
+   "thought": "The search only returned one result, which is a high school chemistry teacher, not likely the joinery instructor. Need more targeted query. Perhaps the person is a woodworker or carpenter. Let's try \"joinery instructor\" alone."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "joinery"
+   },
+   "result": [],
+   "thought": "We need find a specific person in profile index who teaches a joinery class on Saturdays. We need to search the profile index. Maybe a profile list? We have no index. We need to search. Possibly the answer is a particular profile. Search for \"joinery class\" might yield. Try search \"joinery\" only."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

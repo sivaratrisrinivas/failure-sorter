@@ -1,0 +1,57 @@
+{
+ "id": "q28",
+ "query": "Find the person at Quarry AI who hires ML engineers.",
+ "gold": "p13",
+ "split": "dev",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 2,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Quarry AI ML engineer hiring"
+   },
+   "result": [
+    {
+     "id": "p08",
+     "name": "Daniel Okafor",
+     "headline": "ML engineer at Quarry AI"
+    },
+    {
+     "id": "p13",
+     "name": "Mei Chen-Watts",
+     "headline": "Recruiter at Quarry AI"
+    },
+    {
+     "id": "f18",
+     "name": "Morgan Kowal",
+     "headline": "Office manager at Quarry AI"
+    }
+   ],
+   "thought": "We need to find a specific person in a profile index. Query: \"Quarry AI hires ML engineers\" or \"Quarry AI ML engineer hiring\". Let's search."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p13",
+    "why": "Recruiter at Quarry AI"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We need person at Quarry AI who hires ML engineers. Likely a recruiter: Mei Chen-Watts. Use answer."
+  }
+ ],
+ "answer": {
+  "id": "p13",
+  "why": "Recruiter at Quarry AI"
+ },
+ "correct": true
+}

@@ -1,0 +1,62 @@
+{
+ "id": "q41",
+ "query": "Who runs a weekend 10k club in Austin?",
+ "gold": "p02",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 0.0,
+ "seed": 1,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "weekend 10k club Austin"
+   },
+   "result": [],
+   "thought": "We need to find a person in profile index who runs a weekend 10k club in Austin. Likely a running club organizer. Search query: \"weekend 10k club Austin\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "10k club Austin"
+   },
+   "result": [],
+   "thought": "No results. Maybe phrase \"weekend 10k club\" is not common. Could be \"Weekend 10k\" or \"10k club\" in Austin. Let's search \"10k club Austin\""
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Austin 10k club"
+   },
+   "result": [],
+   "thought": "We need to find a person who runs a weekend 10k club in Austin. Likely a running club organizer. Could be \"Austin 10K Club\" or \"Austin 10K Weekend Club\". Let's search for \"Austin 10k club\" again. Maybe the profile index contains a profile of a person. Let's search for \"Austin 10k club\" again."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "\"10k club\" Austin"
+   },
+   "result": [],
+   "thought": "No results. Maybe the club is run by a person with a profile. Could be \"Austin 10k club\" maybe \"Austin 10k club\" is a group. Search for \"10k club Austin\" again but maybe with quotes? Let's try \"10k club\" Austin."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Weekend 10k club"
+   },
+   "result": [],
+   "thought": "No results. Maybe the club is called \"Weekend 10k Club\" or \"Weekend 10k\". Could be a running group. Maybe the person is a coach or organizer. Search for \"Weekend 10k club\" alone."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

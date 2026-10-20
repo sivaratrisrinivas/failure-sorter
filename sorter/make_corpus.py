@@ -92,8 +92,15 @@ Q = [
  ("q32","Find the person who co-maintains tidyledger and contracts for Harbor Ledger.","p23"),
 ]
 json.dump(P, open("data/profiles.json","w"), indent=1)
+# Keep any held-out queries already in the file (q33 and up). q01-q32 are dev:
+# their traces were read during error analysis, so they cannot be held out.
+import os
+kept = []
+if os.path.exists("data/queries.jsonl"):
+    kept = [json.loads(l) for l in open("data/queries.jsonl") if json.loads(l)["split"] == "heldout"]
 with open("data/queries.jsonl","w") as f:
     for qid,q,g in Q:
-        # held-out split fixed by id parity, decided before any run
-        f.write(json.dumps({"id":qid,"query":q,"gold":g,"split":"dev" if int(qid[1:])%2 else "heldout"})+"\n")
+        f.write(json.dumps({"id":qid,"query":q,"gold":g,"split":"dev"})+"\n")
+    for r in kept:
+        f.write(json.dumps(r)+"\n")
 print(len(P),"profiles",len(Q),"queries")

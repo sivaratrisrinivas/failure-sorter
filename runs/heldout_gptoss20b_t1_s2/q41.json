@@ -1,0 +1,62 @@
+{
+ "id": "q41",
+ "query": "Who runs a weekend 10k club in Austin?",
+ "gold": "p02",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 2,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "weekend 10k club Austin runner"
+   },
+   "result": [],
+   "thought": "We need to find a profile of someone who runs a weekend 10k club in Austin. Likely a running club organizer. We need to search. Use search function."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "10k club Austin weekend"
+   },
+   "result": [],
+   "thought": "No results. Try different search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "10k club Austin"
+   },
+   "result": [],
+   "thought": "We need to find a profile of someone who runs a weekend 10k club in Austin. We need to search. Maybe the person is a running club founder. Maybe \"Austin 10k club\" is something. Let's try searching for \"weekend 10k club Austin\" maybe not enough. Use broader: \"10k club Austin\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Austin \"10k club\""
+   },
+   "result": [],
+   "thought": "No results. Maybe the name is in profile index with different wording. Let's try search for \"Austin 10k club\" or \"weekend 10k\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Weekend 10k Austin club"
+   },
+   "result": [],
+   "thought": "No results. Maybe the name is not \"10k club\". Could be \"Weekend 10k\" club. Let's search for \"Weekend 10k Austin\" or \"Weekend 10k club Austin\"."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

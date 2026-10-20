@@ -1,0 +1,78 @@
+{
+ "id": "q35",
+ "query": "Find the person who sells prints of comics about coffee.",
+ "gold": "p10",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "sells prints of comics about coffee"
+   },
+   "result": [
+    {
+     "id": "p33",
+     "name": "Omar Farouk",
+     "headline": "Founder of Tilepath"
+    },
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    },
+    {
+     "id": "p23",
+     "name": "Arjun Mehta",
+     "headline": "Open source maintainer of tidyledger"
+    }
+   ],
+   "thought": "We need to find a person in profile index who sells prints of comics about coffee. Likely a profile of someone selling coffee-themed comic prints. We'll search."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee comics prints"
+   },
+   "result": [],
+   "thought": "Search results irrelevant. We need to find person who sells prints of comics about coffee. Might be a vendor, maybe in profile index. Need to search differently. Let's try \"coffee comics prints\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee comic prints seller"
+   },
+   "result": [],
+   "thought": "We need person who sells prints of comics about coffee. Let's broaden: \"coffee\" \"comic\" \"prints\". Maybe \"coffee comics\" \"art prints\". Search again."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee-themed comic prints"
+   },
+   "result": [],
+   "thought": "We need a person who sells prints of comics about coffee. Let's search more generally for \"coffee comic prints seller\". Maybe the person sells coffee-themed comic prints. Could be an artist. Let's try \"coffee-themed comic prints\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee comic art prints"
+   },
+   "result": [],
+   "thought": "We need find person sells prints of comics about coffee. We got search results that seem unrelated. Maybe need refine search terms. \"Coffee comics prints seller\" maybe \"coffee comic art prints\". Search."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

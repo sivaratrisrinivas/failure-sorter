@@ -1,0 +1,72 @@
+{
+ "id": "q33",
+ "query": "Find the Rafael Duarte who used to work at Harbor Ledger.",
+ "gold": "p14",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Rafael Duarte Harbor Ledger"
+   },
+   "result": [
+    {
+     "id": "p14",
+     "name": "Rafael Duarte",
+     "headline": "Security researcher"
+    },
+    {
+     "id": "p15",
+     "name": "Rafael Duarte",
+     "headline": "Chef and owner of Casa Duarte"
+    },
+    {
+     "id": "p11",
+     "name": "Mei Chen",
+     "headline": "CTO at Harbor Ledger"
+    }
+   ],
+   "thought": "We need to find Rafael Duarte who used to work at Harbor Ledger. Use search query."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p14"
+   },
+   "result": {
+    "id": "p14",
+    "name": "Rafael Duarte",
+    "headline": "Security researcher",
+    "city": "Lisbon",
+    "body": "Rafael finds bugs in payment SDKs. Formerly at Harbor Ledger. Known handle: rduarte_sec."
+   },
+   "thought": "We have two Rafael Duarte hits, but we need the one that used to work at Harbor Ledger. The search returned 2 Radu? Actually, two Rafael Duarte. We need to open both to check employment. Let's open each.\n\n"
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p14",
+    "why": "The profile indicates Rafael Duarte, formerly at Harbor Ledger, as a security researcher."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have the profile. We need to answer with id, and why."
+  }
+ ],
+ "answer": {
+  "id": "p14",
+  "why": "The profile indicates Rafael Duarte, formerly at Harbor Ledger, as a security researcher."
+ },
+ "correct": true
+}

@@ -1,0 +1,67 @@
+{
+ "id": "q34",
+ "query": "Find the Hana Sato who organizes a monthly Go meetup.",
+ "gold": "p16",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 4,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Hana Sato monthly Go meetup"
+   },
+   "result": [
+    {
+     "id": "p16",
+     "name": "Hana Sato",
+     "headline": "Engineering manager at Ostrava Maps"
+    },
+    {
+     "id": "p17",
+     "name": "Hana Satou",
+     "headline": "Violinist"
+    }
+   ],
+   "thought": "We need to find a specific person in a profile index. Query: \"Hana Sato monthly Go meetup\". We'll use search."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p16"
+   },
+   "result": {
+    "id": "p16",
+    "name": "Hana Sato",
+    "headline": "Engineering manager at Ostrava Maps",
+    "city": "Tokyo",
+    "body": "Hana manages the search team at Ostrava Maps. Previously at Quarry AI. Organizes a monthly Go meetup."
+   },
+   "thought": "We have two results. The first: \"Hana Sato, Engineering manager at Ostrava Maps\". The question: \"Find the Hana Sato who organizes a monthly Go meetup.\" We need to determine which profile matches that description.\n\nWe need to open profile to check bio. We have two. Let's open first."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p16",
+    "why": "Organizes a monthly Go meetup"
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have the profile ID p16, with why: Organizes a monthly Go meetup."
+  }
+ ],
+ "answer": {
+  "id": "p16",
+  "why": "Organizes a monthly Go meetup"
+ },
+ "correct": true
+}

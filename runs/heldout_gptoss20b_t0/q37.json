@@ -1,0 +1,68 @@
+{
+ "id": "q37",
+ "query": "Who teaches a joinery class on Saturdays?",
+ "gold": "p05",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 0.0,
+ "seed": 1,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "joinery class Saturdays"
+   },
+   "result": [],
+   "thought": "We need to find a person who teaches a joinery class on Saturdays. Likely a profile in some index. We need to search. Use search with query \"joinery class Saturdays\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "joinery Saturday"
+   },
+   "result": [],
+   "thought": "No results. Maybe the query is too generic. Let's search for \"joinery\" and \"Saturday\" separately."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "joinery teacher Saturday"
+   },
+   "result": [
+    {
+     "id": "p12",
+     "name": "Mei Chen",
+     "headline": "High school chemistry teacher"
+    }
+   ],
+   "thought": "We need to find a person who teaches a joinery class on Saturdays. Likely a profile in some directory. We need to search for \"joinery class Saturday\" or \"joinery teacher Saturday\". Let's try \"joinery teacher Saturday\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "joinery class"
+   },
+   "result": [],
+   "thought": "The search results show only Mei Chen, a high school chemistry teacher. That seems unrelated. Maybe the query is too narrow. Let's try \"joinery class\" alone."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "joinery"
+   },
+   "result": [],
+   "thought": "We need to find a person who teaches a joinery class on Saturdays. The search didn't return relevant results. Maybe the profile index contains a person with a headline indicating \"joinery teacher\" or \"Saturdays\". Let's search for \"joinery\" alone."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

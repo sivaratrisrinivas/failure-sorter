@@ -1,0 +1,62 @@
+{
+ "id": "q35",
+ "query": "Find the person who sells prints of comics about coffee.",
+ "gold": "p10",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 2,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "prints comics coffee"
+   },
+   "result": [],
+   "thought": "We need to find a profile that sells prints of comics about coffee. We should search. Probably the person might be an artist or a shop. Let's search \"prints comics coffee\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "comic prints coffee"
+   },
+   "result": [],
+   "thought": "No results. Try other terms."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee comic prints"
+   },
+   "result": [],
+   "thought": "We need to find a profile that sells prints of comics about coffee. Possibly someone who sells prints of comics with coffee theme. Maybe a comic artist or a print shop.\n\nWe need to find a specific person in the profile index. Use search with likely keywords. Maybe \"coffee comics prints\" or \"coffee comics prints seller\". Let's try \"coffee comic prints\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee comic artist prints"
+   },
+   "result": [],
+   "thought": "We need to find a profile that sells prints of comics about coffee. Possibly someone with a shop or artist who sells coffee-themed comics prints. Search queries didn't return. Perhaps the profile index search is limited. We could broaden: \"coffee comic artist\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee comic prints for sale"
+   },
+   "result": [],
+   "thought": "We need to find a profile index (maybe LinkedIn-like). The question: \"Find the person who sells prints of comics about coffee.\" We need to search. Our search queries didn't find anything. Maybe need more general: \"coffee comics prints for sale\". Let's try."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

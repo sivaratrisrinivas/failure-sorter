@@ -1,0 +1,78 @@
+{
+ "id": "q35",
+ "query": "Find the person who sells prints of comics about coffee.",
+ "gold": "p10",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 0.0,
+ "seed": 1,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "prints of comics about coffee"
+   },
+   "result": [
+    {
+     "id": "p33",
+     "name": "Omar Farouk",
+     "headline": "Founder of Tilepath"
+    },
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    },
+    {
+     "id": "p23",
+     "name": "Arjun Mehta",
+     "headline": "Open source maintainer of tidyledger"
+    }
+   ],
+   "thought": "We need to find a person who sells prints of comics about coffee. Likely a profile in some index. We need to search. Use search with query \"prints of comics about coffee\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee comics prints"
+   },
+   "result": [],
+   "thought": "Search didn't find relevant. Maybe search for \"coffee comics prints\""
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee comic"
+   },
+   "result": [],
+   "thought": "We need to find a person who sells prints of comics about coffee. The search didn't return relevant results. Maybe the profile index contains a person with a headline like \"Prints of coffee comics\" or \"Coffee comic prints\". Let's search for \"coffee comic\" or \"coffee comics\" or \"coffee print\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee prints"
+   },
+   "result": [],
+   "thought": "We need to find a person who sells prints of comics about coffee. The search results didn't find. Maybe the profile index has a person with a headline like \"Prints of coffee comics\" or \"Coffee comic prints\". Let's search for \"coffee\" and \"prints\" separately."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "coffee"
+   },
+   "result": [],
+   "thought": "We need to find a person who sells prints of comics about coffee. The search results didn't find. Maybe the profile index has a person with a headline like \"Prints of coffee comics\" or \"Coffee comic prints\". Let's search for \"coffee\" and \"comic\" separately."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

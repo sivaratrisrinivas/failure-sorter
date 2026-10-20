@@ -1,0 +1,132 @@
+{
+ "id": "q40",
+ "query": "Find the Ivan Petrov who used to work at Lumen Freight.",
+ "gold": "p28",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 2,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Ivan Petrov Lumen Freight"
+   },
+   "result": [
+    {
+     "id": "p29",
+     "name": "Ivan Petrov",
+     "headline": "Hockey coach"
+    },
+    {
+     "id": "p28",
+     "name": "Ivan Petrov",
+     "headline": "Site reliability engineer at Harbor Ledger"
+    },
+    {
+     "id": "p19",
+     "name": "Lukas Becker",
+     "headline": "Logistics coordinator at Lumen Freight"
+    }
+   ],
+   "thought": "We need to search for \"Ivan Petrov Lumen Freight\". Use search tool."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p29"
+   },
+   "result": {
+    "id": "p29",
+    "name": "Ivan Petrov",
+    "headline": "Hockey coach",
+    "city": "Toronto",
+    "body": "Ivan Petrov coaches junior hockey."
+   },
+   "thought": "We need Ivan Petrov who used to work at Lumen Freight. The search returned two Ivan Petrov results but their headlines don't mention Lumen Freight. Might need open profile to see more details. Let's open id p29 and p28. We'll need to check if either had past Lumen Freight."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Ivan Petrov Lumen Freight former"
+   },
+   "result": [
+    {
+     "id": "p29",
+     "name": "Ivan Petrov",
+     "headline": "Hockey coach"
+    },
+    {
+     "id": "p28",
+     "name": "Ivan Petrov",
+     "headline": "Site reliability engineer at Harbor Ledger"
+    },
+    {
+     "id": "p19",
+     "name": "Lukas Becker",
+     "headline": "Logistics coordinator at Lumen Freight"
+    }
+   ],
+   "thought": "We need Ivan Petrov who used to work at Lumen Freight. Search gave three Ivan Petrov but the first is hockey coach. None mention Lumen Freight. Need to search again? Maybe the profile includes 'previously worked at Lumen Freight'. Let's search for \"Ivan Petrov Lumen Freight previous\""
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Lumen Freight Ivan Petrov"
+   },
+   "result": [
+    {
+     "id": "p29",
+     "name": "Ivan Petrov",
+     "headline": "Hockey coach"
+    },
+    {
+     "id": "p28",
+     "name": "Ivan Petrov",
+     "headline": "Site reliability engineer at Harbor Ledger"
+    },
+    {
+     "id": "p19",
+     "name": "Lukas Becker",
+     "headline": "Logistics coordinator at Lumen Freight"
+    }
+   ],
+   "thought": "We need to find Ivan Petrov who used to work at Lumen Freight. Search results didn't show. Perhaps the profile is not listed. Maybe we need to search just \"Ivan Petrov\" and filter for Lumen Freight. Let's search again \"Ivan Petrov Lumen Freight former employee\" or \"Lumen Freight Ivan Petrov\". Also consider other synonyms. Use search with \"Ivan Petrov Lumen Freight\" maybe the search results limited to top 3. Let's search with more generic query: \"Lumen Freight Ivan Petrov\"."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "\"Ivan Petrov\" \"Lumen Freight\""
+   },
+   "result": [
+    {
+     "id": "p29",
+     "name": "Ivan Petrov",
+     "headline": "Hockey coach"
+    },
+    {
+     "id": "p28",
+     "name": "Ivan Petrov",
+     "headline": "Site reliability engineer at Harbor Ledger"
+    },
+    {
+     "id": "p19",
+     "name": "Lukas Becker",
+     "headline": "Logistics coordinator at Lumen Freight"
+    }
+   ],
+   "thought": "We need to find Ivan Petrov who used to work at Lumen Freight. Search results didn't show. Could be hidden. Maybe different name? Could be \"Ivan Petrov\" with headline \"Logistics Coordinator\" etc. We have p19 as Lukas Becker. Maybe Ivan Petrov had previous job at Lumen Freight but currently not. Maybe not listed. Let's search just \"Lumen Freight\" and filter for Ivan? Search for \"Lumen Freight Ivan\" maybe."
+  }
+ ],
+ "answer": null,
+ "correct": false
+}

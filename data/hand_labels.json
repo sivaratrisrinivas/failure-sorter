@@ -143,5 +143,115 @@
   "label": "retrieval_miss",
   "note": "No search returns p06. Small Screens is only in the bio.",
   "by": "builder, one pass, reading the trace"
+ },
+ "heldout_gptoss20b_t0/q35": {
+  "label": "retrieval_miss",
+  "note": "p10 never appears. The coffee comics fact is only in the bio.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t0/q37": {
+  "label": "retrieval_miss",
+  "note": "p05 never appears. Joinery is only in the bio.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t0/q39": {
+  "label": "tool_misuse",
+  "note": "p26 is the second hit in every name search. The agent opened the journalist p27 and never opened p26.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t0/q40": {
+  "label": "tool_misuse",
+  "note": "p28 is in every search. The agent repeated the same search four times, opened p28 last, and ran out of calls.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t0/q41": {
+  "label": "retrieval_miss",
+  "note": "p02 never appears. The 10k club is only in the bio.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t0/q43": {
+  "label": "tool_misuse",
+  "note": "p21 is in every search result. The agent opened the real estate agent p22 and never opened p21.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t0/q44": {
+  "label": "retrieval_miss",
+  "note": "p06 never appears. Small Screens is only in the bio. The agent opened an unrelated author.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t1_s4/q35": {
+  "label": "retrieval_miss",
+  "note": "p10 never appears. The coffee comics fact is only in the bio.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t1_s4/q37": {
+  "label": "retrieval_miss",
+  "note": "p05 never appears. Joinery is only in the bio.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t1_s4/q39": {
+  "label": "tool_misuse",
+  "note": "p26 is the second hit in every name search. The agent opened the journalist p27 and never opened p26.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t1_s4/q41": {
+  "label": "retrieval_miss",
+  "note": "p02 never appears. The 10k club is only in the bio.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t1_s4/q43": {
+  "label": "tool_misuse",
+  "note": "p21 is in every search result. The agent opened the real estate agent p22 and never opened p21.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t1_s4/q44": {
+  "label": "retrieval_miss",
+  "note": "p06 never appears. Small Screens is only in the bio. The agent opened an unrelated author.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "run_s2_gptoss20b_t1/q22": {
+  "label": "retrieval_miss",
+  "note": "p33 never appears. The map tile CDN fact is only in the bio.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "run_s2_gptoss20b_t1/q24": {
+  "label": "tool_misuse",
+  "note": "p35 is the second hit. The agent opened the photographer p36 and never opened p35.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "run_s2_gptoss20b_t1/q32": {
+  "label": "retrieval_miss",
+  "note": "Every search mixes tidyledger with Harbor Ledger words, so the CTO and interns win. p23 never appears.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t1_s2/q35": {
+  "label": "retrieval_miss",
+  "note": "p10 never appears. The coffee comics fact is only in the bio.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t1_s2/q37": {
+  "label": "retrieval_miss",
+  "note": "p05 never appears. Joinery is only in the bio.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t1_s2/q40": {
+  "label": "tool_misuse",
+  "note": "p28 is in every search. The agent opened the hockey coach p29 and never opened p28.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t1_s2/q41": {
+  "label": "retrieval_miss",
+  "note": "p02 never appears. The 10k club is only in the bio.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t1_s2/q43": {
+  "label": "tool_misuse",
+  "note": "p21 is in every search. The agent never opened either Sofia Marquez and ran out of calls.",
+  "by": "builder, one pass, reading the trace, before running v1"
+ },
+ "heldout_gptoss20b_t1_s2/q44": {
+  "label": "retrieval_miss",
+  "note": "p06 never appears. Small Screens is only in the bio.",
+  "by": "builder, one pass, reading the trace, before running v1"
  }
 }

@@ -16,19 +16,22 @@ When a people-search agent gets the wrong answer, there are two very different b
 
 | | count |
 |---|---|
-| runs | 205 (32 with a harness that also indexed bios, 173 with the name and headline index) |
-| misses | 29 |
-| retrieval miss | 19 |
-| tool misuse | 10 |
+| runs | 252 (32 with a search that also indexed bios, 220 with the name and headline index) |
+| misses | 51 |
+| retrieval miss | 33 |
+| tool misuse | 18 |
 
-The harness that indexed bios (`runs/run0_full_index`) missed 0 of 32. Same queries, same model.
+The search that also indexed bios (`runs/run0_full_index`) missed 0 of 32. Same queries, same model.
 
 Labeler agreement with hand labels:
 
-| labeler | dev (22 misses) | held out (7 misses) |
+| labeler | dev (25 misses) | held out (26 misses) |
 |---|---|---|
-| v0: no answer means retrieval miss | 12/22 | 5/7 |
-| v1: was the right id in any tool result | 22/22 | 7/7 |
+| v0: no answer means retrieval miss | 14/25 | 17/26 |
+| v1: was the right id in any tool result | 25/25 | 26/26 |
+
+Held out, by hand label: v1 matched 19 of 19 retrieval misses and 7 of 7 tool misuses. v0 matched 17 of 19 and 0 of 7.
+Held-out runs: 12 queries, 5 runs each (gpt-oss-20b at temperature 0, and at temperature 1 with seeds 2 and 4; qwen3.8-27b at temperature 0, and at temperature 1 with seed 3).
 
 ## How it was built
 
@@ -44,8 +47,11 @@ Following the evals-skills workflow (error-discovery, write-code-eval, validate-
 - **Hand labels have one annotator**, the builder (an AI agent working for Srinivas), in one pass. Srinivas has not reviewed them. No inter-annotator agreement exists. (verified)
 - **v1 encodes the same rule the annotator used**, so 100% agreement mostly shows the code matches the rule. It does not show the rule is the right one. (inferred)
 - **The first split leaked.** I first split q01 to q32 by parity, then read misses from both halves. So I moved all 32 to dev and wrote new held-out queries. (verified)
-- **Held-out has only retrieval misses, all from one model** (qwen3.8-27b). The gpt-oss-20b held-out runs hit the Groq free daily token cap. So v1 is not yet tested on held-out tool misuse. (verified)
-- **29 misses is small.** Treat the split as a demo, not a rate. (verified)
+- **Held-out tool misuse is only 7 cases from 3 queries** (q39, q40, q43, all from gpt-oss-20b). 7 of 7 is a small number. (verified)
+- **The hand labels were written before v1 ran on them, but by someone who knew the v1 rule.** So they are not blind. (verified)
+- **One held-out run was produced by a background job that kept running** after the first session ended (`heldout_gptoss20b_t1_s4`, files dated 2026-10-20 02:44 to 08:05 IST). Same code and frozen v1. I kept it and labeled it by hand like the rest. (verified)
+- **The seed 2 rerun also ran the held-out queries.** I moved those 12 traces from `run_s2_gptoss20b_t1` to `heldout_gptoss20b_t1_s2`. (verified)
+- **51 misses is small.** Treat the split as a demo, not a rate. (verified)
 - Whether this split matches what a production people-search agent sees: unknown.
 
 ## Sources showing this problem is real
@@ -59,7 +65,7 @@ Following the evals-skills workflow (error-discovery, write-code-eval, validate-
 
 ```
 export GROQ_API_KEY=...   # free tier
-python3 sorter/make_corpus.py   # note: rewrites queries.jsonl with q01-q32 only
+python3 sorter/make_corpus.py   # keeps held-out queries q33-q44
 OUT=runs/mine python3 sorter/agent.py
 python3 sorter/label.py
 python3 -m http.server -d docs

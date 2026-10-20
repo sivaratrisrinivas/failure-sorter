@@ -1,0 +1,57 @@
+{
+ "id": "q38",
+ "query": "Find the Kwame Asante who runs Kubernetes at a CRM company.",
+ "gold": "p37",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 2,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Kwame Asante Kubernetes CRM"
+   },
+   "result": [
+    {
+     "id": "p37",
+     "name": "Kwame Asante",
+     "headline": "Platform engineer at Spindle CRM"
+    },
+    {
+     "id": "p38",
+     "name": "Kwame Asante",
+     "headline": "Football agent"
+    },
+    {
+     "id": "p18",
+     "name": "Lukas Becker",
+     "headline": "Founder of Spindle CRM"
+    }
+   ],
+   "thought": "We need to find a profile of a person named \"Kwame Asante\" who runs Kubernetes at a CRM company. Likely a LinkedIn profile. Use search function."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p37",
+    "why": "Kwame Asante is a Platform engineer at Spindle CRM, where he runs Kubernetes."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We have two Kwame Asante, but the clue: runs Kubernetes at a CRM company. The first result: Platform engineer at Spindle CRM. Likely that runs Kubernetes. So choose id p37. Let's answer."
+  }
+ ],
+ "answer": {
+  "id": "p37",
+  "why": "Kwame Asante is a Platform engineer at Spindle CRM, where he runs Kubernetes."
+ },
+ "correct": true
+}

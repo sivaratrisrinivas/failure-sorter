@@ -1,0 +1,87 @@
+{
+ "id": "q34",
+ "query": "Find the Hana Sato who organizes a monthly Go meetup.",
+ "gold": "p16",
+ "split": "heldout",
+ "model": "openai/gpt-oss-20b",
+ "temperature": 1.0,
+ "seed": 2,
+ "index_fields": [
+  "name",
+  "headline"
+ ],
+ "steps": [
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Hana Sato monthly Go meetup"
+   },
+   "result": [
+    {
+     "id": "p16",
+     "name": "Hana Sato",
+     "headline": "Engineering manager at Ostrava Maps"
+    },
+    {
+     "id": "p17",
+     "name": "Hana Satou",
+     "headline": "Violinist"
+    }
+   ],
+   "thought": "We need to find a Hana Sato who organizes monthly Go meetup. Search query."
+  },
+  {
+   "type": "tool",
+   "name": "search",
+   "args": {
+    "query": "Hana Sato Go meetup organizer"
+   },
+   "result": [
+    {
+     "id": "p16",
+     "name": "Hana Sato",
+     "headline": "Engineering manager at Ostrava Maps"
+    },
+    {
+     "id": "p17",
+     "name": "Hana Satou",
+     "headline": "Violinist"
+    }
+   ],
+   "thought": "We need the Hana Sato who organizes a monthly Go meetup. The search gave two results: p16, engineering manager at Ostrava Maps; p17, violinist. Likely not the meetup organizer. Perhaps \"Go meetup\" refers to \"Go\" programming language. Let's search for \"Hana Sato Go meetup\" more specifically."
+  },
+  {
+   "type": "tool",
+   "name": "open_profile",
+   "args": {
+    "id": "p16"
+   },
+   "result": {
+    "id": "p16",
+    "name": "Hana Sato",
+    "headline": "Engineering manager at Ostrava Maps",
+    "city": "Tokyo",
+    "body": "Hana manages the search team at Ostrava Maps. Previously at Quarry AI. Organizes a monthly Go meetup."
+   },
+   "thought": "We need to find the person who organizes a monthly Go meetup. The search returned two results, both named \"Hana Sato\" or \"Hana Satou\" but not necessarily about Go meetup. We may need to open the profile to verify. We have 4 tool calls max; we have used 2 search calls. We can use open_profile for id \"p16\" and check if they mention Go meetup. If not, maybe open \"p17\". But we can also try search with different query: \"monthly Go meetup\" + \"Hana\" maybe. But we have 4 calls. We can open p16. Let's open p16."
+  },
+  {
+   "type": "tool",
+   "name": "answer",
+   "args": {
+    "id": "p16",
+    "why": "She organizes a monthly Go meetup and matches the name Hana Sato."
+   },
+   "result": {
+    "ok": true
+   },
+   "thought": "We found the profile id p16. We need answer."
+  }
+ ],
+ "answer": {
+  "id": "p16",
+  "why": "She organizes a monthly Go meetup and matches the name Hana Sato."
+ },
+ "correct": true
+}
